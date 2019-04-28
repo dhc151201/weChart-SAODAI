@@ -1,0 +1,85 @@
+<view class="rel page-content min-full border-box padded-b-16" hidden="{{!showPage}}"
+    bind:touchmove="hideSideToIndexComp"
+    bind:touchend="showSideToIndexComp"
+>
+
+    <image class="abs bg-image" src="{{$state.assetsUrl}}bg_xchb_sky@2x.png"></image>
+    <image class="abs bg-image" style="top: 2340rpx;" src="{{$state.assetsUrl}}bg_xchb_sky@2x.png"></image>
+    <image class="abs bg-image-t" src="{{$state.assetsUrl}}bg_xchb_red@2x.png"></image>
+
+    <view bindtap='showRols' class="abs rules-t color-success">活动规则</view>
+    <view class="flex flex-pack-center flex-align-center padded-t-8">
+        <cm-loading-image width="48rpx" height="48rpx" src="{{tripUser.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/100" radius="48"/>
+        <view class="f-11 padded-l-8 color-write">您的好友邀请您领红包</view>
+    </view>
+
+    <view class="tip-box">
+        <cm-envelope btnText="{{myTrip ? '邀好友开红包' : '发个行程开红包'}}" data="{{myTrip ? tripRedPacket : shareRedPacket}}" type="large" ></cm-envelope>
+    </view>
+
+    <view class="rel stac-bar color-write f-14">
+        <image class="abs stac-bar-bg" src="{{$state.assetsUrl}}bg_xchb_orange@2x.png"></image>
+        <view class="stac-bar-content flex flex-pack-center flex-align-center">
+            <view class="padded-r-8">{{totalUserNum}}人已领取</view>
+            <view class="">
+                <swiper style="width: 300rpx; height: 104rpx;"
+                    autoplay vertical interval="{{2000}}" duration="{{400}}" circular >
+                    <block wx:for="{{activityUsers}}" wx:key="{{index}}">
+                        <swiper-item>
+                            <view class="flex flex-align-center" style="height: 104rpx;">
+                                <cm-loading-image width="48rpx" height="48rpx" src="{{item.wxAvatarUrl}}" radius="48"/>
+                                <view class="padded-l-8 flex-1 aui-ellipsis-1">领取{{item.amount}}元现金红包</view>
+                            </view>
+                            
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            
+        </view>
+    </view>
+
+    <block wx:if="{{!myTrip}}">
+        <view class="color-write f-18 text-center">每日首次发行程，领取随机红包</view>
+        <view class="tip-box" style='margin-top: 32rpx; margin-bottom: 48rpx;'>
+            <cm-envelope data="{{tripRedPacket}}" type="large" ></cm-envelope>
+        </view>
+    </block>
+
+    <view class="total-box flex flex-v flex-pack-justify flex-align-center">
+        <cm-loading-image width="128rpx" height="128rpx" src="{{currentUser.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/100" radius="128"/>
+        <view class="tit">您累计获得现金红包</view>
+        <view class="color-error bold value">¥
+            <text class="number rel">{{currentUser.amount}}</text>
+            <image class="rel number-icon" src="{{$state.assetsUrl}}img_xchb_Withdraw@2x.png"></image>
+        </view>
+        <view class="flex flex-pack-center flex-align-center">
+            待开启红包 {{currentUser.waitActiveNum}} 个  I
+            <view bindtap="href" data-url="/pages/with-help/shop-list/index" class="margin-l-8 btn f-11 color-write">发布行程开启红包</view>
+        </view>
+    </view>
+
+
+</view>
+
+<import src="./../../../libs/wxParser/index.wxml"/>
+<cm-mask zindex="200" id="mask-tip-normel">
+    <view class="rel">
+        <text bindtap='hideRols' class="iconfont icon-ios-close-circle abs icon-close"></text>
+        <view class="rels-box bg-write padded-16">
+            
+            <view class="wxParser">
+                <template is="wxParser" data="{{wxParserData:richText.nodes}}"/>
+            </view>
+            
+        </view>
+
+    </view>
+</cm-mask>
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+
+<cm-side-to-index id="side-to-index" zindex="200" bottom="100" right="8" />

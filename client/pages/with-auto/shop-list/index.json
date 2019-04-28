@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "全部店铺",
+  "usingComponents": {
+    "wux-tabs": "/libs/wux/tabs/index",
+    "wux-tab": "/libs/wux/tab/index",
+    "cm-note": "/components/base/note/index",
+    "cm-side-to-index": "/components/side-to-index/index",
+    "no-data-placeholder": "/components/no-data-placeholder/index",
+    "cm-picker": "/components/base/picker/index",
+    "van-area": "/libs/vant/area/index"
+  }
+}

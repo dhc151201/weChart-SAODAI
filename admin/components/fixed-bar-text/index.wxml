@@ -1,0 +1,6 @@
+<!-- fixed bottom text bar -->
+<cm-fixed-bar background="{{background}}" style="color: {{color}}">
+  <view class="fixed-bar-text-item flex-1">
+    <slot></slot>
+  </view>
+</cm-fixed-bar>

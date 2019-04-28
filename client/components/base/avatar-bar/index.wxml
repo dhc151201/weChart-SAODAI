@@ -1,0 +1,23 @@
+<view wx:if="{{!cover}}" class="avatar-bar-box">
+  <view class="avatar-bar-margin-padded flex">
+    <image wx:for="{{list}}" wx:key="index" class="avatar"
+      src="{{item.headPortraitUrl}}?imageView2/1/w/{{width}}/h/{{height}}/q/100"
+      style="z-index:{{index}};{{_style}}{{index== 0 ? '' : _marginleft}}"
+    ></image>
+    <view wx:if="{{data.length > max}}" class="avatar"
+      style="z-index:{{max}};line-height: {{height/1.4}}rpx;overflow:hidden;{{_style}}{{_marginleft}}"
+    >...</view>
+  </view>
+</view>
+
+<cover-view wx:else class="avatar-bar-box">
+  <cover-view class="avatar-bar-margin-padded flex">
+    <cover-image wx:for="{{list}}" wx:key="index" class="avatar"
+      src="{{item.headPortraitUrl}}?imageView2/1/w/{{width}}/h/{{height}}/q/100"
+      style="z-index:{{index}};{{_style}}{{index== 0 ? '' : _marginleft}}"
+    ></cover-image>
+    <cover-view wx:if="{{data.length > max}}" class="avatar"
+      style="z-index:{{max}};line-height: {{height/1.4}}rpx;overflow:hidden;{{_style}}{{_marginleft}}"
+    >...</cover-view>
+  </cover-view>
+</cover-view>

@@ -1,0 +1,2 @@
+<web-view wx:if="{{htmlUrl}}" class="height-{{height}}" src="{{htmlUrl}}#wechat_redirect" bindload="viewLoad"></web-view>
+<wux-dialog id="wux-dialog"></wux-dialog>

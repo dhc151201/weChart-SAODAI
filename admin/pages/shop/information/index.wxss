@@ -1,0 +1,38 @@
+.title{
+  position: relative;
+}
+.title::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  border-top: 1rpx solid rgb(244,244,244);
+}
+
+.up-handel{
+  width: 480rpx;
+  height: 320rpx;
+  margin: 24rpx auto;
+  border: 1rpx solid rgb(244,244,244);
+  border-radius: 8rpx;
+  color: #666;
+}
+
+.up-handel-bottom{
+  width: 280rpx;
+  height: 380rpx;
+}
+
+.image-card-front,
+.image-card-back{
+  width: 320rpx;
+  height: 200rpx;
+  display: block;
+}
+
+.image-bus{
+  width: 216rpx;
+  height: 260rpx;
+  display: block;
+}

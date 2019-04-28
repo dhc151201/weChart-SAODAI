@@ -1,0 +1,145 @@
+.search-bar-fixed{
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+  padding-top: 10rpx;
+  padding-bottom: 4rpx;
+}
+.search-bar-fixed.shadow{
+  box-shadow: 0 3rpx 10rpx rgba(0,0,0,.1);
+}
+.search-box{
+  border: 1rpx solid rgb(224,223,224);
+  border-radius: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.swiper-top{
+  /* margin-top: 70rpx; */
+  /* padding-top: 18rpx; */
+}
+.swiper-top swiper{
+  height: 224rpx;
+}
+.swiper-top swiper-item{
+  padding: 0 8rpx;
+}
+.swiper-top image{
+  border-radius: 20rpx;
+}
+
+.hotShopTitle{
+  width: 136rpx;
+  height: 32rpx;
+}
+
+.section{
+  max-width: 400rpx;
+  top: 4rpx;
+}
+
+.picker-label-box{
+    margin: 0 -16rpx;
+}
+.picker-btns{
+    box-shadow: 0 -5rpx 15rpx rgba(0,0,0,.05);
+}
+.picker-btn{
+    width: 50%;
+    border-radius: 0;
+}
+
+
+.classify-box{
+  width: 100vw;
+  left: 0;
+  top: -20rpx;
+  z-index: 10;
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,.1);
+}
+.classify-box .left,
+.classify-box .right{
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  height: 540rpx;
+}
+.classify-box .left{
+  background: rgb(245,245,245);
+}
+.classify-box .left .item{
+  padding: 20rpx 40rpx;
+  width: 184rpx;
+  height: 112rpx;
+  box-sizing: border-box;
+}
+.classify-box .left .item.bg-write{
+  position: relative;
+}
+.classify-box .left .item.bg-write::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 12rpx;
+  top: calc(50% - 16rpx);
+  height: 32rpx;
+  border-left: 6rpx solid #ffac1a;
+}
+.classify-btns{
+  box-shadow: 0 -5rpx 15rpx rgba(0,0,0,.05);
+  position: relative;
+  z-index: 10;
+}
+.classify-btn{
+  width: 50%;
+  border-radius: 0;
+}
+
+
+.noset-height{
+    height: auto !important;
+}
+
+
+.filter-item-tit{
+  position: relative;
+}
+.filter-item-tit::before{
+  position: absolute;
+  left: 0;
+  top: calc(32rpx * 1.15);
+  height: 30rpx;
+  width: 8rpx;
+  display: block;
+  content: "";
+  background: -webkit-linear-gradient(top, rgb(254, 191, 0), rgb(255, 170, 29));
+  border-top-right-radius: 6rpx;
+  border-bottom-right-radius: 6rpx; 
+}
+
+.flex-labels{
+  flex-wrap: wrap;
+  text-align: center;
+}
+.flex-labels-item{
+  width: calc(25% - 6rpx);
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 6rpx;
+  background: rgba(255, 172, 26, 0.2);
+  color: rgb(255, 172, 26);
+}
+
+.near-shops-box{
+  padding: 40rpx 0;
+}
+.near-shops-box:first-child{
+  padding-top: 10rpx;
+}
+.near-shops-box:not(:last-child){
+  border-bottom: 1rpx solid rgb(224,223,224);
+}
+.f-16{
+  font-size: 32rpx;
+}

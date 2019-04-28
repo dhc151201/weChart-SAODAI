@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "找人捎带",
+  "usingComponents": {
+    "cm-note": "/components/base/note/index",
+    "cm-goods-pic": "/components/base/goods-pic/index",
+    "cm-goods-paycard-bar": "/components/goods-paycard-bar/index",
+    "cm-label-item": "/components/base/label-item/index",
+    "cm-search-bar": "/components/base/search-bar/index",
+    "cm-invitation-shop-join": "/components/invitation-shop-join/index"
+  }
+}

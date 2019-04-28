@@ -1,0 +1,85 @@
+<view class="padded-16 padded-b-12 color-light">
+    捎带范围： <text class="color-default">全国</text>
+    <!-- <text class="iconfont icon-ios-arrow-down"></text> -->
+</view>
+
+<view wx:for="{{tripList}}" wx:key="{{index}}" 
+    class="rel trip-list bg-write padded-16 border-box {{index > 1 ? '' : 'active'}}" 
+    bindtap="href" data-url="/packageTrip/detail/index?tripId={{item.id}}&from=auto"
+    >
+    
+    <image wx:if="{{index< 2}}" class="recomend-pic abs" src="./../../assets/images/icon_recommend_up@2x.png" mode="aspectFill"/>
+      
+
+    <view class="flex flex-pack-justify flex-align-center">
+        
+        <cm-loading-image width="96rpx" height="96rpx" src="{{item.userInfo.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/85" radius="{{96}}" />
+     
+        <view class="margin-l-8 flex-1 margin-r-8 f-11">
+            <view class="f-14 bold aui-ellipsis-1" style="max-width: 260rpx">{{item.userInfo.wxNickname}}</view>
+            <cm-note wx:for="{{item.userInfo.profession}}" wx:key="{{index}}" radius="30" color="#fff" background="rgba(144,203,249, 0.6)">{{item}}</cm-note>
+            <cm-note wx:if="{{item.userInfo.wxGender}}" radius="30" color="#fff" background="rgba(144,203,249, 0.6)">{{item.userInfo.wxGender}}</cm-note>
+        </view>
+
+        <view wx:if="{{!item.myTrip}}" catchtap="creatOrder" data-id="{{item.id}}" class="bg-success-ease padded-l-16 padded-r-16 color-write f-13" hover-class="hover-class">找TA捎带</view>
+          
+    </view>
+
+    <view class="flex flex-pack-justify color-light f-11 margin-t-16">
+        
+        <view class="destCityName}">
+            <view class="f-14 color-default">
+                {{item.destCityName}}
+                <text wx:if="{{item.sameCity}}" class="f-11 my-city-alt color-write rel">我所在市</text>
+            </view>
+            携带目的地
+        </view>
+
+        <view class="">
+            <view class="f-14 color-default">{{item.arriveTime}}</view>
+            送达时间
+        </view>
+
+        <view class="">
+            <view class="f-14 color-default">¥{{item.crosscityCharge || 0}}</view>
+            捎带费
+        </view>
+          
+
+    </view>
+      
+      
+
+</view>
+
+<block wx:if="{{tripList.length}}">
+    <block wx:if="{{tripList.length && skus}}" >
+        
+        <cm-fixed-bar>
+            <view class="flex-1 flex flex-pack-justify flex-align-center padded-l-16 padded-r-16" style='padding-top: 12rpx;'>
+                <view class="flex flex-align-center">
+                    捎带者都不合适？
+                </view>
+                <sd-button bindsubmit="addFindWith" reportSubmit formType="submit" size="small" width="400" type="success">我要发布求捎带</sd-button>
+            </view>
+        </cm-fixed-bar>
+        <layout-body  hasFixed="bottom" />
+        
+    </block>
+    
+</block>
+<block wx:else >
+
+    <view style="padding-top: 25vh;">
+    <no-data-placeholder placeholder="暂无捎带者~" 
+        image="./../../assets/images/picHintNog@2x.png"
+    />
+    </view>
+
+</block>
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+  
+  

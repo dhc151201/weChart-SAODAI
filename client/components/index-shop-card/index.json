@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cm-note": "./../base/note/index",
+    "wux-image": "/../../libs/wux/image/index"
+  }
+}

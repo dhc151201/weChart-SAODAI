@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cm-loading-image": "../base/loading-image/index"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "cm-actionsheet": "/components/base/actionsheet/index"
+  }
+}

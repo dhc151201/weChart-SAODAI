@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "店铺提货单",
+  "usingComponents": {
+    "wux-notice-bar": "/libs/wux/notice-bar/index",
+    "cm-fixed-bar": "/components/fixed-bar/index",
+    "cm-order-shop-goodslist": "/components/order-shop-goodslist/index",
+    "cm-order-shop-goodslist-take": "/components/order-shop-goodslist-take/index",
+    "cm-contact": "/components/base/contact/index",
+    "cm-countdown": "/components/base/countdown/index"
+  }
+}

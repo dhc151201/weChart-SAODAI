@@ -1,0 +1,73 @@
+<view class="padded-t-8"></view>
+
+<view class="bg-write padded-16 f-14 title">
+  <view>上传经营者身份证</view>
+  <view class="flex flex-pack-justify flex-align-end f-13">
+    <view class="color-light">需要和营业执照经营者一致</view>
+    <text class="color-blue" bindtap='hrefExampleHandelCard'>查看示例</text>
+  </view>
+</view>
+
+<view class="bg-write padded-8 f-14">
+  <view bindtap='actionsheetShow' data-key="cardFrontImageUrl" class="up-handel flex flex-v flex-pack-center flex-align-center">
+
+    <wux-spin nested spinning="{{uploadcardFrontImageUrl== 1}}">
+      <image class="image-card-front margin-b-8" 
+      src="{{cardFrontImageUrl || './../../../assets/images/iconIdFront@2x.png'}}?imageView2/1/w/160/h/100/q/85"></image>
+    </wux-spin>
+
+    <text>上传身份证正面</text>
+  </view>
+  <view bindtap='actionsheetShow' data-key="cardBackImageUrl" class="up-handel flex flex-v flex-pack-center flex-align-center">
+
+    <wux-spin nested spinning="{{uploadcardBackImageUrl== 1}}">
+      <image class="image-card-back margin-b-8" 
+      src="{{cardBackImageUrl || './../../../assets/images/iconIdVerso@2x.png'}}?imageView2/1/w/160/h/100/q/85"></image>
+    </wux-spin>
+
+    <text>上传身份证背面</text>
+  </view>
+</view>
+
+<view class="bg-write padded-16 margin-t-8 f-14 title">
+  <view class="flex flex-pack-justify flex-align-end f-13">
+    <view class="">上传{{ merchantInfo.type!= 3 ? '店铺营业执照' : '农场照片'}}</view>
+    <text bindtap='hrefExampleHandel' class="color-blue">查看示例</text>
+  </view>
+</view>
+
+<view class="bg-write padded-8 f-14">
+  <view bindtap='actionsheetShow' data-key="licenseImageUrl" class="up-handel up-handel-bottom flex flex-v flex-pack-center flex-align-center">
+
+    <wux-spin nested spinning="{{uploadlicenseImageUrl== 1}}">
+      <image class="image-bus margin-b-8" src="{{licenseImageUrl || './../../../assets/images/iconBus@2x.png'}}?imageView2/1/w/108/h/130/q/85"></image>
+    </wux-spin>
+
+    <text wx:if="{{merchantInfo.type!= 3}}">上传营业执照</text>
+    <text wx:else >上传农场相关照片</text>
+  </view>
+</view>
+
+<view class="padded-16" style="padding-top: 65rpx;">
+  <view bindtap='submit' hover-class="hover-class" class="btn btn-block btn-lg bg-success-ease">提交审核</view>
+</view>
+<view class="text-center f-13 padded-b-16">
+  <button class="flex-1 btn contact-btn" open-type="contact">联系客服</button>
+</view>
+
+<import src="./../../../templates/behavior.wxml" />
+<template is="behavior" />
+
+
+<cm-actionsheet id="sdai-actionsheet">
+  <cm-upload wx:if="{{upTarget== 'cardFrontImageUrl'}}" data-key="cardFrontImageUrl"
+   bindchange="onuploadChange" bindsuccess="onuploadSuccess"
+   bindfail="onfailUpload"></cm-upload>
+  <cm-upload wx:if="{{upTarget== 'cardBackImageUrl'}}" data-key="cardBackImageUrl"
+   bindchange="onuploadChange" bindsuccess="onuploadSuccess"
+   bindfail="onfailUpload"></cm-upload>
+  <cm-upload wx:if="{{upTarget== 'licenseImageUrl'}}" data-key="licenseImageUrl"
+   bindchange="onuploadChange" bindsuccess="onuploadSuccess"
+   bindfail="onfailUpload"></cm-upload>
+</cm-actionsheet>
+

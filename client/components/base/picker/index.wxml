@@ -1,0 +1,8 @@
+<!-- mask -->
+<cm-mask id="sdai-mask" zindex="{{zindex-1}}" catchtap='hide'></cm-mask>
+<!-- 下拉层 -->
+<view catchtouchmove='nullFun' hidden="{{hidden}}" class="actionsheet {{ out ? 'out' : ''}} {{ enter ? 'enter' : '' }}" style="z-index: {{zindex}}">
+  <slot></slot>
+  <view class="{{$state.fullSenClassName}}"></view>
+</view>
+

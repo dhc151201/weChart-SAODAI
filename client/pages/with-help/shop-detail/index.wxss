@@ -1,0 +1,16 @@
+.tab-box::after{
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  bottom: 1rpx;
+  width: 100%;
+  border-bottom: 1rpx solid rgb(224,224,224);
+}
+.btn{
+  width: 240rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  line-height: 80rpx;
+  margin: 10rpx 30rpx;
+}

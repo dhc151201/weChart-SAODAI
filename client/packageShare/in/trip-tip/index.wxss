@@ -1,0 +1,102 @@
+@import './../../../libs/wxParser/index.wxss';
+
+.page-content{
+    overflow: hidden;
+}
+.bg-image{
+    width: 100vw;
+    height: 2340rpx;
+    z-index: -5;
+}
+.bg-image-t{
+    width: 100vw;
+    height: 800rpx;
+    z-index: -4;
+}
+.rules-t{
+    right: 32rpx;
+    top: 26rpx;
+    z-index: 3;
+    font-size: 24rpx;
+}
+
+.t-name{
+    max-width: 70rpx;
+}
+
+.tip-box{
+    width: 560rpx;
+    margin: 530rpx auto 0;
+}
+
+.stac-bar{
+    padding: 56rpx 124rpx 48rpx;
+}
+.stac-bar-bg{
+    width: 698rpx;
+    height: 128rpx;
+    left: 32rpx;
+    z-index: -1;
+}
+.stac-bar-content{
+    height: 128rpx;
+}
+
+.total-box{
+    border: 6rpx solid rgb(101, 186, 164);
+    background: rgb(245, 255, 248);
+    border-radius: 14rpx;
+    margin: 0 32rpx;
+    min-height: 100rpx;
+    padding: 48rpx;
+}
+.total-box .tit{
+    color: rgb(100, 201, 154);
+    margin-top: 24rpx;
+}
+.total-box .value{
+    font-size: 64rpx;
+    color: rgb(240, 71, 18);
+}
+.total-box .number{
+    font-size: 120rpx;
+}
+.total-box .number-icon{
+    top: -60rpx;
+    width: 96rpx;
+    height: 40rpx;
+    z-index: 1;
+}
+.total-box .btn{
+    padding: 2rpx 16rpx;
+    background: rgb(171, 222, 213);
+    border-radius: 10rpx;
+}
+
+.rels-box{
+    max-height: 70vh;
+    width: 560rpx;
+    overflow-y: auto;
+    border-radius: 20rpx;
+}
+.tit-h2{
+    font-size: 36rpx;
+    
+}
+.tit-h4{
+    margin-top: 16rpx;
+    margin-left: -16rpx;
+    color: #333;
+}
+.cont-p{
+    color: #666;
+}
+.icon-close{
+    width: 60rpx;
+  height: 60rpx;
+  right: -8rpx;
+  top: -104rpx;
+  font-size: 60rpx;
+  color: #ddd;
+  z-index: 1;
+}

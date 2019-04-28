@@ -1,0 +1,7 @@
+<view class='flex flex-pack-justify flex-align-center'>
+  <!-- <image mode='aspectFill' src="{{data.}}?imageView2/1/w/100/h/100/q/85" class="goods-pic margin-r-8"></image> -->
+  <view class="f-13 flex-1">{{data.skuName}}</view>
+  <view wx:if="{{data.subStatus== 2}}" class="f-11 padded-r-8 padded-l-8">无货</view>
+  <view class="f-11 one-pay-number">×{{data.count}}</view>
+  <view class='bold f-13 text-right' style="min-width: 100rpx;">¥{{data.skuSalePrice}}</view>
+</view>

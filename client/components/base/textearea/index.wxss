@@ -1,0 +1,17 @@
+textarea.self{
+    width: 100%;
+    margin-top: 2rpx;
+}
+.placeholder{
+    color: #999;
+}
+textarea.self,
+.placeholder,
+.value{
+    display: block;
+    line-height: inherit !important;
+}
+
+.textarea-box{
+    padding: 3rpx 0;
+}

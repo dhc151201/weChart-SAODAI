@@ -1,0 +1,21 @@
+<view class="fixed-{{fixed}} mask-{{mask}} show-{{show}}"
+  style="background: {{ mask ? background : 'none' }}"
+ catchtap='hide' catchtouchmove='nullFun'>
+
+  <!-- loading -->
+  <view wx:if="{{type== 'loading'}}">
+    <wux-spin size="{{fixed ? 'large' : 'small'}}"></wux-spin>
+    <slot name="loading"></slot>
+  </view>
+
+  <!-- error -->
+  <view wx:if="{{type== 'error'}}">
+    error
+  </view>
+
+  <!-- empty data -->
+  <view wx:if="{{type== 'empty'}}">
+    <slot name="empty"></slot>
+  </view>
+
+</view>

@@ -1,0 +1,11 @@
+<view class="search-bar f-13 {{fixed}} flex flex-pack-justify flex-align-center"
+     style="border-color: {{ bordercolor }}; background-color: {{backgroundcolor}}"
+     >
+
+    <text bindtap="onClear" wx:if="{{showSearch}}" class="iconfont icon-search icon-ios-close-circle"></text>
+
+    <input value="{{value}}" class="flex-1 {{showSearch ? 'has-icon-search' : ''}}" placeholder='{{placeholder}}' bindinput='onInput'  bindfocus="onFocus" bindblur="onBlur" bindconfirm="onConfirm"></input>
+
+    <text bindtap="onClear" wx:if="{{showCancel && _showCancel}}" class="iconfont icon-cancel icon-ios-close-circle"></text>
+
+</view>

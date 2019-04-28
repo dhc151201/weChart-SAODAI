@@ -1,0 +1,30 @@
+.shop-base-card-box{
+  background: rgb(3,37,82);
+}
+.shop-base-card-margin-padded{
+  padding: 50rpx 40rpx;
+}
+.shop-base-card-box .avatar{
+  margin-right: 40rpx;
+}
+
+.shop-base-card-box .baseinfo{
+  line-height: 2;
+}
+
+.features{
+  border-radius: 16rpx;
+  margin-top: 60rpx;
+  padding: 10rpx 40rpx 20rpx;
+  color: #666;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, .3);
+}
+.features-title{
+  background: red;
+  border-radius: 20rpx;
+  padding: 5rpx 40rpx;
+  top: -20rpx;
+}
+.features-labels{
+  padding-bottom: 10rpx;
+}

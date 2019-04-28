@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cm-goods-pic": "./../base/goods-pic/index",
+    "cm-stepper": "./../base/stepper/index",
+    "cm-mask": "./../base/mask/index",
+    "cm-note": "./../base/note/index",
+    "wux-gallery": "/libs/wux/gallery/index",
+    "cm-label-item": "./../base/label-item/index"
+  }
+}

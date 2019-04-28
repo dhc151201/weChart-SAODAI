@@ -1,0 +1,13 @@
+@import './../../assets/wxss/base.wxss';
+
+.code-image{
+    width: 240rpx;
+    height: 240rpx;
+    display: block;
+    margin: auto;
+    /* border: 1rpx solid rgb(117, 117, 117); */
+    border-radius: 8rpx;
+}
+.inivation-btn{
+    margin: 72rpx 32rpx 128rpx;
+}

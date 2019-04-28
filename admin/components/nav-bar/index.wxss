@@ -1,0 +1,49 @@
+@import './../../assets/wxss/base.wxss';
+.nav-bar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 108rpx;
+  /* line-height: 108rpx; */
+  width: 100vw;
+  background: #fff;
+  border-top: 1rpx solid #ddd;
+  color: rgb(158,158,158);
+  z-index: 100;
+}
+.fullSen{
+  padding-bottom: 34rpx;
+  height: calc(108rpx + 34rpx);
+}
+
+.bav-bar-item{
+  height: 108rpx;
+}
+.bav-bar-item>view{
+  margin-top: -10rpx; 
+  font-size: 20rpx;
+}
+.bav-bar-item image{
+  width: 72rpx;
+  height: 72rpx;
+  display: block;
+  margin: 10rpx auto 0;
+  overflow: visible;
+}
+
+.label{
+  display: block;
+  right: -10rpx;
+  top: 0rpx;
+  background: rgb(255, 59, 48);
+  color: #fff;
+  border-radius: 100%;
+  min-width: 32rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+
+.color-success{
+  color: #333;
+}

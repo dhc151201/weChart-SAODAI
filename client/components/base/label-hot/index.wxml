@@ -1,0 +1,3 @@
+<view class="label-hot" style="{{style}}">
+    <slot></slot>
+</view>

@@ -1,0 +1,6 @@
+<view class='flex flex-pack-justify flex-align-center'>
+  <!-- <image mode='aspectFill' src="{{data.}}?imageView2/1/w/100/h/100/q/85" class="goods-pic margin-r-8"></image> -->
+  <view class="f-13 flex-1">{{data.skuName}}</view>
+  <text class="f-11 one-pay-number">×{{data.count}}</text>
+  <text class='bold f-13'>¥{{data.skuSalePrice}}</text>
+</view>

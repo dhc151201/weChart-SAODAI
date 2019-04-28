@@ -1,0 +1,68 @@
+
+.shop-list-panel{
+  box-shadow: 0 5rex 15rpx rgba(0,0,0,.3);
+  border-radius: 16rpx;
+}
+
+.shop-list{
+  padding: 40rpx 0;
+  line-height: 1.2;
+
+}
+.shop-list:not(:last-child){
+  border-bottom: 1rpx solid rgb(224,224,224);
+}
+.icon-chose{
+  font-size: 40rpx;
+}
+
+.address{
+  max-width: 300rpx;
+  transition: all 300ms;
+}
+
+.notice-bar{
+  position: fixed;
+  bottom: 108rpx;
+  height: 108rpx;
+  line-height: 72rpx;
+  width: 100%;
+  left: 0;
+  background: rgb(255 ,246 ,232);
+  color: #666;
+}
+.notice-bar.fullSen{
+  bottom: calc(108rpx + 52rpx) !important;
+}
+
+.icon-close{
+  font-size: 44rpx;
+}
+
+.search-image{
+  width: 100rpx;
+  height: 120rpx;
+  margin: 80rpx auto 0;
+}
+
+.btn-invitation-shop-join{
+  height: 56rpx;
+  width: 196rpx;
+  line-height: 56rpx;
+  border-radius: 56rpx;
+  border: 1rpx solid #ffac1a;
+  background: #fff;
+  margin: 0 32rpx 0;
+}
+
+
+.picker-label-box{
+  margin: 0 -16rpx;
+}
+.picker-btns{
+  box-shadow: 0 -5rpx 15rpx rgba(0,0,0,.05);
+}
+.picker-btn{
+  width: 50%;
+  border-radius: 0;
+}

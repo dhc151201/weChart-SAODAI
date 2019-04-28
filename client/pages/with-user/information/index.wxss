@@ -1,0 +1,22 @@
+.panel{
+    margin: 24rpx 32rpx;
+    padding: 24rpx 32rpx 32rpx;
+    border-radius: 16rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0,0,0,.1);
+}
+.panel:first-child{
+    margin-top: 32rpx;
+}
+
+.tit-pic{
+    width: 44rpx;
+    height: 44rpx;
+}
+.worker-item-box{
+    margin: 0 -16rpx;
+}
+.sex-pic{
+    width: 128rpx;
+    height: 128rpx;
+    display: block;
+}

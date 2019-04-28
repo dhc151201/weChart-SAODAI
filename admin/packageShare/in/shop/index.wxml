@@ -1,0 +1,10 @@
+<view class="rel box{{longImage ? '-long': ''}}">
+  <image src="{{ $state.assetsUrl }}{{ longImage ? 'backgroundimg_x.png' : 'backgroundimg.png' }}" class="abs bg{{longImage ? '-long': ''}}"></image>
+
+  <view class="abs f-11 text-center bottom-texts {{longImage && 'longImage'}}">
+    <button class="btn" bindtap='addShopHandel'>
+      <image class="btn" src='./../../../assets/images/share_btn_shop@2x.png'></image>
+    </button>
+  </view>
+
+</view>

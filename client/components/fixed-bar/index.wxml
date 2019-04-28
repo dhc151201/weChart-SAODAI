@@ -1,0 +1,6 @@
+<!-- fixed 布局 bar 如分享到/结算/购物车 外层 -->
+<layout-footer background='{{background}}'>
+    <view class="flex flex-pack-justify flex-align-center bg-write fixed-bar" style="background: {{background}}">
+        <slot></slot>
+    </view>
+</layout-footer>

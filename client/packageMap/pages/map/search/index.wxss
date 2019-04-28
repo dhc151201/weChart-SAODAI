@@ -1,0 +1,55 @@
+
+.page-box{
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.top-search{
+  margin: 20rpx 20rpx;
+}
+
+.line{
+  border-top: 1rpx solid rgb(244,244,244);
+}
+
+
+.top-search-city{
+  margin-right: 16rpx;
+}
+
+.top-search-city,
+.top-search-input-box{
+  border-radius: 6rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+
+.top-search-input-box{
+  padding-top: 5rpx;
+}
+
+.top-search-input{
+  /* background: #fff; */
+  height: 40rpx;
+}
+
+.result-box{
+  padding: 20rpx 0 20rpx 72rpx;
+}
+.result-list{
+  padding: 24rpx 32rpx 24rpx 0;
+}
+.result-list:not(:last-child){
+  border-bottom: 1rpx solid rgb(244,244,244);
+}
+
+.other-type-bar{
+  padding: 0 20rpx 20rpx;
+  border-bottom: 1rpx dashed rgb(244,244,244);
+}
+
+.wux-icon{
+  top: 4rpx;
+}

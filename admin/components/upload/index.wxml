@@ -1,0 +1,11 @@
+<wux-upload url="{{uploadUrl}}" bind:change="onChange" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:progress="onProgress"
+  sourceType="{{['album']}}" sizeType="{{['compressed']}}"
+  header="{{header}}"
+>
+    <view class="list border-bottom">从相册选择</view>
+</wux-upload>
+<wux-upload url="{{uploadUrl}}" bind:change="onChange" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:progress="onProgress"
+  sourceType="{{['camera']}}" sizeType="{{['compressed']}}"
+>
+    <view class="list">拍照</view>
+</wux-upload>

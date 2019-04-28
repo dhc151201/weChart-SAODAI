@@ -1,0 +1,77 @@
+<!--packageFindWith/near/index.wxml-->
+<!-- <text>packageFindWith/near/index.wxml</text> -->
+<import src="./../../templates/load.more.wxml" />
+<!-- 所在地及送达目的地 -->
+<view class="flex flex-pack-justify flex-align-center padded-16 padded-b-12 bg-write">
+    <view class="flex flex-align-center" bindtap="href"
+        data-url="/packageMap/pages/map/search/index?after=/packageFindWith/near/index">
+        <text class="iconfont icon-ios-pin f-17 color-whiteThree rel" style="top: 2rpx;"></text>
+        <text class="section-m aui-ellipsis-1 rel"><text class="color-grey">您所在城市：</text>{{choseAddress.address || $state.location.formatted_addresses.recommend}}</text>
+    </view>
+    <view class="flex flex-align-center padded-l-8">
+        <text class="color-grey">送达目的地：</text>
+        <view bindtap="showArea" >
+          <text>{{cityName}}</text>
+          <text class="iconfont icon-down icon-ios-arrow-down f-17 color-light"></text>
+        </view>
+    </view>
+</view>
+
+<!-- 求捎带列表 -->
+<block wx:if="{{allWaitAcceptList.length}}">
+  <view class="order-box padded-16 bg-write" wx:for="{{allWaitAcceptList}}" wx:key="{{index}}" bindtap="href" data-url="/packageOrder/detail/with-help/index?orderId={{item.headerId}}&from=find">
+    <!-- 求捎带者信息 -->
+    <view class="flex flex-align-center border-bot padded-b-16">
+      <cm-loading-image width="80rpx" height="80rpx" src="{{item.avatar}}?imageView2/1/w/100/h/100/q/100" radius="80" />
+      <view class="flex-1 padded-l-8">
+        <view class="flex flex-pack-justify flex-align-center">
+          <view class="bold f-14 flex flex-align-center">{{item.userName}}</view>
+          <!-- <text class="color-yellowishOrange">我已接单</text> -->
+          <!-- <view bindtap="getOrder" id="{{item.shopId}}" class="btn bg-success-ease little-btn" data-headerId="{{item.headerId}}" data-shopId="{{item.shopId}}" data-tripAmount="{{item.tripAmount}}" data-arriveTime="{{item.arriveTime}}" hover-class="hover-class">帮TA捎带</view> -->
+          <sd-button catchtap="nullFun" catchsubmit="getOrder" data-headerId="{{item.headerId}}" data-shopId="{{item.shopId}}" data-tripAmount="{{item.tripAmount}}" data-arriveTime="{{item.arriveTime}}" reportSubmit formType="submit" size="smaller" type="success">帮TA捎带</sd-button>
+        </view>
+        <view class="flex flex-pack-justify flex-align-center">
+          <view class="f-11 color-grey flex flex-align-center">
+            <text wx:if="{{item.wxGender == '女'}}" class="{{item.wxGender == '女' ? 'pink-bg' : 'blue-bg'}} blockstyle">♀女</text>
+            <text wx:else="{{item.wxGender == '男'}}" class="{{item.wxGender == '女' ? 'pink-bg' : 'blue-bg'}} blockstyle">♂男</text>
+            <text wx:if="{{item.profession != null}}" class="{{item.wxGender == '女' ? 'pink-bg' : 'blue-bg'}} blockstyle">{{item.profession}}</text>         
+          </view>
+          <text class="color-yellowishOrange font-style">捎带费 ¥{{item.finalTripAmount}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 需要捎带的商品及店铺信息 -->   
+    <view class="bold f-14 flex flex-align-center padded-t-16"><image class="icon-style" src="{{$state.assetsUrl}}icon_fjqsd_qsd_2x.png"></image><text>{{item.shopName}}</text></view>
+    <view class="f-11 color-grey">{{item.shopAddress}} | <cm-distance value="{{item.distance}}"></cm-distance></view>
+    
+    <view class="flex flex-pack-justify flex-align-center padded-t-12 f-11 padded-b-16 border-bot">
+      <view class="rel" wx:for="{{item.skus}}" wx:key="{{index}}" wx:if="{{index< 3}}">
+          <cm-loading-image width="144rpx" height="144rpx" src="{{item.skuImage}}?imageView2/1/w/100/h/100/q/85" radius="10" />
+          <text class="abs goods-num">x{{item.skuCount}}</text>
+      </view>
+      <view>
+        共 {{item.skus.length}} 件 
+        <text class="iconfont icon-ios-arrow-forward color-light"></text>
+      </view>
+    </view>
+    <!-- 送达信息 -->
+    <view class="flex flex-pack-justify flex-align-center bg-write padded-t-16">
+      <view class="flex flex-align-center">
+          <text class="section-m aui-ellipsis-1 rel">送达:{{item.destAddress}}</text>
+      </view>
+      <view class="flex flex-align-center padded-l-8"><cm-time time="{{item.arriveTime}}" />前</view>
+    </view>
+  </view>
+</block>
+  <!-- 搜索结果提示 -->
+  <view wx:if="{{loadmore== 3}}" style="padding-top: 25vh;">
+    <no-data-placeholder placeholder="暂无求捎带的哟~"/>
+  </view>
+  <template wx:else is="loadmore" data="{{status: loadmore}}" />
+<cm-picker id="area" zindex="122">
+  <van-area bindcancel="areaCancel" bindconfirm="areaConfirm" area-list="{{ areaList }}" columns-num="{{ 2 }}" title="城市选择" />
+</cm-picker>
+<wux-toast id="wux-toast" />
+  
+<wux-dialog id="wux-dialog" />

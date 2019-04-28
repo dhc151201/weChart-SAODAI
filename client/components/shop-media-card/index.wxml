@@ -1,0 +1,30 @@
+<!-- 店铺信息顶部的卡片 -->
+<view class="bg-write">
+
+  <image mode="aspectFill" class="shop-cover-pic" src="{{$state.assetsUrl}}bg_shop@2x.png"></image>
+
+  <view class="rel" style="height: 40rpx;">
+    <view class="abs shop-info-card bg-write flex flex-pack-justify flex-align-center padded-16 border-box">
+      <cm-loading-image src="{{info.logoImageUrl}}?imageView2/1/w/128/h/128/q/100" width="128rpx" height="128rpx" radius="96" />
+      <view class="f-11 color-light flex-1 padded-l-8">
+        <view class="f-17 bold color-default flex flex-pack-justify flex-align-center">
+          <view class="flex flex-align-center">
+            <text class="aui-ellipsis-1 shopName">{{info.shopName}}</text>
+            <image wx:if="{{info.entered == 0}}" src='./../../assets/images/icon_ruzhu@2x.png' class='iconstyle'></image>
+          </view>
+          <text bindtap="makePhoneCall" data-phone="{{info.shopTelphone}}" class="color-success iconfont icon-tubiao210 f-20"></text>
+        </view>
+        <view class="padded-b-4">
+          <cm-note wx:if="{{info.discountName}}" background="#FFE8E8" color="#FF5E4B">{{info.discountName}}</cm-note>
+          <cm-note wx:if="{{info.category}}">{{info.category}}</cm-note>
+          <!-- <cm-note wx:for="{{info.tagList}}" wx:key="{{index}}" wx:if="{{index< 3}}">{{item.name}}</cm-note> -->
+        </view>
+        <view class="flex flex-pack-justify">
+          <text class="aui-ellipsis-1" style="max-width: 300rpx;">{{info.address}}</text>
+          <cm-distance value="{{info.distance}}" beforeText="距您"/>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,41 @@
+@import './../../assets/wxss/base.wxss';
+
+.fixed-bar-share-item{
+  width: 50vw;
+  height: 108rpx;
+  text-align: center;
+  line-height: 108rpx;
+  font-size: 36rpx;
+  border-top: 1rpx solid #ddd;
+}
+.fixed-bar-share-item:not(:last-child){
+  border-right: 1rpx solid #ddd;
+}
+
+
+
+@-webkit-keyframes move{
+  0%, 100%{
+    transform: translate3d(0, 0, 0);
+  }
+  50%{
+    transform: translate3d(0, -20rpx, 0);
+  }
+}
+
+.share-guide{
+  bottom: 116rpx;
+  right: 16rpx;
+  width: 344rpx;
+  height: 190rpx;
+  -webkit-animation: move 1000ms infinite;
+}
+
+.share-guide.fullSen{
+  bottom: calc(116rpx + 50rpx);
+}
+
+.btn{
+  border: 0 none;
+  border-radius: 0;
+}

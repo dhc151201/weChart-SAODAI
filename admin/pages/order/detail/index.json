@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "wux-tabs": "/libs/wux/tabs/index",
+    "wux-tab": "/libs/wux/tab/index",
+    "cm-order-goods-bar": "/components/order-goods-bar/index"
+  }
+}

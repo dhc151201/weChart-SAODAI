@@ -1,0 +1,156 @@
+{
+    "pages": [
+        "pages/with-help/index/index",
+        "pages/with-help/shop-list/index",
+        "pages/with-help/shop-detail/index",
+        "pages/with-auto/index/index",
+        "pages/with-auto/shop-list/index",
+        "pages/with-auto/shop-detail/index",
+        "pages/with-auto/shop-search/index",
+        "pages/with-user/index/index",
+        "pages/with-user/information/index",
+        "pages/with-user/letters/index",
+        "pages/no-network/index",
+        "pages/webview/index"
+    ],
+    "tabBar": {
+        "custom": true,
+        "list": [
+            {
+                "pagePath": "pages/with-help/index/index"
+            },
+            {
+                "pagePath": "pages/with-auto/index/index"
+            },
+            {
+                "pagePath": "pages/with-user/index/index"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "人人捎带",
+        "navigationBarTextStyle": "black"
+    },
+    "networkTimeout": {
+        "request": 10000
+    },
+    "usingComponents": {
+        "i-load-more": "/libs/ivew/load-more/index",
+        "i-spin": "/libs/ivew/spin/index",
+        "wux-toast": "/libs/wux/toast/index",
+        "wux-button": "/libs/wux/button/index",
+        "wux-dialog": "/libs/wux/dialog/index",
+        "wux-loading": "/libs/wux/loading/index",
+        "cm-mask": "/components/base/mask/index",
+        "cm-nav-bar": "/components/nav-bar/index",
+        "cm-avatar": "/components/base/avatar/index",
+        "cm-avatar-bar": "/components/base/avatar-bar/index",
+        "cm-empty-layout": "/components/base/empty-layout/index",
+        "cm-loading-image": "/components/base/loading-image/index",
+        "no-data-placeholder": "/components/no-data-placeholder/index",
+        "cm-time": "/components/base/timeReg/index",
+        "cm-distance": "/components/base/distanceReg/index",
+        "cm-money": "/components/base/moneyReg/index",
+        "layout-body": "/components/layout-body/index",
+        "layout-footer": "/components/layout-footer/index",
+        "sd-button": "/libs/sdai/from/button/index"
+    },
+    "workers": "workers",
+    "subpackages": [
+        {
+            "root": "packageMap",
+            "name": "packageMap",
+            "pages": [
+                "pages/map/search/index",
+                "pages/map/city/index"
+            ]
+        },
+        {
+            "root": "packageScope",
+            "pages": [
+                "pages/scope/index"
+            ]
+        },
+        {
+            "root": "packageAddress",
+            "pages": [
+                "pages/list/index",
+                "pages/add/index"
+            ]
+        },
+        {
+            "root": "packageShare",
+            "pages": [
+                "out/shop/index",
+                "out/trip/index",
+                "in/shop/index",
+                "in/trip-tip/index"
+            ]
+        },
+        {
+            "root": "packageShop",
+            "pages": [
+                "typeList/index",
+                "takeDetail/index"
+            ]
+        },
+        {
+            "root": "packageTrip",
+            "pages": [
+                "add/index",
+                "list/index",
+                "detail/index"
+            ]
+        },
+        {
+            "root": "packageWallet",
+            "pages": [
+                "list/balance/index",
+                "list/income/index",
+                "list/voucher/index"
+            ]
+        },
+        {
+            "root": "packageOrder",
+            "pages": [
+                "list/with-help/index",
+                "list/with-auto/index",
+                "list/trip/index",
+                "detail/with-help/index",
+                "detail/with-auto/index",
+                "update/with-auto/index",
+                "recede/with-auto/index"
+            ]
+        },
+        {
+            "root": "packageFindWith",
+            "pages": [
+                "near/index"
+            ]
+        }
+    ],
+    "preloadRule": {
+        "pages/with-help/index/index": {
+            "network": "all",
+            "packages": [
+                "packageMap"
+            ]
+        }
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "获取用户地理位置"
+        },
+        "scope.userInfo": {
+            "desc": "获取用户登录信息"
+        },
+        "scope.writePhotosAlbum": {
+            "desc": "允许保存图片至本地"
+        }
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wx13363befd3bf9007"
+    ]
+}

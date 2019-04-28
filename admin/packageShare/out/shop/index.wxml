@@ -1,0 +1,33 @@
+<view class="rel box{{longImage ? '-long': ''}}" bindlongpress='saveHandel'>
+
+  <image 
+  src="{{ bgImage }}" class="abs bg{{longImage ? '-long': ''}}"></image>
+
+  <image src="{{weiChatCode}}" class="abs code {{longImage && 'longImage'}}"></image>
+
+  <view class="abs f-11 text-center bottom-texts {{longImage && 'longImage'}}">
+    <button class="btn" open-type="share" 
+      data-title="和我一起开店吧，全民都来帮你卖！" 
+      data-path="/packageShare/in/shop/index?entrance=10010?merchantId={{$state.user.merchantId}}"
+      data-imageUrl="{{ bgImage }}"
+    >
+      <image class="btn" src='./../../../assets/images/shareBtnInvite@2x.png'></image>
+
+
+    </button>
+  </view>
+
+  <!-- 前往setting页 -->
+  <cm-actionsheet id="sdai-actionsheet">
+    <button class="btn gosetting" bindtap="openSetting">前往授权设置</button>
+  </cm-actionsheet>
+
+  <canvas class="abs canvas {{ longImage ? 'long' : ''}}" canvas-id="canvas"></canvas>
+  
+
+</view>
+
+<wux-dialog id="wux-dialog"></wux-dialog>
+<wux-toast id="wux-toast" />
+
+<cm-empty-layout show="{{showLoading}}"></cm-empty-layout>

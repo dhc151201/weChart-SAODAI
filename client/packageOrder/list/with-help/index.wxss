@@ -1,0 +1,56 @@
+.tabs-box{
+    border-top: 1rpx solid rgb(224,224,224);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+.nodata .no-data-placeholder image.no-data-image{
+  width: 324rpx;
+  height: 150rpx;
+}
+.tab-content{
+    padding-top: 100rpx;
+}
+
+.car-ticket{
+
+}
+.card-bg{
+    width: calc(100% + 12rpx);
+    height: calc(100% + 10rpx);
+    left: -6rpx;
+    top: 0;
+    z-index: -1;
+}
+.trip-box{
+    height: 191rpx;
+}
+.trip-from,
+.trip-to{
+    width: calc(50% - 44rpx);
+}
+.trip-center-line{
+    width: 44rpx;
+    height: 12rpx;
+}
+.line-c{
+    border-top: 1rpx dashed rgb(224,224,224);
+    /* margin-bottom: 40rpx; */
+    margin-left: 32rpx;
+    margin-right: 32rpx;
+}
+
+.trip-footer{
+    height: 102rpx;
+    color: #666;
+}
+.trip-status-image{
+    width: 120rpx;
+    height: 92rpx;
+    
+}
+.trip-box,
+.trip-footer{
+    margin: 0 16rpx;
+}

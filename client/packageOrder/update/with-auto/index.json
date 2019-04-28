@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+      "fixed-bar": "/components/fixed-bar/index",
+      "sd-radio": "/libs/sdai/from/radio/index",
+      "cm-order-shop-goodslist": "/components/order-shop-goodslist/index"
+  }
+}

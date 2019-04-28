@@ -1,0 +1,22 @@
+@import './../../assets/wxss/base.wxss';
+
+.right-bar{
+  height: 144rpx;
+}
+.pic{
+  margin-right: 40rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  width: 144rpx;
+  height: 144rpx;
+}
+
+.old-price::after{
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  border-top: 1rpx solid #bbb;
+}

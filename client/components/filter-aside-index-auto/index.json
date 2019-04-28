@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cm-filter-actionsheet": "/components/base/filter-actionsheet/index"
+    }
+}

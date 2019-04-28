@@ -1,0 +1,4 @@
+<!-- 便签 -->
+<view class="note" style="background: {{background}}; color: {{color}};">
+   <slot></slot>
+</view>

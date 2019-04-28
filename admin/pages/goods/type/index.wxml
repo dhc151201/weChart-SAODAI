@@ -1,0 +1,28 @@
+<view class="flex bg-write">
+
+  <view class="full left f-14">
+    <view wx:for="{{parent}}" wx:key="{{item.id}}"
+    class="list flex flex-pack-center flex-align-center {{parentId== item.id ? 'bg-write color-success': ''}}"
+       bindtap='choseParentIdHandel' 
+       data-id="{{item.id}}" data-index="{{index}}"
+    >{{item.name}}</view>
+
+  </view>
+
+  <view class="full right f-13 flex-1 color-light">
+    <block wx:for="{{children}}" wx:key="{{item.id}}">
+      
+        <text bindtap='choseIdHandel' data-id="{{item.id}}" data-name="{{item.name}}"
+      class="note {{choseId['child_'+ item.id] ? 'bg-success color-write': ''}}"
+      >{{item.name}}</text>
+
+    </block>
+
+    <view class="text-center f-13 padded-t-4" wx:if="{{!children.length}}">暂无子分类</view>
+    
+  </view>
+
+</view>
+
+<import src="./../../../templates/behavior.wxml" />
+<template is="dialog" />

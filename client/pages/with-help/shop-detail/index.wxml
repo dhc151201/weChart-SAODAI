@@ -1,0 +1,53 @@
+<import src="./../../../templates/load.more.wxml"/>
+
+<cm-shop-media-card info="{{shopInfo}}"/>
+
+<view class="margin-b-8" wx:if="{{tripList.data.length}}" bind:touchmove="hideSideToIndexComp" bind:touchend="showSideToIndexComp">
+    <cm-couple-block-simple shopId="{{shopInfo.id}}" list="{{tripList.data}}" allNum="{{tripList.totalCount}}" from="help"></cm-couple-block-simple>
+</view>
+
+<view class="bg-write tab-box rel">
+    <view class="rel" style="z-index: 1;">
+        <wux-tabs defaultCurrent="{{tabChose}}" bindchange="tabchange">
+            <wux-tab key="linegoods" title="在售商品"></wux-tab>
+            <wux-tab key="shopinfo" title="商家信息"></wux-tab>
+        </wux-tabs>
+    </view>
+</view>
+
+
+<view class="bg-write padded-16">
+
+    <!-- 在售商品 -->
+    <view hidden="{{tabChose== 'shopinfo'}}">
+
+        <cm-goods-paycard-bar wx:for="{{goodsList}}" wx:key="{{index}}" goodsInfo="{{item}}"/>
+
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder placeholder="该分类下暂无店铺哟~" image="./../../assets/images/picHintNog@2x.png"/>
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore}}"/>
+        <fixed-bar>
+            <view class="flex-1 flex flex-pack-justify flex-align-center padded-l-16 padded-r-16" style='padding-top: 12rpx;'>
+                <view class="rel bold">返利{{shopInfo.rebate}}%</view>
+                <sd-button bindtap="href" data-url="/packageTrip/add/index?shopId={{shopInfo.id}}" size="small" width="260" type="success">发起捎带</sd-button>
+            </view>
+        </fixed-bar>
+
+    </view>
+
+    <!-- 商家信息 -->
+    <view hidden="{{tabChose== 'linegoods'}}">
+        <cm-shop-detail-block info="{{shopInfo}}" bind:change="shopChange"/>
+    </view>
+
+</view>
+
+<layout-body wx:if="{{tabChose== 'linegoods'}}" hasFixed="bottom"/>
+<layout-body wx:else />
+
+<wux-dialog id="wux-dialog"/>
+<wux-toast id="wux-toast"/>
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

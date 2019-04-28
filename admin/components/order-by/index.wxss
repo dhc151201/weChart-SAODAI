@@ -1,0 +1,45 @@
+.options-box{
+  /* position: fixed; */
+  width: 750rpx;
+  z-index: 100;
+  transform: translateY(10rpx);
+  box-shadow: 0 8rpx 15rpx rgba(0,0,0,.3);
+  box-sizing: border-box;
+  color: #666;
+}
+
+.options-body{
+  max-height: 80vh;
+  padding: 0 20rpx 10rpx;
+  overflow: auto;
+}
+
+.options-box .title{
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #ddd;
+}
+.options-box .title:last-child{
+  border-bottom: 0 none;
+}
+
+.option-item{
+  margin: 10rpx 10rpx 10rpx 0;
+  padding: 10rpx 80rpx;
+  display: inline-block;
+  border: 1rpx dashed #ddd;
+}
+
+.options-box .cancel,
+.options-box .sure{
+  height: 100rpx;
+  line-height: 100rpx;
+  background: rgb(251,56,135);
+}
+.options-box .cancel{
+  width: 240rpx;
+  background: rgb(245,245,245);
+}
+
+.chosed{
+  color: rgb(251,56,135);
+}

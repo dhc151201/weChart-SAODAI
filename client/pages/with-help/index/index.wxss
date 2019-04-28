@@ -1,0 +1,286 @@
+.map{
+  width: 100vw;
+  height: calc(100vh - 110rpx - 90rpx);
+}
+.map.fullSen{
+  height: calc(100vh - 110rpx - 90rpx - 50rpx);
+}
+.locationimg{
+  width: 24rpx;
+  height: 32rpx;
+  margin-right: 6rpx;
+}
+.top-info-box{
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 90rpx;
+}
+.top-info{
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+   padding: 0 32rpx 10rpx;
+}
+.top-info-number{
+  display: inline;
+  padding: 0 6rpx;
+}
+.can-buy-box{
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+
+
+.with-btn{
+  left: 124rpx;
+  border-radius: 60rpx;
+  width: 504rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  z-index: 100;
+  opacity: 1;
+  bottom: 200rpx;
+}
+.with-btn.fullSen{
+    bottom: 272rpx;
+}
+.with-btn.choseMarker{
+  bottom: -200rpx;
+  opacity: 0;
+}
+
+
+.chose-card-box{
+  bottom: -210rpx;
+  left: 0;
+  width: 100%;
+  min-height: 100rpx;
+  padding: 0 0 30rpx;
+  box-sizing: border-box;
+  z-index: 10;
+  opacity: 0;
+}
+.chose-card-box.choseMarker.fullSen{
+    bottom: 182rpx;
+}
+.chose-card-box.choseMarker{
+  bottom: 110rpx;
+  opacity: 1;
+}
+.chose-card{
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx 0;
+}
+.note{
+  display: inline-block;
+  color: rgb(255, 172, 26);
+  background: rgb(255, 246, 232);
+  padding: 0rpx 8rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 6rpx;
+  margin: 10rpx 6rpx;
+}
+.chose-card .btn{
+  width: 384rpx;
+  height: 104rpx;
+  display: inline-block;
+}
+
+
+
+.no-location-summary{
+  display: block;
+  margin-top: -30vh;
+  color: rgb(117,117,117);
+}
+.btn.no-location{
+  box-shadow: 0 5rpx 15rpx rgba(254, 190, 2, 0.4);
+  width: 480rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 48rpx;
+}
+
+.define_location{
+  width: 60rpx;
+  height: 60rpx;
+  top: 65vh;
+  left: 32rpx;
+}
+
+
+.banner-side{
+  top: 214rpx;
+  right: 16rpx;
+  width: 132rpx;
+  height: 118rpx;
+}
+.banner-side.no-has-headProt{
+  top: 120rpx;
+}
+
+.top-banner{
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 232rpx;
+  z-index: 10;
+  overflow: hidden;
+}
+
+
+.top-banner .size-lg{
+  height: 240rpx;
+}
+.top-banner cover-image{
+  width: 100%;
+  height: 100%;
+}
+.top-banner .close{
+  display: block;
+  right: -14rpx;
+  top: -2rpx;
+  color: rgba(255,255,255,1);
+  z-index: 50;
+}
+
+
+/* 红包弹窗样式 */
+.tip-box{
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 900;
+  background: rgba(0, 0, 0, .7);
+}
+.tip-body{
+  width: 560rpx;
+  height: 580rpx;
+  /* background: #fff; */
+  overflow: visible;
+}
+.tip-box .icon-close{
+  width: 60rpx;
+  height: 60rpx;
+  right: -8rpx;
+  top: -84rpx;
+  font-size: 60rpx;
+  color: #ddd;
+  z-index: 600;
+}
+.tip-bg{
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.tip-box .tip-title{
+  color: rgb(213, 163, 99);
+  font-size: 32rpx;
+}
+.tip-number{
+  font-size: 80rpx;
+  margin: 0 -80rpx;
+}
+.tip-number .number{
+  font-size: 128rpx;
+  display: inline;
+}
+.tip-summery{
+  min-height: 26rpx;
+}
+.tip-sure{
+  height: 88rpx;
+  width: 400rpx;
+  display: inline-block;
+  margin-top: 116rpx;
+}
+
+.tip-body.tip-large{
+  height: 720rpx;
+}
+.tip-large .tip-title{
+  color: rgb(167, 75, 15);
+  padding-top: 50rpx;
+}
+.tip-large .tip-number{
+  margin-top: 180rpx;
+  color: #fff;
+}
+.tip-large .tip-summery{
+  color: rgb(141, 29, 29);
+}
+.tip-large .tip-sure{
+  margin-top: 48rpx;
+}
+.tip-large .number-icon{
+  top: -60rpx;
+  width: 136rpx;
+  height: 56rpx;
+  z-index: 1;
+}
+.tip-large .number-icon-help{
+  width: 52rpx;
+  height: 82rpx;
+  margin: 36rpx auto;
+}
+.btn-content{
+  top: -98rpx;
+  height: 88rpx;
+  width: 400rpx;
+  margin: auto;
+  font-size: 32rpx;
+}
+
+.icon-close-tip{
+  width: 60rpx;
+  height: 60rpx;
+  right: 90rpx;
+  top: calc(50vh - 420rpx);
+  z-index: 900;
+}
+.icon-close-large{
+  width: 60rpx;
+  height: 60rpx;
+  right: 90rpx;
+  top: calc(50vh - 460rpx);
+  z-index: 1000;
+}
+
+
+.with-proples{
+  left: 0;
+  top: 90rpx;
+  height: 128rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.top-banner-with-proples{
+  top: 240rpx;
+}
+.with-proples-info{
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0 46rpx 8rpx;
+  box-sizing: border-box;
+}
+
+
+.banner-side-large{
+  top: 360rpx;
+}
+.banner-side-large.no-has-headProt{
+  top: 270rpx;
+}

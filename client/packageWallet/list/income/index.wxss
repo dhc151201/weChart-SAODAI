@@ -1,0 +1,51 @@
+.top-card{
+    margin: 0 56rpx 0;
+    height: 320rpx;
+    border-top-left-radius: 12rpx;
+    border-top-right-radius: 12rpx;
+    background: -webkit-linear-gradient(top, rgb(255, 219, 99), rgb(255, 181, 39)); 
+    padding: 40rpx;
+}
+
+.number{
+    font-size: 48rpx;
+}
+.number-summary{
+    font-size: 24rpx;
+    color: #666;
+}
+
+.line{
+    border-top-color: rgb(255, 232, 168);
+    margin: 40rpx 0 26rpx;
+}
+.f-16{
+    font-size: 32rpx;
+}
+.top-line-v{
+    border-left: 1rpx solid #fff;
+    height: 32rpx;
+}
+
+.column{
+    box-shadow: 0 -10rpx 15rpx rgba(0, 0, 0, .1);
+    border-bottom: 1rpx solid rgb(224,224,224);
+}
+
+.list{
+    position: relative;
+    z-index: 10;
+    padding-top: 40rpx;
+}
+.content{
+    padding-bottom: 40rpx;
+}
+.content::after{
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 32rpx;
+    width: 100%;
+    border-bottom: 1rpx solid rgb(224,224,224);
+}

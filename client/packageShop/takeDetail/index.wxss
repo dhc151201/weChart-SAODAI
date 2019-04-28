@@ -1,0 +1,27 @@
+.panel{
+    border-radius: 16rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0,0,0,.05);
+    margin: 24rpx 32rpx;
+    padding: 32rpx;
+}
+
+.status-cancel{
+    background: rgba(255, 172, 26, 0.1);
+    padding: 2rpx 16rpx;
+}
+
+.fixed-bar-item:first-child{
+    margin-left: 32rpx;
+    text-align: left;
+}
+.fixed-bar-item:last-child{
+    margin-right: 32rpx;
+    /* width: 368rpx; */
+}
+
+.btn-cutdown{
+    border-radius: 80rpx;
+    line-height: 1.4;
+    height: 80rpx;
+    padding-top: 10rpx;
+}

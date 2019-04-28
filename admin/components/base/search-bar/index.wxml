@@ -1,0 +1,7 @@
+<view class="search-bar f-13 {{fixed}} flex flex-pack-justify flex-align-center">
+  
+    <text class="margin-l-12 margin-r-8"> </text>
+    <input class="flex-1" placeholder='请输入关键字' bindinput='onInput'></input>
+    <text hidden class="padded-8 margin-r-8 color-grey">取消</text>
+
+</view>

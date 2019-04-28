@@ -1,0 +1,11 @@
+.note{
+  padding: 0rpx 12rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  color: rgb(255, 172, 26);
+  background: rgba(255, 172, 26, .1);
+  border-radius: 4rpx;
+  margin-top: 8rpx;
+  margin-right: 8rpx;
+  display: inline-block;
+}

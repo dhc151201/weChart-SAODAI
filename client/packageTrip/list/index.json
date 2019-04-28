@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "店铺全部捎带者",
+  "usingComponents": {
+    "cm-fixed-bar": "/components/fixed-bar/index",
+    "cm-note": "/components/base/note/index"
+  }
+}

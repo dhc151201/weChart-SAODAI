@@ -1,0 +1,41 @@
+<view class="min-full bg-write">
+
+  <view class="bg-write padded-l-16 from-block">
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">收货人</text>
+        <input bindinput='onInputFrom' data-name="receiveName" name="receiveName" value="{{info.receiveName}}" class="flex-1 f-14" placeholder='请输入收货人'></input>
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">电话</text>
+        <input bindinput='onInputFrom' data-name="receivePhone" name="receivePhone" value="{{info.receivePhone}}" type="number" class="flex-1 f-14" placeholder='电话'></input>
+      </view>
+
+
+      <view class="from-input-block flex flex-align-center"
+        bindtap='href' data-url="/packageMap/pages/map/search/index?after=/packageAddress/pages/add/index"
+        >
+        <text class="from-label">地址</text>
+        <view hidden="{{!info.receiveAddress}}" class="flex-1 f-14">{{info.receiveAddress}}</view>
+        <input hidden="{{info.receiveAddress}}" value="{{info.receiveAddress}}" name="address" disabled class="flex-1 f-14" placeholder='选择'></input>
+        <text class="iconfont icon-ios-arrow-forward color-light f-17"></text>
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">门牌号</text>
+        <input bindinput='onInputFrom' data-name="houseNo" name="houseNo" value="{{info.houseNo}}" class="flex-1 f-14" placeholder='例：8号楼806'></input>
+      </view>
+
+  </view>
+  
+
+</view>
+
+<view bindtap='save'>
+  <cm-fixed-bar >保存</cm-fixed-bar>
+</view>
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+

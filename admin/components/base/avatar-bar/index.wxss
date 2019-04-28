@@ -1,0 +1,16 @@
+.avatar{
+  position: relative;
+  display: inline-block;
+  border: 6rpx solid #fff;
+  background: #ddd;
+  box-sizing: border-box;
+  border-radius: 100%;
+  margin-left: -20rpx;
+  box-shadow: -2rpx 5rpx 15rpx rgba(0,0,0,.3);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.avatar-bar-margin-padded{
+  padding-left: 20rpx;
+}

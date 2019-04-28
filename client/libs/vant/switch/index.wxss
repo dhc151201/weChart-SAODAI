@@ -1,0 +1,24 @@
+@import '../common/index.wxss';.van-switch{height:1em;width:116rpx;display:inline-block;position:relative;border-radius:1em;box-sizing:border-box;
+/* border:1px solid rgba(0,0,0,.1); */
+background-color:#fff;transition:background-color .3s}.van-switch__node{top:0;left:1rpx;z-index:1;width:.95em;height:.95em;transition:.3s;position:absolute;border-radius:100%;background-color:#fff;
+
+    box-shadow:0 3px 1px 0 rgba(0,0,0,.05),0 2px 2px 0 rgba(0,0,0,.1),0 3px 3px 0 rgba(0,0,0,.05)
+    
+    }.van-switch__loading{top:25%;left:25%;position:absolute!important}.van-switch--on{background-color:#1989fa}.van-switch--on .van-switch__node{-webkit-transform:translateX(calc(116rpx - 1em));transform:translateX(calc(116rpx - .95em))}.van-switch--disabled{opacity:.4}
+
+.label{
+    font-size: 20rpx;
+    color: #FFAC1A;
+    padding: 6rpx 12rpx 0;
+    display: block;
+    box-sizing: border-box;
+}
+
+.van-switch.label{
+    text-align: right;
+    background: transparent;
+}
+.van-switch--on.label{
+    text-align: left;
+    background: transparent;
+}

@@ -1,0 +1,99 @@
+<import src="./../../../templates/load.more.wxml" />
+
+
+<view class="tabs-box bg-write fix">
+    <wux-tabs defaultCurrent="{{tabChose}}" bindchange="tabChange">
+      <wux-tab key="successed" title="已完成"></wux-tab>
+      <wux-tab key="cancel" title="已取消"></wux-tab>
+    </wux-tabs>
+</view>
+
+<view class="tab-content min-full border-box">
+    <view class="padded-t-12"></view>
+
+    <block wx:if="{{tabChose== 'successed'}}">
+        
+        <!-- list 已完成 -->
+        <view wx:for="{{successedList}}" wx:key="{{index}}" class="rel car-ticket margin-b-12 margin-l-16 margin-r-16 border-box"
+            bindtap="href" data-url="/packageTrip/detail/index?tripId={{item.id}}&from=history"
+        >
+            <image class="card-bg abs" src="./../../../assets/images/bg_128@2x.png"></image>
+            <view class="trip-box flex flex-pack-justify flex-align-center text-center f-17 bold">
+                <view class="trip-from">
+                    {{item.startLocalName_comp}}
+                    <view class="f-13"><cm-time time="{{item.setOutTime}}" /></view>
+                </view>
+                <image class="trip-center-line" src="./../../../assets/images/icon_go@2x.png"></image>
+                <view class="trip-to">
+                    {{item.destLocalName_comp}}
+                    <view class="f-13"><cm-time time="{{item.arriveTime}}" /></view>
+                </view>
+            </view>
+            <view class="line-c"></view>
+            <view class="trip-footer flex flex-pack-justify flex-align-center">
+                <view class="margin-l-8">
+                    我已接 <text class="color-success">{{item.orderCount}}</text> 单 
+                </view>
+                <view>
+                    捎带收入 <text class="color-success">¥{{item.revenue}}</text>
+                </view>
+                <image src='./../../../assets/images/pic_indent_finish@2x.png' class="trip-status-image margin-r-8"></image>
+            </view>
+        </view>
+
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_successed== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无已完成订单哟~" class="nodata" image="./../../assets/images/img_noorders@2x.png" />
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_successed}}" />
+    
+    </block>
+
+    <block wx:else="{{tabChose== 'cancel'}}">
+
+        <!-- list 已取消-->
+        <view wx:for="{{cancelList}}" wx:key="{{index}}" class="rel car-ticket margin-b-12 margin-l-16 margin-r-16 border-box"
+            bindtap="href" data-url="/packageTrip/detail/index?tripId={{item.id}}&from=history"
+        >
+            <image class="card-bg abs" src="./../../../assets/images/bg_128@2x.png"></image>
+            <view class="trip-box flex flex-pack-justify flex-align-center text-center f-17 bold">
+                <view class="trip-from">
+                    {{item.startLocalName_comp}}
+                    <view class="f-13"><cm-time time="{{item.setOutTime}}" /></view>
+                </view>
+                <image class="trip-center-line" src="./../../../assets/images/icon_go@2x.png"></image>
+                <view class="trip-to">
+                    {{item.destLocalName_comp}}
+                    <view class="f-13"><cm-time time="{{item.arriveTime}}" /></view>
+                </view>
+            </view>
+            <view class="line-c"></view>
+            <view class="trip-footer flex flex-pack-justify flex-align-center">
+                <view class="margin-l-8">
+                    我已接 <text class="color-success">{{item.orderCount}}</text> 单 
+                </view>
+                <view>
+                    <!-- 预计捎带收入 <text class="color-success">¥{{item.crosscityCharge}}</text> -->
+                </view>
+                <image src='./../../../assets/images/pic_indent_calloff@2x.png' class="trip-status-image margin-r-8"></image>
+            </view>
+        </view>
+
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_cancel== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无已取消订单哟~" image="./../../assets/images/img_noorders@2x.png"/>
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_cancel}}" />
+
+    </block>
+      
+    
+
+</view>
+
+<layout-body />
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

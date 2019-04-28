@@ -1,0 +1,5 @@
+<!-- 从分享入口进来的到主页的快捷块 -->
+
+<view class="fix flex flex-v {{class}}" style="{{style}}">
+    <image bindtap="href" data-hreftype="reLaunch" data-url="/pages/with-help/index/index" src="{{$state.assetsUrl}}icon_share_returnhome2x.png"></image>
+</view>

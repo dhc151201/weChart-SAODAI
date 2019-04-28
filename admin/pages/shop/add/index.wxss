@@ -1,0 +1,15 @@
+.upload-box{
+  width: 192rpx;
+  HEIGHT: 192rpx;
+  margin: auto;
+  background: rgb(245,245,245);
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.logo-image{
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}

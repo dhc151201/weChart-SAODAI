@@ -1,0 +1,12 @@
+<!-- 骨架屏绘制 -->
+
+<!-- 最外层的view绑定了js中定义的宽、高以及背景颜色 -->
+<view style="width: {{systemInfo.width}}px; height: {{systemInfo.height}}px; background-color: {{bgcolor}}; position: absolute; left:0; top:0; z-index:9998; overflow: hidden;">
+  <!-- 循环，遍历绘制矩形节点，宽高参照js获取到的节点宽高，以绝对定位的方式定位 -->
+  <view wx:for="{{skeletonRectLists}}" wx:key="{{index}}" class="{{loading == 'chiaroscuro' ? 'chiaroscuro' : ''}}" style="width: {{item.width}}px; height: {{item.height}}px; background-color: {{blockbgcolor}}; position: absolute; left: {{item.left}}px; top: {{item.top- relTop}}px"></view>
+  <!-- 循环，遍历绘制矩形节点，宽高参照js获取到的节点宽高，以绝对定位的方式定位 -->
+  <view wx:for="{{skeletonCircleLists}}" wx:key="{{index}}" class="{{loading == 'chiaroscuro' ? 'chiaroscuro' : ''}}" style="width: {{item.width}}px; height: {{item.height}}px; background-color: {{blockbgcolor}}; border-radius: {{item.width}}px; position: absolute; left: {{item.left}}px; top: {{item.top}}px"></view>
+  <view class="spinbox" wx:if="{{loading == 'spin'}}">
+    <view class="spin"></view>
+  </view>
+</view>

@@ -1,0 +1,59 @@
+<import src="./../../../templates/load.more.wxml" />
+
+<view class="tabs-box bg-write fix">
+    <wux-tabs defaultCurrent="{{tabChose}}" bindchange="tabChange">
+      <wux-tab key="waitingPay" title="待支付"></wux-tab>
+      <wux-tab key="waiting" title="待收货"></wux-tab>
+      <wux-tab key="successed" title="已完成"></wux-tab>
+      <wux-tab key="cancel" title="已取消"></wux-tab>
+    </wux-tabs>
+</view>
+
+<view class="tab-content border-box">
+    
+    <block wx:if="{{tabChose== 'waitingPay'}}">
+        <cm-order-card-list orderInfo="{{waitingPayList}}" />
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_waitingPay== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无待支付订单哟~" image="./../../assets/images/img_noorders@2x.png" />
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_waitingPay}}" />
+    </block>
+
+    <block wx:elif="{{tabChose== 'waiting'}}">
+        <cm-order-card-list orderInfo="{{waitingList}}" />
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_waiting== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无待收货订单哟~" image="./../../assets/images/img_noorders@2x.png" />
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_waiting}}" />
+    </block>
+
+    <block wx:elif="{{tabChose== 'successed'}}">
+        <cm-order-card-list orderInfo="{{successedList}}" />
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_successed== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无已完成订单哟~" image="./../../assets/images/img_noorders@2x.png" />
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_successed}}" />
+    </block>
+
+    <block wx:else="{{tabChose== 'cancel'}}">
+        <cm-order-card-list orderInfo="{{cancelList}}" />
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_cancel== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无已取消订单哟~" image="./../../assets/images/img_noorders@2x.png" />
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_cancel}}" />
+    </block>
+      
+    
+
+</view>
+
+<layout-body />
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

@@ -1,0 +1,78 @@
+<!-- 购物车组件 -->
+<import src="./../../templates/load.more.wxml" />
+<import src="./../../templates/shop.wxml" />
+
+<!-- 购物车商品list bar -->
+<block wx:if="{{!isScrollView}}">
+    <cm-goods-paycard-bar showDesc showStepper
+        wx:for="{{_list}}" wx:key="{{index}}" goodsInfo="{{item}}" bind:chose="chose"
+        bind:showGoodsPropertyCard="showGoodsPropertyCard"
+        bind:hideGoodsPropertyCard= "hideGoodsPropertyCard"
+    />
+</block>
+<view wx:else >
+  <scroll-view scroll-y="{{scrollY}}" style="{{scrollViewStyle}}" bindscrolltolower="scrolltolower" >
+
+    <template is="shopInfo" data="{{data: shopInfo}}" />
+
+    <cm-goods-paycard-bar showDesc showStepper showGallery="{{false}}" bindshowGallery="showGallery"
+        wx:for="{{_list}}" wx:key="{{index}}" goodsInfo="{{item}}" bind:chose="chose"
+        bind:showGoodsPropertyCard="showGoodsPropertyCard"
+        bind:hideGoodsPropertyCard= "hideGoodsPropertyCard"
+    />
+    <!-- 搜索结果提示 -->
+    <view wx:if="{{loadmoreStatus== 3}}" style="padding-top: 25vh;">
+        <no-data-placeholder placeholder="暂无已完成订单哟~" image="./../../assets/images/picHintNog@2x.png" />
+    </view>
+    <template wx:else is="loadmore" data="{{status: loadmoreStatus}}" />
+
+  </scroll-view>
+</view>
+
+<!-- 页脚 找人捎带bar -->
+<cm-fixed-bar-shopping-card allNum="{{allNum}}" btnText="{{btnText}}" crosscityCharge="{{tripInfo.crosscityCharge}}" allPrice="{{allPrice}}"  discount="{{discount}}" bind:showCard="showCard" bind:sumbit="sumbit" />
+
+
+<!-- mask -->
+<cm-mask id="sdai-mask" catchtap="hideCard"/>
+<!-- 已选择商品列表卡片 -->
+<view class="chose-list-box {{$state.fullSenClassName}} fix bg-write {{ isShowCard ? 'show' : ''}}">
+
+  <view class="header padded-16 padded-t-4 padded-b-4 flex flex-pack-justify flex-align-center color-grey">
+    <text wx:if="{{discount> 0}}">{{discountName}} 优惠￥{{discount}}</text>
+    <text wx:else >已选商品</text>
+    <text bindtap="clearPayCard" class="iconfont icon-shanchu"></text>
+  </view>
+
+  <view class="body padded-l-16">
+
+    <view wx:for="{{choseGoodsList}}" wx:key="{{index}}" class="chose-list padded-r-16 padded-t-16 padded-b-16">
+
+      <view class="flex flex-pack-justify flex-align-center">
+        <text class="flex-1 aui-ellipsis-1">{{item.spuName}}</text>
+        <text class="f-11 color-light old-price del">{{item.originPrice > item.salePrice ? '¥'+ item.originPrice : ''}}</text>
+        <view class="new-price">
+          <text>¥</text>
+          <text class="f-17">{{item.salePrice}}</text>
+        </view>
+        <cm-stepper data-id="{{item.skuId}}" bind:change="changeCardNum" value="{{item.choseNum}}" />
+      </view>
+
+      <view class="f-11 color-light">
+        {{item.chosePropNamesString}}
+      </view>
+
+
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 更多属性选择卡片 -->
+<cm-dialog-chose-goods-property id="goodsPropertyCard" goodsInfo="{{goodsInfo}}" bindchose="chose" ></cm-dialog-chose-goods-property>
+
+<wux-gallery catchtouchmove="nullFun" id="wux-gallery" />
+
+
+

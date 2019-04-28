@@ -1,0 +1,79 @@
+
+<view class="top-block bg-success rel">
+  <image class="abs top-bg" src="./../../../assets/images/bgMy.png"></image>
+  <view class="content flex flex-align-center rel">
+    <cm-avatar shadow="{{false}}" src="{{$state.user.wxAvatarUrl}}"></cm-avatar>
+    <view class="margin-l-12 color-write">
+      <view class="user-name padded-b-8">{{$state.user.wxNickname}}</view>
+      <view class="f-13">{{merchant.name}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="main-nav-block rel text-center bold" style="z-index: 10;">
+  <view class="abs main-nav bg-write f-14 flex flex-pack-justify flex-align-center" >
+    <view class="main-nav-item" bindtap='href' data-url="/pages/shop/list/index">
+      <image src="./../../../assets/images/iconMy@2x.png"></image>
+      店铺管理
+    </view>
+    <view class="main-nav-line"></view>
+    <view class="main-nav-item" bindtap='href' data-url="/pages/goods/list/index">
+      <image src="./../../../assets/images/iconMyCom@2x.png"></image>
+      商品管理
+    </view>
+  </view>
+</view>
+
+<view class="nav-list bg-write f-14 margin-b-16">
+
+  <view class="flex flex-pack-justify flex-align-center nav-list-item rel">
+    <image src="./../../../assets/images/iconMyAccount@2x.png" class="left-image"></image>
+    <text class="flex-1">订单收款账户</text>
+    <text class="color-light">你的微信钱包</text>
+  </view>
+
+  <view class="flex flex-pack-justify flex-align-center nav-list-item rel"
+    bindtap='href' data-url="/packageShare/out/shop/index"
+  >
+    <image src="./../../../assets/images/iconMyInvite@2x.png" class="left-image"></image>
+    <text class="flex-1">邀请他人开店</text>
+    <text class="color-light f-17 iconfont icon-ios-arrow-forward"></text>
+  </view>
+
+  <view class="flex flex-pack-justify flex-align-center nav-list-item rel">
+    <image src="./../../../assets/images/iconMyService@2x.png" class="left-image"></image>
+    <!-- <text class="flex-1">在线客服</text> -->
+    <button class="flex-1 btn contact-btn" open-type="contact">在线客服</button>
+    <text class="color-light f-17 iconfont icon-ios-arrow-forward"></text>
+  </view>
+
+  <!-- <view class="flex flex-pack-justify flex-align-center nav-list-item rel color-light">
+    <image src="./../../../assets/images/iconMyAdm@2x.png" class="left-image"></image>
+    <text class="flex-1">子账号管理</text>
+    <text class="color-light f-17 iconfont icon-ios-arrow-forward"></text>
+  </view>
+
+  <view class="flex flex-pack-justify flex-align-center nav-list-item rel color-light">
+    <image src="./../../../assets/images/iconMyPact@2x.png" class="left-image"></image>
+    <text class="flex-1">电子合同</text>
+    <text class="color-light f-17 iconfont icon-ios-arrow-forward"></text>
+  </view> -->
+
+</view>
+
+
+<!-- <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class="section section_gap">
+    <view class="section__title">switch</view>
+    <switch name="switch" />
+  </view>
+  <view class="btn-area">
+    <button form-type="submit">Submit</button>
+    <button form-type="reset">Reset</button>
+  </view>
+</form> -->
+
+<view class="has-fixed-bottom{{ $state.fullSen ? '-fullSen' : ''}}"></view>
+
+
+<cm-nav-bar activeindex="user-index"></cm-nav-bar>

@@ -1,0 +1,10 @@
+.tab-box::after{
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  bottom: 1rpx;
+  width: 100%;
+  border-bottom: 1rpx solid rgb(224,224,224);
+}
+

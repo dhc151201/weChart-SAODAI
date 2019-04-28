@@ -1,0 +1,56 @@
+<view class="panel bg-write padded-l-16 padded-r-16 padded-t-4 padded-b-12">
+    <view class="flex flex-align-center margin-t-8">
+        <text class="bold label-left">捎带人：</text>
+        <text class="">{{info.incidentallyName}}</text>
+    </view>
+    <view class="flex flex-align-center margin-t-8">
+        <text class="bold label-left">订单号：</text>
+        <text class="">{{info.orderNo}}</text>
+    </view>
+    <view class="flex flex-align-center margin-t-8">
+        <text class="bold label-left">退款金额：</text>
+        <text class="color-success">¥{{info.refundTotalAmount}}</text>
+    </view>
+    <view class="flex flex-align-center margin-t-8">
+        <text class="bold label-left">状态：</text>
+        <text class="{{statusClass[info.status]}}">{{statusStr[info.status]}}</text>
+    </view>
+    <view class="flex flex-align-center margin-t-8">
+        <text class="bold label-left">退款原因：</text>
+        <text class="">{{info.reason}}</text>
+    </view>
+    <view class="flex flex-align-center margin-t-8">
+        <text class="bold label-left">提交时间：</text>
+        <view class=""><cm-time time="{{info.refundDate}}" /></view>
+    </view>
+</view>
+
+<view class="panel bg-write padded-l-16 padded-r-16 padded-t-12 padded-b-12">
+    <block wx:for="{{info.details}}">
+        <cm-order-shop-goodslist data="{{item}}" />
+    </block>
+      
+</view>
+
+
+<view class="panel bg-write padded-l-16 padded-r-16">
+    <view class="flex flex-pack-justify flex-align-center">
+        <text>共 <text class="color-error bold">{{info.refundTotalCount}}</text> 件商品</text>
+        <text>合计<text class="color-error bold">¥<text class="f-17">{{info.refundTotalAmount}}</text></text></text>
+    </view>
+    <view class="flex flex-align-center">
+        <view class="color-blue f-13"><cm-contact>在线客服</cm-contact></view>
+    </view>
+</view>
+
+<layout-body />
+
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+<cm-side-to-index wx:if="{{share== 'true'}}" id="side-to-index" zindex="200" bottom="100" right="8" />
+
+

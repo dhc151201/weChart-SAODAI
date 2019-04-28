@@ -1,0 +1,15 @@
+<fixed-bar>
+    <view class="card-box rel">
+      <image src='./../../assets/images/btn_fab_shop@2x.png' class="abs" catchtap="showCard"></image>
+      <!-- <text wx:if="{{allNum> 0}}" class="abs all-number">{{allNum}}</text> -->
+      <cm-bubbles wx:if="{{allNum> 0}}" class="abs all-number" >{{allNum}}</cm-bubbles>
+    </view>
+    <view class="flex-1 bold">
+      ¥ <text class='number rel'>{{allPrice}}</text>
+      <view wx:if="{{crosscityCharge && allPrice}}" class='f-11 color-light'>(含捎带费{{crosscityCharge}}元)</view>
+    </view>
+    <view wx:if="{{discount}}" class="f-11">
+      优惠{{discount}}元
+    </view>
+    <view catchtap="sumbit" class="btn bg-success-ease color-write text-center f-17">{{_btnText}}</view>
+</fixed-bar>

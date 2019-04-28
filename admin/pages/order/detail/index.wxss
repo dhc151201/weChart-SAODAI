@@ -1,0 +1,59 @@
+.head-pic{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 72rpx;
+  border: 6rpx solid #ddd;
+}
+.phone-handel{
+  width: 80rpx;
+  height: 48rpx;
+  border-left: 1rpx solid rgb(244,244,244);
+}
+
+
+.status-bg{
+  left: -40rpx;
+  top: -12rpx;
+  width: calc(100% + 64rpx);
+  height: 178rpx;
+}
+.order-info-box{
+  box-shadow: 0 5rpx 10rpx rgba(0,0,0,.1);
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+  overflow: hidden;
+}
+.states-bar{
+  height: 144rpx;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.order-pay-user::after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1rpx solid rgb(224,224,224);
+}
+
+.order-footer{
+  border-top: 1rpx solid rgb(224,224,224);
+}
+
+.order-money{
+  font-size: 1.2em;
+}
+
+.order-footer-block{
+  border-radius: 16rpx;
+  box-shadow: 0 5rpx 10rpx rgba(0,0,0,.1);
+}
+
+.status-button{
+  width: 196rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 56rpx;
+}

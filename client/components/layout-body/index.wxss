@@ -1,0 +1,10 @@
+.has-fixed-bottom{
+    padding-bottom: 108rpx;
+    box-sizing: border-box;
+}
+.fullSen{
+    padding-bottom: 52rpx;
+}
+.has-fixed-bottom.fullSen{
+    padding-bottom: 160rpx;
+}

@@ -1,0 +1,9 @@
+
+<view class="inivation-btn">
+    <sd-button block szie="large" type="success" openType="share">立即邀请店主加入</sd-button>
+</view>
+
+<image class="code-image" src="{{imgWeChat}}" mode="aspectFit" />
+<view class="text-center color-light f-13 padded-t-8 padded-b-8">面对面扫码邀请</view>
+  
+  

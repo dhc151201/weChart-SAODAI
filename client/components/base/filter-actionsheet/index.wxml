@@ -1,0 +1,16 @@
+<i-drawer mode="right" visible="{{showDrawer}}" bind:close="hide">
+    <view class="demo-container">
+        <view class="flex flex-v flex-pack-justify demo-container">
+            <view class="flex-1" style="overflow-y: auto;">
+                <slot></slot>
+            </view>
+            <view class="padded-16 padded-t-8 footer">
+                <sd-button-group class="fr" size="small">
+                    <sd-button bindtap="cancel" radius="0" size="small" width="192" type="cancel">取消</sd-button>
+                    <sd-button bindtap="sure" radius="0" size="small" width="192" type="success">确认</sd-button>
+                </sd-button-group>
+            </view>
+            <layout-body />
+        </view>
+    </view>
+</i-drawer>

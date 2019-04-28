@@ -1,0 +1,28 @@
+.tabs-box{
+    border-top: 1rpx solid rgb(224,224,224);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.tab-content{
+    padding-top: 100rpx;
+}
+
+.fixed-btm-item{
+    height: 108rpx;
+    font-size: 30rpx;
+    position: relative;
+}
+.fixed-btm-item:first-child::after{
+    content: "";
+    display: block;
+    right: 0;
+    top: 50%;
+    height: 50rpx;
+    width: 1rpx;
+    margin-top: -25rpx;
+    border-right: 1rpx solid rgb(224,224,224);
+    position: absolute;
+}

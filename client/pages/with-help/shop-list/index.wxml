@@ -1,0 +1,194 @@
+<import src="./../../../templates/load.more.wxml"/>
+
+<layout-body hasFixed="bottom">
+
+    <view class="flex flex-pack-justify flex-align-center padded-16 padded-b-12 bg-write" bindtap="onSearchblur">
+        <view class="flex" bindtap="href"
+            data-url="/packageMap/pages/map/search/index?after=/pages/with-help/shop-list/index">
+            <text class="address aui-ellipsis-1" style="width: {{searchfocus ? 40: 300}}rpx;transform: translateZ({{searchfocus ? 0: 1}})">{{ $state.location_indexhelp.address ||
+                $state.location.formatted_addresses.recommend }}
+            </text>
+            <text hidden="{{searchfocus}}">附近店铺</text>
+            <text class="color-success padded-l-8">[更换]</text>
+        </view>
+        <!-- <view catchtap="onSearchfocus" class="flex-1 flex flex-align-center padded-l-8 border-box">
+            <view class="flex-1">
+                <cm-search-bar bindinput="onInputFrom" data-name="shopName" backgroundcolor="rgb(245,245,245)" placeholder="搜店铺"></cm-search-bar>
+            </view>
+            <view bindtap="onSearch" hidden="{{!searchfocus}}" class="padded-l-8">
+                搜索
+            </view>
+        </view> -->
+    </view>
+
+    <view class="padded-l-16 padded-r-16 bg-write" bindtap="onSearchblur">
+        <!-- 筛选栏 -->
+        <view class="flex flex-pack-justify flex-align-center color-semi f-13 padded-t-8 padded-b-12">
+            <view catchtap="nullFun" class="flex-1 flex flex-align-center border-box">
+                <view class="flex-1">
+                    <cm-search-bar showCancel bindinput="onInputFrom" bindconfirm="onSearch" data-name="shopName" backgroundcolor="rgb(245,245,245)" placeholder="搜店铺"></cm-search-bar>
+                </view>
+                <!-- <view bindtap="onSearch" hidden="{{!searchfocus}}" class="padded-l-8">
+                    搜索
+                </view> -->
+            </view>
+            <view bindtap="showFilterOptions" class="flex flex-align-center color-grey padded-l-16">
+                筛选<text class="iconfont icon-down icon-ios-arrow-down f-17 color-light"></text>
+            </view>
+        </view>
+
+        <view class="bg-summary" style="padding: 8rpx 0; margin-left: -32rpx; margin-right: -32rpx;">
+            <view wx:if="{{bannerImageUrl}}" class="padded-l-16 padded-r-16 padded-t-8 padded-b-8" 
+                bindtap="href" data-url="{{bannerPathUrl + '?' + bannerPathParam}}">
+                <cm-loading-image src="{{bannerImageUrl}}?imageView2/1/w/688/h/120/q/100" width="688rpx"
+                    height="120rpx" radius="120"/>
+            </view>
+        </view>
+          
+
+        <view wx:if="{{shopList.length}}" class="shop-list-panel bg-write padded-l-16 padded-r-16" >
+
+            <view class="flex flex-align-center shop-list" wx:for="{{shopList}}" wx:key="{{index}}"
+                  bindtap="href" data-hreftype="redirectTo" data-url="/pages/with-help/shop-detail/index?shopId={{item.id}}"
+            >
+                <cm-loading-image src="{{item.logoImageUrl}}?imageView2/1/w/128/h/128/q/100" width="128rpx"
+                                  height="128rpx" radius="128"/>
+                <view class="flex-1 margin-l-8">
+                    <view class="padded-b-4">{{item.shopShortName}}</view>
+                    <view class="f-11 color-light flex">
+                        <text class="aui-ellipsis-1" style="max-width: 260rpx;">{{item.address}}</text>
+                        <cm-distance value="{{item.distance}}" beforeText="距您"/>
+                    </view>
+                    <view class="f-11 flex">
+                        <cm-note wx:if="{{item.rebate> 0}}" class="" color="#fff" bordercolor="rgb(255, 94, 75)"
+                                 background="rgb(255, 94, 75)">返利{{item.rebate}}%
+                        </cm-note>
+                        <cm-note wx:if="{{item.activityName}}" class="" color="#fff" bordercolor="rgb(255, 94, 75)"
+                                 background="rgb(255, 94, 75)">{{item.activityName}}
+                        </cm-note>
+                        <view wx:if="{{item.headPortraits.length}}" class="color-success" style="padding-top: 12rpx;">{{item.headPortraits.length}}人求捎带</view>
+                    </view>
+                </view>
+                <view class="padded-l-8 color-light">
+                    <text catchtap="choseHandel" data-index="{{index}}"
+                          class="padded-t-16 padded-b-16 iconfont icon-chose {{(item.chose) ? 'icon-duoxuan color-blue' : 'icon-danxuanweixuanzhong'}}"></text>
+
+                </view>
+
+            </view>
+
+        </view>
+    </view>
+
+    <!-- 搜索结果提示 -->
+    <view wx:if="{{loadmore== 3}}" class="text-center">
+        <image class="search-image" src="{{$state.assetsUrl}}img_wusousuo@2x.png" mode="aspectFill"/>
+        <view class="margin-t-12">附近没有可捎带的实体商家</view>
+        <view class="f-13 color-light">把附近的特色店添加进来</view>
+        <!-- <cm-invitation-shop-join /> -->
+        <!-- <no-data-placeholder placeholder="该分类下暂无店铺哟~" image="./../../assets/images/picHintNog@2x.png"/> -->
+    </view>
+    <template wx:else is="loadmore" data="{{status: loadmore}}"/>
+
+</layout-body>
+
+<!-- <view wx:if="{{noticeShow}}" style='padding-top:100rpx;'></view> -->
+<!-- <view wx:if="{{shopList.length}}" class="notice-bar {{$state.fullSenClassName}} f-13 flex flex-pack-justify flex-align-center" style="transition: transform 300ms;transform: translate3d(0, {{ noticeShow ? '0' : '200%'}}, 0)">
+    <view class="flex-1 padded-l-16">
+        没找到您想捎带的店铺？
+    </view>
+    <button bindtap="href" data-url="/packageShare/out/shop/index" class="btn btn-invitation-shop-join f-13 color-success" hover-class="hover-class" >
+        立即邀请
+    </button>
+    <text catchtap="noticeCloseHandel" class="iconfont icon-close icon-ios-close color-light padded-r-16"></text>
+</view> -->
+
+<cm-fixed-bar wx:if="{{shopList.length}}">
+    <view class="flex-1 flex flex-pack-justify flex-align-center padded-l-16 padded-r-16" style='padding-top: 12rpx;'>
+        <view bindtap="choseAllHandel" class="flex flex-align-center">
+            <text class="padded-8 padded-l-0 iconfont icon-chose {{choseAll ? 'icon-duoxuan color-blue' : 'icon-danxuanweixuanzhong color-light'}}"></text>全选
+        </view>
+        <sd-button bindsubmit="submit" reportSubmit formType="submit" size="small" width="400" type="success">选好了，发起捎带</sd-button>
+    </view>
+</cm-fixed-bar>
+
+<wux-dialog id="wux-dialog"/>
+<wux-toast id="wux-toast"/>
+<wux-select id="wux-select" />
+
+<!-- 优选店铺筛选picker -->
+<!-- <cm-picker id="screening" zindex="200">
+    <view class="bg-write" wx:if="{{screening}}">
+        <view class="padded-16 padded-b-0 color-grey f-13">
+            送达范围
+        </view>
+        <view class="picker-label-box padded-16 padded-t-0">
+            <view><cm-label-item bindtap="choseDistance" active="{{!screeningData.distance}}">全城</cm-label-item></view>
+            <cm-label-item bindtap="choseDistance" data-value="5000" active="{{screeningData.distance== 5000}}">5公里内</cm-label-item>
+            <cm-label-item bindtap="choseDistance" data-value="3000" active="{{screeningData.distance== 3000}}">3公里内</cm-label-item>
+            <cm-label-item bindtap="choseDistance" data-value="1000" active="{{screeningData.distance== 1000}}">1公里内</cm-label-item>
+        </view>
+        <view class="flex flex-align-center padded-16 padded-t-0 color-grey">
+            <view class="f-13 padded-r-8">捎带返利</view>
+            <view class="color-success">{{screeningData.rebateStart}}% - {{screeningData.rebateEnd}}%</view>
+        </view>
+        <view class="padded-l-16 padded-r-16 padded-b-16 margin-b-16 margin-l-16 margin-r-16">
+            <wux-slider bind:change="sliderChange" defaultValue="{{ [screeningData.rebateStart, screeningData.rebateEnd] }}" max="100"/>
+        </view>
+        <view class="flex flex-pack-justify flex-align-center picker-btns">
+            <button bindtap="screeningCancel" class="btn btn-lg picker-btn picker-cancel">取消</button>
+            <button bindtap="screeningSure" class="btn btn-lg picker-btn bg-success-ease">确定</button>
+        </view>
+    </view>
+</cm-picker> -->
+
+<cm-filter-actionsheet id="filter-actionsheet" bindsure="filterSure" bindcancel="filterCancel">
+
+    <block wx:if="{{showFilterOptionsStatus}}">
+      
+        <view class="padded-16 padded-b-0 color-grey f-13 filter-item-tit">
+            排序方式
+        </view>
+        <view class="picker-label-box padded-16 padded-t-8 padded-b-0">
+            <cm-label-item bindtap="choseQuert" data-value="0" active="{{orderType== 0}}">按距离排序</cm-label-item>
+            <cm-label-item bindtap="choseQuert" data-value="1" active="{{orderType== 1}}">按返利排序</cm-label-item>
+        </view>
+
+        <view class="padded-16 padded-b-0 color-grey f-13">
+            送达范围
+        </view>
+        <view class="picker-label-box padded-16 padded-t-0">
+            <view><cm-label-item bindtap="choseDistance" active="{{!screeningData.distance}}">全城</cm-label-item></view>
+            <cm-label-item bindtap="choseDistance" data-value="5000" active="{{screeningData.distance== 5000}}">5公里内</cm-label-item>
+            <cm-label-item bindtap="choseDistance" data-value="3000" active="{{screeningData.distance== 3000}}">3公里内</cm-label-item>
+            <cm-label-item bindtap="choseDistance" data-value="1000" active="{{screeningData.distance== 1000}}">1公里内</cm-label-item>
+        </view>
+        <view class="flex flex-align-center padded-16 padded-t-0 color-grey">
+            <view class="f-13 padded-r-8">捎带返利</view>
+            <view class="color-success">{{screeningData.rebateStart}}% - {{screeningData.rebateEnd}}%</view>
+        </view>
+        <view class="padded-l-16 padded-r-16 padded-b-16 margin-b-16 margin-l-16 margin-r-16">
+            <wux-slider bind:change="sliderChange" defaultValue="{{ [screeningData.rebateStart, screeningData.rebateEnd] }}" max="100"/>
+        </view>
+
+        <view class="padded-16 padded-b-0 color-grey f-13 filter-item-tit">
+            店铺分类
+        </view>
+        <view class="picker-label-box padded-16 padded-t-8 padded-b-0">
+            <view wx:for="{{parent}}" wx:key="{{item.id}}" class="margin-b-8">
+                <view class="flex flex-pack-justify flex-align-center">
+                    <cm-label-item bindtap="tabParent" data-id="{{item.id}}" data-value="1000" type="solid" active="{{item.id== classifyData.firstCategory}}">{{item.name}}</cm-label-item>
+                    <text class="iconfont icon-ios-arrow-down color-light"></text>
+                </view>
+                <view hidden="{{item.id!= classifyData.firstCategory}}" class="rel" style="background: #f8f8f8;min-height: 92rpx;">
+                    <cm-label-item active="{{item.chose}}" wx:for="{{children}}" wx:key="{{item.id}}" wx:if="{{item.parentId== classifyData.firstCategory}}" bindtap="choseTag" data-id="{{item.id}}" data-index="{{index}}">{{item.name}}</cm-label-item>
+                    <no-data-placeholder wx:if="{{!children.length && classifyData.firstCategory && !requestChild}}" placeholder="该分类下暂无子分类哟~" />
+                    <i-spin size="large" fix wx:if="{{ requestChild }}"></i-spin>
+                </view>  
+            </view>
+        </view>
+
+    </block>
+
+</cm-filter-actionsheet>
+

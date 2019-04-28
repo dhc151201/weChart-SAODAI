@@ -1,0 +1,95 @@
+<!-- <wux-notice-bar wx:if="{{info.merchantEntered== 1}}" mode="closable" content="非入驻商户: 到店确认提货，货款转入您微信钱包" />
+<wux-notice-bar wx:else mode="closable" content="入驻商户:无须付款到店提货，点“确认提货”即可" /> -->
+<wux-notice-bar mode="closable" content="到店提货货款放发到您的平台账户，行程完成即可提现" />
+
+<view class=""></view>
+
+<view class="shop-info bg-write flex flex-pack-justify padded-16 padded-t-12 padded-b-12">
+    <cm-loading-image width="128rpx" height="128rpx" src="{{info.shopImageUrl}}?imageView2/1/w/100/h/100/q/85" radius="128" />
+    <view class="flex-1 f-11 padded-l-8 padded-t-4">
+        <view class="f-17 bold">{{info.shopName}}</view>
+        <view class="color-grey">营业时间  {{info.hour.startTime}}-{{info.hour.endTime}} </view>
+        <view class="color-grey">{{info.shopAddress}} I 距您<cm-distance value="{{info.distance}}" /></view>
+    </view>
+    <view bindtap="makePhoneCall" data-phone="{{info.shopTelphone}}" class="iconfont icon-tubiao210 color-success f-17 padded-l-16 padded-t-4 rel"></view>
+</view>
+
+<view wx:if="{{info}}" class="panel bg-write" style="padding-bottom: 0;">
+    <view class="bold">
+        需要提货的订单
+    </view>
+      
+    <block wx:for="{{info.details}}" wx:key="{{index}}">
+        <view wx:if="{{index}}" class="line"></view>
+        <view class="flex margin-t-4 margin-b-8 padded-t-16 padded-b-12">
+            <cm-loading-image width="72rpx" height="72rpx" src="{{item.userImageUrl}}?imageView2/1/w/100/h/100/q/85" radius="{{72}}" />
+            <view class="f-11 padded-l-8 padded-r-8 color-light">
+                <view class="bold f-14 color-default">{{item.userName}}</view>
+                订单号：{{item.orderNo}}
+            </view>
+            <view bindtap="makePhoneCall" data-phone="{{item.userPhone}}" class="iconfont icon-tubiao210 color-success f-17 padded-l-16 rel"></view>
+        </view>
+
+        <cm-order-shop-goodslist-take orderInfo="{{item}}" bindchose="choseComponent" />
+        
+    </block>
+</view>
+
+
+<view wx:if="{{info}}" class="panel bg-write padded-l-16 padded-r-16 padded-t-12 padded-b-12">
+    <view class="flex flex-pack-justify flex-align-center margin-b-8">
+        <text>商品总价</text>
+        <text>¥{{chosePrice || 0}}</text>
+    </view>
+    <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+        <text>商家返利</text>
+        <text>¥{{info.rebateAmount}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="flex flex-pack-justify flex-align-center margin-t-8">
+        <text>共 <text class="color-error bold">{{choseNum || 0}}</text> 件商品</text>
+        <text>合计<text class="color-error bold">¥<text class="f-17">{{chosePriceReal || 0}}</text></text></text>
+    </view>
+</view>
+
+
+
+<view class="panel bg-write padded-l-16 padded-r-16">
+    <view class="flex flex-pack-center flex-align-center">
+        <view class="color-blue f-13"><cm-contact>在线客服</cm-contact></view>
+    </view>
+</view>
+
+<view class="has-fixed-bottom" ></view>
+
+<cm-fixed-bar>
+    <view class='fixed-bar-item flex-1 flex flex-align-center' bindtap="choseAllHandel">
+      <text class="padded-t-16 padded-b-16 padded-r-8 iconfont icon-chose f-20 {{choseAll ? 'icon-duoxuan color-blue' : 'icon-danxuanweixuanzhong color-light'}}"></text>全选 ¥<text class="f-20">{{chosePriceReal || 0}}</text>
+        
+    </view>
+    <view class='fixed-bar-item'>
+        
+        <sd-button catchsubmit="submit" reportSubmit formType="submit" size="small" type="success">
+            <block wx:if="{{info.tripArriveTime > info.systemTime}}">
+                确定提货(共{{choseNum || 0}}件)
+            </block>
+            <view wx:else class="padded-t-4" style="line-height: 1.2;width: 300rpx;">
+                确定提货(共{{choseNum || 0}}件)
+                <view class="f-11">还剩<cm-countdown 
+                    startTime="{{info.tripArriveTime}}" serverTime="{{info.systemTime}}" 
+                    minutes="{{60* 24}}" format=" DD 天 hh 时 mm 分 ss 秒" />
+                </view>
+            </view>
+        </sd-button>
+        
+    </view>
+</cm-fixed-bar>
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+  
+
+  

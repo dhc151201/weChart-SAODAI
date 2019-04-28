@@ -1,0 +1,97 @@
+@import './../../assets/wxss/base.wxss';
+.tip-box .tip-body{
+  width: 560rpx;
+  height: 580rpx;
+  /* background: #fff; */
+  overflow: visible;
+}
+.tip-box .icon-close{
+  width: 60rpx;
+  height: 60rpx;
+  right: -8rpx;
+  top: -84rpx;
+  font-size: 60rpx;
+  color: #ddd;
+  z-index: 600;
+}
+.tip-bg{
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.tip-box .tip-title{
+  color: rgb(213, 163, 99);
+  font-size: 32rpx;
+}
+.tip-number{
+  font-size: 80rpx;
+  margin: 0 -80rpx;
+}
+.tip-number .number{
+  font-size: 128rpx;
+  display: inline;
+}
+.tip-summery{
+  min-height: 26rpx;
+}
+.tip-sure{
+  height: 88rpx;
+  width: 400rpx;
+  display: inline-block;
+  margin-top: 116rpx;
+}
+.tip-sure.gray{
+    filter: grayscale(1)
+}
+
+
+.tip-body.envelope-large{
+    height: 720rpx;
+}
+.envelope-large .tip-title{
+    color: rgb(167, 75, 15);
+    padding-top: 50rpx;
+}
+.envelope-large .tip-number{
+    margin-top: 180rpx;
+    color: #fff;
+}
+.envelope-large .tip-summery{
+    color: rgb(141, 29, 29);
+    margin-bottom: 40rpx;
+}
+.envelope-large .tip-sure{
+    margin-top: 48rpx;
+}
+.envelope-large .number-icon{
+    top: 20rpx;
+    width: 136rpx;
+    height: 56rpx;
+    z-index: 1;
+}
+.envelope-large .number-icon-help{
+    width: 52rpx;
+    height: 82rpx;
+    margin: 36rpx auto;
+}
+.btn-content{
+    top: -98rpx;
+    height: 88rpx;
+    width: 400rpx;
+    margin: auto;
+    font-size: 32rpx;
+    background: transparent;
+    border: 0 none;
+}
+button.btn-content{
+    line-height: 1.2;
+}
+.btn-content::after, .btn-content::before{
+    display: none;
+}
+.btn-content-bg{
+    height: 88rpx;
+    width: 400rpx;
+}

@@ -1,0 +1,5 @@
+<!-- fixed bottom 分享bar -->
+<cm-fixed-bar>
+  <view catchtap='shareHandel' data-index="1" class="fixed-bar-share-item">分享给好友</view>
+  <view catchtap='shareHandel' data-index="2" class="fixed-bar-share-item">分享到朋友圈</view>
+</cm-fixed-bar>

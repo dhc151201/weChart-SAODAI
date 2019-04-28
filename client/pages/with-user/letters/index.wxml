@@ -1,0 +1,42 @@
+<import src="./../../../templates/load.more.wxml" />
+
+<!-- <view class="padded-t-4"></view> -->
+<view wx:if="{{lettersList.length}}" class="flex text-right margin-r-16 margin-t-16">
+  <text class='iconfont icon-shanchu flex-1' bindtap='clearAll'>清空</text>
+</view>
+<view class="panel bg-write" wx:for="{{lettersList}}" wx:key="{{index}}" id='{{item.id}}' bindtouchstart="mytouchstart" bindtouchmove="mytouchmove">
+    <view class="flex flex-align-center">
+        <cm-loading-image width="48rpx" height="48rpx" src="{{$state.assetsUrl}}20190115logo.png?imageView2/1/w/100/h/100/q/85" radius="48" />
+        <view class="margin-l-8 f-13 color-grey">
+            人人捎带
+        </view>
+        <view class='flex-1 color-light fontright'><cm-time time="{{item.createTime}}" /></view>
+    </view>
+    <view class="line  margin-t-12"></view>
+    <view class="colum-tit bold margin-t-16 margin-b-12">
+        {{item.content.title}}
+    </view>
+
+    <view wx:for="{{item.content.content}}" wx:key="{{index}}" class="flex list">
+        <view class="left nowrap">{{item.key}}：</view>
+        <view class="right {{index == 0 ? 'color-success' : ''}}">{{item.value}}</view>
+    </view>
+    <cover-view class="flex coverbottombtn {{isShow == false ? 'hide': ''}} {{isShow == true&id == item.id ? 'move_tf': 'hide'}}">
+      <button class='flex-1 bg-light color-write' bindtap='hidebtn'>取消</button>
+      <button class='flex-1 bg-error color-write' id='{{item.id}}' bindtap='deletelet'>删除</button>
+    </cover-view>
+</view>
+
+
+
+<!-- 搜索结果提示 -->
+  <view wx:if="{{loadmore== 3}}" style="padding-top: 25vh;">
+    <no-data-placeholder placeholder="暂无消息哟~"/>
+  </view>
+  <template wx:else is="loadmore" data="{{status: loadmore}}" />
+<wux-dialog id="wux-dialog" />
+
+
+
+<layout-body  />
+

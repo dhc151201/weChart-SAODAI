@@ -1,0 +1,52 @@
+<view class="order-box padded-16 bg-write" wx:for="{{orderInfo}}" wx:key="{{index}}" data-index="{{index}}"
+    bindtap='detailGo'
+    >
+        <!-- 捎带人信息及状态 -->
+        <view class="flex flex-align-center" wx:if="{{item.orderTrip.incidentallyName || item.orderTrip.incidentallierImageUrl}}">
+            <cm-loading-image width="72rpx" height="72rpx" src="{{item.orderTrip.incidentallierImageUrl}}?imageView2/1/w/100/h/100/q/100" radius="72" />
+            <view class="flex-1 padded-l-8">
+                <view class="bold f-14">捎带人:{{item.orderTrip.incidentallyName}}</view>
+                <view class="flex flex-pack-justify flex-align-center">
+                    <view class="f-11 color-grey flex flex-align-center">
+                       {{item.orderTrip.startCityName}} 
+                       <image class="from-to-line margin-l-4 margin-r-4" src="./../../assets/images/icon_go@2x.png"></image>
+                       {{item.orderTrip.destCityName}}
+                    </view>
+                    <text wx:if="{{item.status== 4}}" class="color-green status">已送达</text>
+                    <text wx:if="{{item.status== 6}}" class="color-light status">已取消</text>
+                </view>
+            </view>
+        </view>
+        <!-- 订单商品图片及数量 -->
+        <view class="flex flex-align-center padded-t-16 margin-t-4 f-11 padded-l-4">
+            <view class="rel {{index && 'margin-l-8'}}" wx:for="{{item.skus}}" wx:key="{{index}}" wx:if="{{index< 4}}">
+                <cm-loading-image width="144rpx" height="144rpx" src="{{item.skuImageUrl}}?imageView2/1/w/100/h/100/q/85" radius="10" />
+                <text class="abs goods-num">x{{item.skuCount}}</text>
+            </view>
+        </view>
+        <!-- 订单状态及商品总计 -->
+        <view class="padded-t-16 padded-b-16 color-semi flex flex-pack-justify flex-align-center f-11">
+            <text class="flex-1" wx:if="{{item.status== 2 || item.status== 3 || item.status== 4}}">捎带者已接单，待收货</text>
+            <text class="flex-1" wx:else></text>
+            <view>
+            共 {{item.skuAcount}} 件 
+            </view>
+            <text class="iconfont icon-ios-arrow-forward color-light"></text>
+        </view>
+        <!-- 订单统计及操作提示区域 -->
+        <view class="order-footer f-14 flex flex-pack-justify flex-align-center padded-t-16">
+            <view class="flex-1">
+                <view>
+                    实付金额 <text class="f-13 color-error">¥<text class="f-17">{{item.allAmountStr || 0}}</text></text>
+                </view>
+                <view wx:if="{{item.status== 6}}" class="color-light f-11">已取消</view>
+                <view wx:if="{{item.status== 0}}" class="color-error f-11">
+                    支付剩余时间 <cm-countdown startTime="{{item.createTime}}" serverTime="{{item.systemTime}}"/>
+                </view>
+            </view>
+            <button  wx:if="{{item.isReturn}}" class="default color-grey f-13 btn" hover-class='hover-class' catchtap="href" data-url="/packageOrder/recede/with-auto/index?orderId={{item.orderId}}">退款详情</button>
+            <button  wx:if="{{item.status== 4}}" class="bg-success-ease f-13 btn" hover-class='hover-class'>确认收货</button>
+            <button  wx:if="{{item.status== 0}}" class="bg-success-ease f-13 btn" hover-class='hover-class'>去支付</button>
+        </view>
+
+    </view>

@@ -1,0 +1,168 @@
+<view class="min-full bg-write f-14 {{info ? 'page-in': 'opacity'}}">
+
+  <view wx:if="{{ info.shopType == 1 }}" class="padded-l-16 padded-r-16 padded-t-4 padded-b-4 disable color-success" style="background: #fefcec;"
+    bindtap='href' data-url="{{ (info.state== 1 && info.shopType== 1) ? '/pages/shop/information/index?id='+ info.id : ''}}"
+    >
+    <view class="flex flex-align-center flex-pack-justify f-11">
+      <view wx:if="{{info.shelfDay> 0}}">
+        您的临时店铺营业时间仅剩{{info.shelfDay}}天，请及时认证
+      </view>
+      <view wx:else >您的店铺已到期下架，请及时认证</view>
+      <text class="iconfont icon-ios-arrow-forward f-17 bold"></text>
+    </view>
+  </view>
+
+  <view class="padded-16 flex flex-align-center flex-pack-justify rel">
+    <view class="padded-r-12">
+      <cm-loading-image width="136rpx" height="136" radius="136" src="{{info.logoImageUrl+ '?imageView2/1/w/100/h/100/q/85'}}"></cm-loading-image>
+    </view>
+    <view class="flex-1">
+      <view>{{info.shopName}}</view>
+      <view class="color-light f-11" style="line-height: 1.3;">
+        <view>地址：{{info.address}}</view>
+        <view>营业时间：{{info ? info.hoursList[0].startTime+ " - "+ info.hoursList[0].endTime : ''}}</view>
+        <view>电话：{{info.shopTelphone}}</view>
+      </view>
+    </view>
+    <view class="status-box">
+      <image class="abs status-box-image" src="./../../../assets/images/{{info.useState ? 'iconOpen@2x' : 'iconSoldout@2x'}}.png"></image>
+    </view>
+  </view>
+
+
+  <view class="padded-t-8 bg-summary"></view>
+
+  <view class="tabs-bar rel">
+    <view class="rel" style="z-index: 1">
+      <wux-tabs default-current="tab1" bind:change="ontabChange">
+        <wux-tab key="goods" title="在售商品"></wux-tab>
+        <wux-tab key="shopinfo" title="商家信息"></wux-tab>
+      </wux-tabs>
+    </view>
+  </view>
+
+  <!-- 在售商品 -->
+  <view hidden="{{tabKey!= 'goods'}}" class="padded-16 padded-t-4 padded-b-4 has-fixed-bottom{{ $state.fullSen ? '-fullSen' : ''}}">
+
+    <view class="goods-block" wx:for="{{goodsList}}" wx:key="{{index}}">
+      <cm-goods-block data="{{item}}"></cm-goods-block>
+    </view>
+
+    <view class="padded-t-12">
+      <i-load-more wx:if="{{loadmore== 2}}" tip="暂无更多数据" loading="{{ false }}" />
+    </view>
+    <view wx:if="{{loadmore== 3}}" class="margin-t-16 padded-16 text-center color-light f-11">
+      <no-data-placeholder placeholder="还没有商品哟~" 
+        image="./../../assets/images/picHintNog@2x.png" 
+        buttontext="新增商品"
+        href="/pages/goods/add/index?id={{info.id}}"
+        />
+    </view>
+    
+    <cm-fixed-bar wx:if="{{info.useState== 1}}">
+      <view bindtap='href' data-url="/pages/goods/add/index?id={{info.id}}" class="fixed-item f-14">新增商品</view>
+      <view bindtap='href' data-url="/pages/goods/list/index" class="fixed-item f-14">商品管理</view>
+      <view bindtap='href' data-url="/pages/shop/edit/index?id={{info.id}}" class="fixed-item f-14">维护店铺</view>
+      <!-- <button class="fixed-item f-14 btn bg-success-ease">微信分享</button> -->
+    </cm-fixed-bar>
+
+    <cm-fixed-bar wx:if="{{info.useState== 0}}">
+      <button class="fixed-item f-14 btn bg-write color-grey">联系客服</button>
+      <view class="fixed-item bg-summary color-write padded-l-12 padded-r-12">该店铺已下架</view>
+    </cm-fixed-bar>
+
+  </view>
+
+  <!-- 商家信息 -->
+  <view hidden="{{tabKey!= 'shopinfo'}}" class="has-fixed-bottom{{ $state.fullSen ? '-fullSen' : ''}}">
+    <!-- <view class="padded-16">
+      <view class="f-17 padded-t-8">老枝花卤(草市街店)</view>
+
+      <view class="info-block">
+        <view class="title padded-b-8 margin-t-16 f-14">其它2家分店</view>
+        <view class="content f-13">
+          <view>老枝花卤(科华店)</view>
+          <view>老枝花卤(科华店)</view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="padded-t-8 bg-summary"></view> -->
+
+    <view class="padded-l-16 padded-r-16">
+
+      <view class="info-block">
+        <view class="title padded-b-8 margin-t-16 f-14">地址</view>
+        <view class="content f-13 padded-b-16">
+          {{info.address}}
+        </view>
+      </view>
+
+      <view class="info-block">
+        <view class="title padded-b-8 margin-t-16 f-14">电话</view>
+        <view class="content f-13 padded-b-16">
+          {{info.shopTelphone}}
+        </view>
+      </view>
+
+      <view class="info-block">
+        <view class="title padded-b-8 margin-t-16 f-14">营业时间</view>
+        <view class="content f-13 padded-b-16">
+          <view class="flex">
+            <view class="time-worker">
+              <view wx:for="{{[1, 2, 3, 4]}}" wx:key="{{index}}">
+                <text class="padded-r-16">{{weekName[info.hoursList[item].weekDay]}}</text>
+                {{info.hoursList[item].startTime}} - {{info.hoursList[item].endTime}}
+              </view>
+            </view>
+            <view class="time-worker padded-l-16">
+              <view wx:for="{{[5,6, 0]}}" wx:key="{{index}}">
+                <text class="padded-r-16">{{weekName[info.hoursList[item].weekDay]}}</text>
+                {{info.hoursList[item].startTime}} - {{info.hoursList[item].endTime}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="padded-t-8 bg-summary"></view>
+
+    <view class="padded-l-16 padded-r-16">
+
+      <view class="info-block">
+        <view class="title padded-b-8 margin-t-16 f-14">特色</view>
+        <view class="content f-13 padded-b-16">
+          <view>
+            <cm-note wx:for="{{info.tagList}}" wx:key="{{index}}">{{item.name}}</cm-note>
+          </view>
+          <view>{{info.feature || ''}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="padded-t-8 bg-summary"></view>
+
+    <view class="padded-l-16 padded-r-16">
+
+      <view class="info-block">
+        <view class="title padded-b-8 margin-t-16 f-14">店铺环境</view>
+        <view class="content f-13 padded-b-16">
+          <view class="flex flex-align-center flex-pack-justify" style="flex-wrap: wrap">
+            <image wx:for="{{info.shopImageList}}" wx:key="{{index}}" class="shop-image-list" src="{{item}}?imageView2/1/w/100/h/100/q/85"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  
+  
+
+
+</view>
+
+<wux-dialog id="wux-dialog"></wux-dialog>
+

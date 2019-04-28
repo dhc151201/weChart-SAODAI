@@ -1,0 +1,31 @@
+<cm-shop-base-card></cm-shop-base-card>
+
+<view class="container min-full bg-write">
+
+  <view class="list-box">
+    <view class="list-margin-padded">
+      <!-- list -->
+      <block>
+        <view class="list flex flex-pack-justify f-4" wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}">
+
+          <view class="left">
+            <view class="bold f-3">成都市万科金色城市</view>
+            <view>龚艳 15001361822</view>
+          </view>
+
+          <view class="right color-info">编辑</view>
+
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <wux-button block type="assertive">+ 新增地址</wux-button>
+
+</view>
+
+<view bindtap='shareHandel'>
+  <cm-fixed-bar >生成捎带清单</cm-fixed-bar>
+</view>
+
+

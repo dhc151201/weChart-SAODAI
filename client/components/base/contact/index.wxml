@@ -1,0 +1,3 @@
+<button class="contact" open-type="contact">
+    <slot></slot>
+</button>

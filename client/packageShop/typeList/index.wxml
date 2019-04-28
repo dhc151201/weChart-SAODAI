@@ -1,0 +1,41 @@
+<view class="full flex">
+
+  <view class="left f-13 color-grey">
+    <view wx:for="{{parent}}" wx:key="{{item.id}}" bindtap="tabParent" data-id="{{item.id}}" class="item flex flex-align-center {{item.id== parentId ? 'active': ''}}">{{item.name}}</view>
+  
+  </view>
+
+  <scroll-view 
+    scroll-into-view="id"
+    scroll-y scroll-with-animation 
+    class="right padded-l-16 padded-r-16 bg-write flex-1 color-light">
+
+
+    <!-- 一级分类下分类 -->
+    <block>
+      <view id="" class="rel">
+
+        <!-- <view class="flex flex-align-center f-11 type-summary color-grey">
+          品牌经营的历史可追溯百年以上
+        </view> -->
+
+        <view class="label-block">
+          <!-- <view>2级类1</view> -->
+          <view class="label-items">
+            <cm-label-item bindtap="choseTag" wx:for="{{children}}" wx:key="{{item.id}}" wx:if="{{item.parentId== parentId}}" data-index="{{index}}" data-id="{{item.id}}" active="{{item.id== childId}}" type="solid">{{item.name}}</cm-label-item>
+            
+          </view>
+        </view>
+
+        <no-data-placeholder wx:if="{{!children.length && !requestChild}}" placeholder="该分类下暂无子分类哟~" />
+
+        <i-spin size="large" fix wx:if="{{ requestChild }}"></i-spin>
+
+      </view>
+    </block>
+    
+
+
+  </scroll-view>
+
+</view>

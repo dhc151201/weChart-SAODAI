@@ -1,0 +1,6 @@
+.list{
+  padding: 50rpx 0;
+}
+.list:not(:last-child){
+  border-bottom: 1rpx solid #ddd;
+}

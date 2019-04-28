@@ -1,0 +1,81 @@
+
+
+<!-- <view class="gps f-4"  data-text="{{city}}" bindtap = "wxSortPickerViewItemTap">
+    当前定位城市
+    <view class="f-3 fr" style='margin-right: 20rpx;display: inline-block;'>
+        {{$state.location.originalData.result.addressComponent.city}} 
+    </view>
+</view> -->
+
+<view class="gps f-13" >
+    <input class="search-input" placeholder='输入城市名/拼音' bindinput='onSearchInput'></input>
+</view>
+
+
+<block wx:if="{{isShowLetter}}">
+    <view class="showSlectedLetter">
+        {{showLetter}}
+    </view>
+</block>
+<view class="searchLetter touchClass f-13" >
+    <view wx:for="{{searchLetter}}" style="height:{{itemH}}px" wx:key="index" data-letter="{{item.name}}" catchtouchstart="searchStart" catchtouchmove="searchMove" catchtouchend="searchEnd">{{item.name}}</view>
+</view>
+
+<scroll-view scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll"  scroll-into-view="{{showLetter}}">
+
+    <view class="selection f-14" wx:for="{{cityList}}" wx:key="{{item.initial}}"  id="{{item.initial}}">
+
+        <!-- <view class="text-center padded-t-30" wx:if="index===0">
+          <cm-empty-layout fixed="{{false}}" show="{{searching}}" mask="{{false}}"></cm-empty-layout>
+        </view> -->
+
+        <block wx:if="{{index===0}}">
+          <view class="f-13" style="margin-left: 15px; padding-top: 15px;">
+            <view class="blod">搜索结果</view>
+            <wux-spin nested spinning="{{searching}}">
+              <view wx:for="{{searchResult}}" wx:key="{{index}}" class="kuai" data-text="{{item.city}}" bindtap = "wxSortPickerViewItemTap">{{item.city}}</view>
+              <view wx:if="{{!searchResult.length}}" class="text-center color-info f-11">
+                空空如也～
+              </view>
+            </wux-spin>
+            
+          </view>
+        </block>
+
+        <block wx:if="{{index===0}}" >
+            <block wx:if="{{cityArr.length}}" >
+                <view style="margin-left: 15px">
+                    <text class="hor" >历史访问</text>
+                    <view>
+                        <block  wx:for="{{cityArr}}" wx:key="{{index}}" wx:for-item="cityName">
+                            <view  class="kuai" data-text="{{cityName}}" bindtap = "wxSortPickerViewItemTap">{{cityName}}</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+
+            <view style="margin-left: 15px;margin-bottom: 15px">
+                <text class="hor" >国内热门城市</text>
+                <view >
+                    <view class="kuai" data-text="北京" bindtap = "wxSortPickerViewItemTap">北京</view>
+                    <view class="kuai" data-text="上海" bindtap = "wxSortPickerViewItemTap">上海</view>
+                    <view class="kuai" data-text="天津" bindtap = "wxSortPickerViewItemTap">天津</view>
+                    <view class="kuai" data-text="广州" bindtap = "wxSortPickerViewItemTap">广州</view>
+                    <view class="kuai" data-text="成都" bindtap = "wxSortPickerViewItemTap">成都</view>
+                    <view class="kuai" data-text="杭州" bindtap = "wxSortPickerViewItemTap">杭州</view>
+                    <view class="kuai" data-text="深圳" bindtap = "wxSortPickerViewItemTap">深圳</view>
+                    <view class="kuai" data-text="苏州" bindtap = "wxSortPickerViewItemTap">苏州</view>
+                    <view class="kuai" data-text="重庆" bindtap = "wxSortPickerViewItemTap">重庆</view>
+                    <view class="kuai" data-text="武汉" bindtap = "wxSortPickerViewItemTap">武汉</view>
+                    <view class="kuai" data-text="厦门" bindtap = "wxSortPickerViewItemTap">厦门</view>
+                    <view class="kuai" data-text="南京" bindtap = "wxSortPickerViewItemTap">南京</view>
+                </view>
+            </view>
+        </block>
+
+        <view class="item_letter">{{item.initial}}</view>
+        <view class="item_city" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}" wx:for-index="idx"  data-text="{{ct.city}}" bindtap = "wxSortPickerViewItemTap">
+            {{ct.city}}
+        </view>
+    </view>
+</scroll-view>

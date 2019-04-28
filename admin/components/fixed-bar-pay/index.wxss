@@ -1,0 +1,22 @@
+.fixed-bar-pay-item{
+  width: 50vw;
+  height: 108rpx;
+  text-align: center;
+  line-height: 108rpx;
+  font-size: 32rpx;
+}
+.fixed-bar-pay-item:last-child{
+  background: #e4393c;
+  color: #fff;
+}
+
+.num{
+  font-size: 40rpx;
+  color: #e4393c;
+}
+
+.summary{
+  padding-left: 10rpx;
+  font-size: 26rpx;
+  color: #999;
+}

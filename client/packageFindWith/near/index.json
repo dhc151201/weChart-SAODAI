@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cm-picker": "/components/base/picker/index",
+    "van-area": "/libs/vant/area/index"
+  }
+}

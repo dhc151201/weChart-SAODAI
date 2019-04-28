@@ -1,0 +1,40 @@
+<!-- 店铺详情页基本信息卡片 -->
+
+<view class="shop-base-card-box">
+  <view class="shop-base-card-margin-padded">
+
+    <view class="shop-base-card">
+      
+      <!-- 基础信息 -->
+      <view class="baseinfo flex f-4  color-write">
+
+        <view class="avatar">
+          <cm-avatar></cm-avatar>
+        </view>
+
+        <view>
+            <view>自贡市自流井区华园街304号 | 距您10km</view>
+            <view>营业时间：09:00-16:00</view>
+            <view>028-66526666</view>
+        </view>
+        
+      </view>
+
+      <!-- 特色 -->
+      <view class="features bg-write text-center f-4">
+        <text class="features-title color-write rel">特色介绍</text>
+
+        <view class="features-labels text-left">
+          标签
+        </view>
+
+        <view class='text-left'>
+          火边子牛肉是自贡的独家美食，商户成立30年，销量在自贡特产排名第一，是国家地理标志产品。
+        </view>
+        
+      </view>
+
+    </view>
+
+  </view>
+</view>

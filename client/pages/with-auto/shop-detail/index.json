@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "店铺详情",
+  "usingComponents": {
+    "cm-shop-media-card": "/components/shop-media-card/index",
+    "wux-tabs": "/libs/wux/tabs/index",
+    "wux-tab": "/libs/wux/tab/index",
+    "cm-pay-card": "/components/pay-card/index",
+    "cm-shop-detail-block": "/components/shop-detail-block/index",
+    "cm-side-to-index": "/components/side-to-index/index",
+    "cm-couple-block-simple": "/components/couple-block-simple/index"
+  }
+}

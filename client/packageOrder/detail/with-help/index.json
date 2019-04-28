@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "用户订单",
+  "usingComponents": {
+      "fixed-bar": "/components/fixed-bar/index",
+      "wux-timeline": "/libs/wux/timeline/index",
+      "cm-contact": "/components/base/contact/index",
+      "wux-timeline-item": "/libs/wux/timeline-item/index",
+      "cm-order-shop-goodslist": "/components/order-shop-goodslist/index",
+      "wux-refresher": "/libs/wux/refresher/index",
+      "cm-mask": "/components/base/mask/index",
+      "cm-envelope": "/components/envelope/envelope",
+      "cm-side-to-index": "/components/side-to-index/index",
+      "sd-button-group": "/libs/sdai/from/button-group/index"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "红包卡券",
+  "usingComponents": {
+      "wux-select": "/libs/wux/select/index",
+      "wux-tabs": "/libs/wux/tabs/index",
+      "cm-side-to-index": "/components/side-to-index/index",
+      "wux-tab": "/libs/wux/tab/index"
+  }
+}

@@ -1,0 +1,8 @@
+
+.from-block{
+  border-top: 1rpx solid rgb(224,224,224);
+}
+
+.submit{
+  margin-top: 100rpx;
+}

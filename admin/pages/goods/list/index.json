@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "商品管理",
+  "usingComponents": {
+    "wux-tabs": "/libs/wux/tabs/index",
+    "wux-tab": "/libs/wux/tab/index",
+    "cm-goods-block": "/components/goods-block/index",
+    "cm-fixed-bar": "/components/fixed-bar/index",
+    "cm-actionsheet": "/components/base/actionsheet/index",
+    "wux-select": "/libs/wux/select/index",
+    "no-data-placeholder": "/components/no-data-placeholder/index"
+  }
+}

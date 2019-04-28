@@ -1,0 +1,5 @@
+<!-- 头像 -->
+<view class="rel avatar-box shadow-{{shadow}} {{size}} loadedStatus-{{loadedStatus}}">
+  <image mode='aspectFill' class="{{size}} loadedStatus-{{loadedStatus}}" src="{{src}}" bindload='loaded'>
+  </image>
+</view>

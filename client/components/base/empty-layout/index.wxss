@@ -1,0 +1,26 @@
+.fixed-true{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fixed-false{
+  display: inline-block;
+}
+.mask-true{
+  background: rgba(0,0,0,.2);
+}
+.show-false{
+  transform: translate3d(0, 150%, 0);
+  opacity: 0;
+  display: none;
+}
+.show-true{
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  transition: opacity 300m;
+}

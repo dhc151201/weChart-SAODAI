@@ -1,0 +1,192 @@
+<!-- <view class="top-fixed">
+  <wux-notice-bar icon="" mode="closable" bind:click="closeNotice" content="店铺信息每日只能提交一次" />
+</view>
+<view wx:if="{{!closeNotice}}" style="padding-top: 60rpx;"></view> -->
+<form bindsubmit="onSubmit" class="f-14 {{info ? 'page-in': 'opacity'}}" style="">
+
+    <view class="bg-write text-center padded-b-16 padded-t-16">
+
+      <wux-spin nested spinning="{{uploadLogo== 1}}">
+        <view class="upload-box f-14 flex flex-v flex-pack-center flex-align-center rel" bindtap='actionsheetShow'>
+          <view class="iconfont icon-tianjia color-blue f-40 margin-b-12"></view>
+          上传logo
+          <image wx:if="{{logoImageUrl}}" mode='scaleToFill' src="{{logoImageUrl+ '?imageView2/1/w/100/h/100/q/85'}}" class="abs logo-image"></image>
+        </view>
+      </wux-spin>
+
+      <input hidden name="logoImageUrl" value="{{logoImageUrl}}"></input>
+
+      <text class="color-blue f-13"><text class="color-light">店铺logo</text></text>
+    </view>
+
+    <view class="margin-t-8 bg-write padded-l-16 from-block">
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">店铺名称</text>
+        <input bindinput='onInputFrom' data-name="shopName" disabled="{{ info.state == 1 ? true : false }}" class="flex-1 f-14" value="{{info.shopName}}" name="shopName" placeholder='请输入店铺名称'></input>
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">店铺简称</text>
+        <input bindinput='onInputFrom' data-name="shopShortName" class="flex-1 f-14" value="{{info.shopShortName}}" name="shopShortName" placeholder='请输入店铺简称'></input>
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">经营者</text>
+        <input bindinput='onInputFrom' data-name="principalName" value="{{info.principalName}}" name="principalName" class="flex-1 f-14" placeholder='姓名'></input>
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">联系电话</text>
+        <input bindinput='onInputFrom' data-name="principalTelphone" value="{{info.principalTelphone}}" name="principalTelphone" type="number" class="flex-1 f-14" placeholder='输入经营者的手机号码'
+          maxlength='11'
+        ></input>
+        <!-- <button open-type='getPhoneNumber' hover-class="hover-class" class="btn btn-block btn-sm bg-success-ease" 
+        bindgetphonenumber="ongetphonenumber">微信授权</button> -->
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">门店电话</text>
+        <input bindinput='onInputFrom' data-name="shopTelephone" value="{{info.shopTelphone}}" name="shopTelephone" type="number" class="flex-1 f-14" placeholder='输入店铺的的门店电话号码'
+          maxlength='12'
+        ></input>
+      </view>
+
+      <view class="from-input-block flex flex-align-center"
+        bindtap='href' data-url="/packageMap/pages/map/search/index?after=/pages/shop/edit/index"
+        >
+        <text class="from-label">店铺地址</text>
+        <view hidden="{{!choseAddress.address}}" class="flex-1 f-14">{{choseAddress.address}}</view>
+        <input hidden="{{choseAddress.address}}" value="{{choseAddress.address}}" name="address" disabled class="flex-1 f-14" placeholder='选择'></input>
+        <wux-icon color="rgb(204,204,204)" type="ios-arrow-forward" size="20"></wux-icon>
+      </view>
+
+      <view class="from-input-block flex flex-align-center last-input-block"
+        bindtap='href' data-url="/pages/goods/type/index"
+        >
+        <text class="from-label">经营品类</text>
+        <view hidden="{{!categoryList}}" class="flex-1 f-14">{{categoryList}}</view>
+        <input hidden='{{categoryList}}' name="categoryList" disabled class="flex-1 f-14" placeholder='选择'></input>
+        <wux-icon color="rgb(204,204,204)" type="ios-arrow-forward" size="20"></wux-icon>
+      </view>
+
+      <input hidden name="cityCode" value="{{choseAddress.cityCode}}"></input>
+      <input hidden name="cityName" value="{{choseAddress.cityName}}"></input>
+      <input hidden name="lat" value="{{choseAddress.lat}}"></input>
+      <input hidden name="lng" value="{{choseAddress.lng}}"></input>
+
+      <!-- <input hidden name="licenseImageUrl" value="{{info.licenseImageUrl}}"></input>
+      <input hidden name="cardBackImageUrl" value="{{info.cardBackImageUrl}}"></input>
+      <input hidden name="cardFontImageUrl" value="{{info.cardFontImageUrl}}"></input> -->
+
+    </view>
+
+    <view class="f-13 padded-t-8 color-light padded-l-16">给捎带者返利，利于提高店铺销量</view>
+
+    <view class="margin-t-4 bg-write padded-l-16 from-block">
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">店铺返利</text>
+        <input bindinput='onInputFrom' data-name="rebate" value="{{info.rebate}}" name="rebate" type="number" class="flex-1 f-14" placeholder='0 - 50'></input>
+        <text class="f-14">%</text>
+      </view>
+
+      <view class="from-input-block flex flex-align-center"
+        bindtap='href' data-url="/pages/shop/notes/index"
+        >
+        <text class="from-label">店铺标签</text>
+        <view hidden="{{!tagList}}" class="flex-1 f-14">{{tagList}}</view>
+        <input hidden='{{tagList}}' name="tagList" disabled class="flex-1 f-14" placeholder='选择'></input>
+        <wux-icon color="rgb(204,204,204)" type="ios-arrow-forward" size="20"></wux-icon>
+      </view>
+
+      <view class="from-input-block last-input-block padded-b-16">
+        <view class="flex flex-pack-justify flex-align-center padded-t-16 padded-b-8">
+          <text>营业时间</text>
+          <view>
+            <cm-radio-group list="{{shopHoursRadios}}" bind:change="onShopHoursType"></cm-radio-group>
+          </view>
+        </view>
+        <!-- 每日营业时间相同 -->
+        <view hidden="{{!shopHoursRadiosChose}}">
+          <view class="shopHoursList flex flex-align-center padded-t-8 padded-b-8">
+            <text class="color-light"></text>
+            <text bindtap='pickerShow' data-index="1" data-position="startTime" data-time="{{shopHoursList[1].startTime}}">{{shopHoursList[1].startTime}} <text class="iconfont icon-ios-arrow-down color-light"></text></text>
+            <text class="text-center">至</text>
+            <text bindtap='pickerShow' class="text-right" data-index="1" data-position="endTime" data-time="{{shopHoursList[1].endTime}}">{{shopHoursList[1].endTime}} <text class="iconfont icon-ios-arrow-down color-light"></text></text>
+          </view>
+        </view>
+        <!-- 每日营业时间不相同 -->
+        <view hidden="{{shopHoursRadiosChose}}">  
+          
+          <view wx:for="{{shopHoursList}}" wx:if="{{index}}" wx:key="{{index}}" class="shopHoursList flex flex-align-center padded-t-8 padded-b-8">
+            <text class="color-light">{{weekName[index]}}</text>
+            <text bindtap='pickerShow' data-index="{{index}}" data-position="startTime" data-time="{{shopHoursList[index].startTime}}">{{item.startTime}} <text class="iconfont icon-ios-arrow-down color-light"></text></text>
+            <text class="text-center">至</text>
+            <text bindtap='pickerShow' class="text-right" data-position="endTime" data-index="{{index}}" data-time="{{shopHoursList[index].endTime}}">{{item.endTime}} <text class="iconfont icon-ios-arrow-down color-light"></text></text>
+          </view>
+
+          <view wx:key="{{0}}" class="shopHoursList flex flex-align-center padded-t-8 padded-b-8">
+            <text class="color-light">{{weekName[0]}}</text>
+            <text bindtap='pickerShow' data-index="0" data-position="startTime" data-time="{{shopHoursList[0].startTime}}">{{shopHoursList[0].startTime}} <text class="iconfont icon-ios-arrow-down color-light"></text></text>
+            <text class="text-center">至</text>
+            <text bindtap='pickerShow' class="text-right" data-position="endTime" data-index="0" data-time="{{shopHoursList[0].endTime}}">{{shopHoursList[0].endTime}} <text class="iconfont icon-ios-arrow-down color-light"></text></text>
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+
+    <view class="margin-t-8 bg-write padded-l-16 padded-r-16 padded-b-16 from-block">
+      <view class="flex flex-pack-justify flex-align-center padded-t-16 padded-b-8">
+        <text>特色介绍</text>
+        <text class="color-light">0/200</text>
+      </view>
+      <textarea bindinput='onInputFrom' data-name="feature" wx:if="{{!hideNavite}}" value="{{info.feature}}" name="feature" auto-height="{{true}}" class="f-13" maxlength='200' placeholder='描述您的店铺优势，例如：经营20年的老字号'></textarea>
+      <view wx:if="{{hideNavite}}">{{info.feature}}</view>
+    </view>
+
+    <view class="margin-t-8 bg-write padded-l-16 padded-r-16 from-block">
+      <view class="flex flex-pack-justify flex-align-center padded-t-16 padded-b-8">
+        <text>店面图片</text>
+        <text class="color-light">{{info.shopImageList.length}}/6</text>
+      </view>
+      <view class="padded-b-16">
+        <view class="flex shopImageList-box">
+          <image wx:for="{{info.shopImageList}}" wx:key="{{index}}" src="{{item+ '?imageView2/1/w/100/h/100/q/85'}}" class="image-list rel">
+            <text class="abs remove-shopImage text-center" data-index="{{index}}" catchtap='removeImageHandel'>x</text>
+          </image>
+          <view hidden="{{info.shopImageList.length> 5}}" class="image-list flex flex-v flex-pack-center flex-align-center f-11 color-light up-controller" 
+            bindtap='upCoverImageList'>
+            <view class="iconfont icon-tianjia color-blue f-20"></view>
+            <text>添加图片</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="padded-16" style="padding-top: 65rpx;">
+      <button form-type="submit" hover-class="hover-class" class="btn btn-block btn-lg bg-success-ease">提交</button>
+    </view>
+
+  </form>
+
+<cm-empty-layout show="{{showLoading}}"></cm-empty-layout>
+
+<cm-actionsheet id="sdai-actionsheet">
+  <cm-upload bindprogress="onuploadProgress" bindchange="onuploadChange" bindsuccess="onuploadSuccess"></cm-upload>
+</cm-actionsheet>
+
+<wux-toptips id="wux-toptips" />
+<wux-dialog id="wux-dialog"></wux-dialog>
+<wux-toast id="wux-toast" />
+
+<cm-picker id="sdai-picker">
+  <van-datetime-picker
+    type="time"
+    value="{{ pickerTimeDefault }}"
+    bind:cancel="pickerHide"
+    bind:confirm="onShopHoursListConfirm"
+  />
+</cm-picker>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的资料",
+  "usingComponents": {
+    "cm-label-item": "/components/base/label-item/index",
+    "cm-dialog-editPhone": "/components/dialog-editPhone/index",
+    "cm-fixed-bar-text": "/components/fixed-bar-text/index"
+  }
+}

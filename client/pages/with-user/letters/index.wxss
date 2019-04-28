@@ -1,0 +1,81 @@
+.panel{
+  margin: 24rpx 32rpx;
+  padding: 24rpx 32rpx 32rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,.1);
+  color: #333;
+  position: relative;
+  width: 622rpx;
+  overflow: hidden;
+}
+.nowrap{
+  white-space: nowrap;
+}
+.colum-tit{
+    position: relative;
+}
+.colum-tit::before{
+    content: "";
+    position: absolute;
+    display: block;
+    left: -32rpx;
+    top: 8rpx;
+    height: 24rpx;
+    width: 8rpx;
+    border-top-right-radius: 6rpx;
+    border-bottom-right-radius: 6rpx;
+    background: -webkit-linear-gradient(top, rgb(254, 191, 0), rgb(255, 170, 29)); 
+}
+
+.list{
+    margin: 0 0 16rpx;
+}
+.fontright {
+  text-align: right;
+}
+.coverbottombtn {
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 32rpx;
+  text-align: center;
+  z-index:99;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+.coverbottombtn button {
+  border-radius: 0; 
+  height: 98rpx;
+  line-height: 98rpx; 
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+.move_t{
+ z-index: 22; 
+ animation: mymove 0.5s 1;
+ animation-fill-mode:forwards; 
+}
+.z_move{
+ z-index: 23!important;
+}
+@keyframes mymove{
+from {right: 0;}
+ to {right: -750rpx;}
+}
+.move_tf{
+ z-index: 22;
+ animation: mymove2 0.5s;
+ animation-fill-mode:forwards; 
+}
+@keyframes mymove2{
+from {right: -622rpx;}
+ to {right: 0;}
+  /* 0% {right: -622rpx;}
+  25% {right: -467rpx;}
+  50% {right: -311rpx;}
+  75% {right: -156rpx;}
+  100% {right: 0rpx;} */
+}

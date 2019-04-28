@@ -1,0 +1,12 @@
+.fixed-bar{
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  /* border-top: 1rpx solid #ddd; */
+  box-shadow: 0 -5rpx 15rpx rgba(0,0,0,.05);
+  z-index: 100;
+}
+.fixed-bar.fullSen{
+  padding-bottom: 58rpx !important;
+}

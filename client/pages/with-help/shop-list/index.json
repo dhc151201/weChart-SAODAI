@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "选择捎带的店铺",
+  "usingComponents": {
+    "cm-fixed-bar": "/components/fixed-bar/index",
+    "cm-note": "/components/base/note/index",
+    "wux-select": "/libs/wux/select/index",
+    "cm-picker": "/components/base/picker/index",
+    "cm-label-item": "/components/base/label-item/index",
+    "wux-slider": "/libs/wux/slider/index",
+    "cm-search-bar": "/components/base/search-bar/index",
+    "cm-filter-actionsheet": "/components/base/filter-actionsheet/index",
+    "cm-invitation-shop-join": "/components/invitation-shop-join/index"
+  }
+}

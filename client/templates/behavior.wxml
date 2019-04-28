@@ -1,0 +1,23 @@
+<template name="toast">
+  <wux-toast id="wux-toast" />
+</template>
+
+<template name="dialog">
+  <wux-dialog id="wux-dialog" />
+</template>
+
+<template name="loading">
+  <wux-loading id="wux-loading" />
+</template>
+
+<template name="toptips">
+  <wux-toptips id="wux-toptips" />
+</template>
+
+<!-- all -->
+<template name="behavior">
+  <wux-toast id="wux-toast" />
+  <wux-dialog id="wux-dialog" />
+  <wux-loading id="wux-loading" />
+  <wux-toptips id="wux-toptips" />
+</template>

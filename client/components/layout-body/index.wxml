@@ -1,0 +1,3 @@
+<view class="{{class}} {{$state.fullSenClassName}}" style='{{style}}'>
+    <slot></slot>
+</view>

@@ -1,0 +1,103 @@
+<view class="panel bg-write">
+    <view class="flex flex-align-center bold">
+        <image class="tit-pic margin-r-8" src="./../../../assets/images/icon_data_call@2x.png" mode="aspectFill" />
+        联系方式
+    </view>
+    <view class="padded-t-12 flex flex-pack-justify flex-align-center">
+
+        <block wx:if="{{phone}}">
+            <view class="f-17">
+                {{phone}}
+            </view>
+            <view class="color-blue" bindtap="editPhoneDialogShow">
+                <text class="iconfont icon-xiugai color-blue f-14 padded-r-4 rel" style="top: 1rpx;"></text>变更
+            </view>
+        </block>
+
+        <block wx:else>
+            <view class="f-11 color-light">
+                还没有哟~
+            </view>
+            <view class="color-blue" bindtap="editPhoneDialogShow">
+                <text class="iconfont icon-tianjia color-blue f-20 padded-r-4 rel" style="top: 5rpx;"></text>添加
+            </view>
+        </block>
+        
+    </view>
+      
+</view>
+
+<view class="panel bg-write">
+    <view class="flex flex-align-center bold">
+        <image class="tit-pic margin-r-8" src="./../../../assets/images/icon_data_sex@2x.png" mode="aspectFill" />
+        性别
+    </view>
+    <view class="f-13 flex flex-pack-around flex-align-center text-center padded-t-16">
+        <view class="{{sex==0 ? '' : 'color-light'}}" bindtap="argumentHandel" data-sex="0">
+            <image class="sex-pic margin-b-8" src="./../../../assets/images/pic_data_boy_{{sex==0 ? 's' : 'n'}}@2x.png" mode="aspectFill" />
+            <text class="iconfont icon-chose margin-r-8 {{sex==0 ? 'icon-danxuanxuanzhong color-success' : 'icon-danxuanweixuanzhong'}}"></text>男生
+        </view>
+        <view class="{{sex==1 ? '' : 'color-light'}}" bindtap="argumentHandel" data-sex="1">
+            <image class="sex-pic margin-b-8" src="./../../../assets/images/pic_data_girl_{{sex==1 ? 's' : 'n'}}@2x.png" mode="aspectFill" />
+            <text class="iconfont icon-chose margin-r-8 {{sex==1 ? 'icon-danxuanxuanzhong color-success' : 'icon-danxuanweixuanzhong'}}"></text>女生
+        </view>
+        
+    </view>
+      
+</view>
+
+<view class="panel bg-write">
+    <view class="flex flex-align-center bold">
+        <image class="tit-pic margin-r-8" src="./../../../assets/images/icon_data_pro@2x.png" mode="aspectFill" />
+        职业
+    </view>
+    <view class="f-13 color-grey worker-item-box padded-t-8">
+        <cm-label-item wx:for="{{professionlist}}" wx:key="{{index}}" type="solid" active="{{item.check}}"
+            data-index="{{index}}" bindtap="choseProfession"
+        >{{item.profession}}</cm-label-item>
+    </view>
+      
+</view>
+
+<view class="panel bg-write">
+    <view class="flex flex-align-center bold">
+        <image class="tit-pic margin-r-8" src="./../../../assets/images/icon_data_add@2x.png" mode="aspectFill" />
+        地址
+        <view class="flex-1 text-right"></view> 
+        <view class="flex flex-align-center" bindtap="href" data-url="/packageAddress/pages/list/index">
+            <text class="color-light f-13">更多</text>
+            <text class="iconfont icon-ios-arrow-forward color-light f-13"></text>
+        </view>
+    </view>
+    <view wx:for="{{addressList}}" wx:key="{{index}}" class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+        <view class="color-light padded-r-16 aui-ellipsis-2 flex-1">
+           {{item.receiveAddress}}
+        </view>
+        <view class="color-blue" catchtap="editAddress" data-index="{{index}}">
+            <text class="iconfont icon-xiugai color-blue f-14 padded-r-4 rel" style="top: 1rpx;"></text>修改
+        </view>
+    </view>
+      
+    <view wx:if="{{!addressList.length}}" class="f-13 flex flex-pack-justify flex-align-center padded-t-8">
+        <view class="color-light">
+            还没有哟~
+        </view>
+        <view class="color-blue" bindtap="href" data-url="/packageAddress/pages/add/index">
+            <text class="iconfont icon-tianjia color-blue f-20 padded-r-4 rel" style="top: 5rpx;"></text>添加
+        </view>
+    </view>
+      
+</view>
+
+<!-- <view class="has-fixed-bottom"></view> -->
+<layout-body  hasFixed="bottom" />
+  
+<cm-fixed-bar-text bindtap="update"><text class="f-18">保存</text></cm-fixed-bar-text>
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+<cm-dialog-editPhone id="dialog-phone" phone="{{phone ? phone+ '' : ''}}" title="{{phone ? '修改手机号' : '完善手机号'}}" bindsubmit="editPhone" />
+  

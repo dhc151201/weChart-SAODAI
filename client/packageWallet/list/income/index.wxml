@@ -1,0 +1,84 @@
+<import src="./../../../templates/load.more.wxml" />
+
+<view class="min-full bg-write padded-t-12 border-box">
+
+    <view class="top-card border-box">
+        <view class="number bold">{{wallet.totalAmount || 0}}</view>
+        <view class="number-summary">累计收入(元)</view>
+
+        <view class="line"></view>
+          
+        <view class="flex flex-pack-justify flex-align-center color-write f-11">
+            <view>
+                <view class="bold f-16">
+                    {{wallet.incidentallyAmount || 0}}
+                </view>
+                捎带费(元)
+            </view>
+            <view class="top-line-v"></view>
+            <view>
+                <view class="bold f-16">
+                    {{wallet.rebateAmount || 0}}
+                </view>
+                返佣收入(元)
+            </view>
+            <view class="top-line-v"></view>
+            <view>
+                <view class="bold f-16">
+                    {{wallet.cashAmount || 0}}
+                </view>
+                现金红包(元)
+            </view>  
+        </view>
+    </view>
+
+    <view class="padded-16 flex flex-pack-justify flex-align-center column">
+        <view class="f-16 bold">收入明细</view>
+        <view class="f-13 color-light" bindtap="openFilterOptions">
+            {{FilterStr[FilterIndex]}} <text class="iconfont icon-ios-arrow-down f-17 rel" style="top: 4rpx;"></text>
+        </view>    
+    </view>
+
+    <!-- list -->
+    <view class="padded-l-16 padded-r-16 list flex" wx:for="{{list}}" wx:key="{{index}}">
+        <cm-loading-image width="80rpx" height="80rpx" src="./../../../assets/images/{{typesImgName[item.tradeType]}}" radius="80" />
+        <view class="padded-l-16 content rel flex-1 flex flex-pack-justify flex-align-center">
+            <view class="f-14">
+                {{item.description}}
+                <view class="f-11 color-light">
+                    <cm-time time="{{item.createTime}}" />    订单 {{item.orderNo}}
+                </view>
+            </view>
+            <view class="bold f-16">
+                {{item.amount || 0}}
+                
+                  
+            </view>
+        </view>
+          
+    </view>
+
+    <!-- 搜索结果提示 -->
+    <view wx:if="{{loadmore== 3}}" style="padding: 5vh 0 10vh;">
+        <no-data-placeholder 
+        placeholder="暂无资金流水~"  
+        placeholderSmiple="发布捎带行程，赚取捎带费及商家返利收入~~"
+        image="./../../assets/images/img_nozjls@2x.png"
+        buttontext="立即发布行程"
+        href="/pages/with-help/shop-list/index" />
+    </view>
+    <template is="loadmore" data="{{status: loadmore}}" />
+      
+      
+    
+</view>
+  
+<layout-body />
+
+<wux-select id="wux-select" />
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+
+  

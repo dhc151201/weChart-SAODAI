@@ -1,0 +1,9 @@
+@import "./../../../assets/wxss/base.wxss";
+.demo-container{
+    background: #fff;
+    height: 100vh;
+}
+.footer{
+    box-shadow: 0 -2rpx 5rpx 2rpx rgba(0,0,0,.05);
+    border-top: 1px solid rgb(224,224,224);
+}

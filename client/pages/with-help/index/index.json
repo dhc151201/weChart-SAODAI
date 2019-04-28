@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "帮人捎带",
+  "usingComponents": {
+    "cm-avatar-bar": "./../../../components/base/avatar-bar/index",
+    "cm-nav-bar": "./../../../components/nav-bar/index",
+    "cm-note": "./../../../components/base/note/index",
+    "cm-empty-layout": "./../../../components/base/empty-layout/index"
+  }
+}

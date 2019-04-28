@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "立即开店",
+    "usingComponents": {
+        "cm-side-to-index": "/components/side-to-index/index"
+    }
+}

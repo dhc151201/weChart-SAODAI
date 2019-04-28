@@ -1,0 +1,10 @@
+<canvas canvas-id="share" style="width:{{canvas.width}}px; height: {{canvas.height}}px" bindlongtap="saveHandel"></canvas>
+
+ <!-- 前往setting页 -->
+<cm-actionsheet id="sdai-actionsheet">
+  <button class="btn gosetting" bindtap="openSetting">前往授权设置</button>
+</cm-actionsheet>
+
+<wux-dialog id="wux-dialog" />
+<wux-toast id="wux-toast" />
+<i-spin size="large" fix wx:if="{{ spinShow }}" />

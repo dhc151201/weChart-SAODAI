@@ -1,0 +1,7 @@
+<!-- fixed bottom 支付bar -->
+<cm-fixed-bar>
+  <view class="fixed-bar-pay-item">
+    <text class="num">￥{{value}}</text> <text class="summary">(含捎带费)</text> 
+  </view>
+  <view catchtap='payHandel' data-index="2" class="fixed-bar-pay-item">微信支付</view>
+</cm-fixed-bar>

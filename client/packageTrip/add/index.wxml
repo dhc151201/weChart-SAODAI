@@ -1,0 +1,165 @@
+<block wx:if="{{from== 'find'}}">
+    <view class="flex flex-pack-justify flex-align-center bg-write padded-16 address-box border-box"
+        bindtap="href" data-url="/packageAddress/pages/list/index?after=/packageTrip/add/index"
+        >
+        <block wx:if="{{!choseAddress}}">
+            <view class="">
+                <text class="iconfont icon-tianjia color-blue f-17 padded-r-4"></text>
+            </view>
+            <view class="flex-1">
+                请点击添加收货人地址
+            </view>
+        </block>
+          
+        <block wx:else> 
+            <view class="f-13 color-light">
+                <view class="f-14 color-default">
+                    {{choseAddress.receiveName}} <text class="padded-l-16 margin-l-8">{{choseAddress.receivePhone}}</text>           
+                </view>
+                {{choseAddress.receiveAddress+ choseAddress.houseNo}}
+            </view>
+        </block>
+          
+        <view class="">
+            
+        </view>
+        <text class="iconfont icon-ios-arrow-forward color-light f-17"></text>
+    </view>
+</block>
+<block wx:else >
+    <view class="container top-address flex flex-pack-justify flex-align-center bg-write"
+      bindtap='href' data-url="/packageMap/pages/map/search/index?after=/packageTrip/add/index"
+    >
+      <view class='flex-1'>{{ dest.address ? '送达目的地：'+ dest.address : '选择您要送达的目的地' }}</view>
+      <view class="iconfont icon-ios-arrow-forward color-light"></view>
+
+    </view>
+</block>
+  
+
+<view class="bg-write padded-l-16 margin-t-8">
+
+  <block wx:if="{{from== 'find'}}">
+
+      <view class="from-input-block flex flex-pack-justify flex-align-center" bindtap="showEndPicker">
+        <text class="from-label">期望到达时间</text>
+        <view class="flex-1 text-right">{{moment_arriveTime}}</view>
+        <view class="iconfont icon-ios-arrow-forward color-light"></view>
+      </view>
+
+  </block>
+  <block wx:else >
+
+    <view class="from-input-block flex flex-pack-justify flex-align-center" bindtap="showStartPicker">
+      <text class="from-label">出发时间</text>
+      <view class="flex-1 text-right">{{moment_setOutTime}}</view>
+      <view class="iconfont icon-ios-arrow-forward color-light"></view>
+    </view>
+    <view class="from-input-block flex flex-pack-justify flex-align-center" bindtap="showEndPicker">
+      <text class="from-label">送达时间</text>
+      <view class="flex-1 text-right">{{moment_arriveTime}}</view>
+      <view class="iconfont icon-ios-arrow-forward color-light"></view>
+    </view>
+
+  </block>
+
+  <block wx:if="{{from== 'find'}}">
+
+      <view class="from-input-block flex flex-pack-justify flex-align-center last-input-block">
+        <text class="from-label">愿意支付捎带费</text>
+        <view class="text-right color-success press f-11">收货后给捎带者的</view>
+      </view>
+
+  </block>
+  <block wx:else >
+
+      <view class="from-input-block flex flex-pack-justify flex-align-center last-input-block">
+        <text class="from-label">捎带费</text>
+        <view class="text-right color-success press f-11">每个买家成交后您收入，请合理设置</view>
+      </view>
+
+  </block>
+
+  <view class="padded-r-16 padded-l-12 border-box" style="height: 120rpx;" catchtouchmove='nullFun'>
+    <view class="slider rel fl">
+      <wux-slider bind:change="sliderChange" defaultValue="{{ [crosscityCharge] }}" />
+    </view>
+    <view class="f-20 color-success bold slider-number text-right fr">
+      ¥ <text class="number">{{crosscityCharge}}</text> 
+    </view>
+  </view>
+
+</view>
+
+<block wx:if="{{from== 'find'}}">
+  
+  <view class="bg-write padded-l-16 margin-t-8">
+    <view bindtap="chosePuttype" class="from-input-block flex flex-pack-justify flex-align-center last-input-block">
+      <text class="from-label">收货方式:</text>
+      <view class="flex-1 text-right color-grey f-13">{{goodsPuttype[putType]}}</view>
+      <view class="iconfont icon-ios-arrow-forward color-light"></view>
+    </view>
+  </view>
+
+</block>
+
+<view class="bg-write padded-l-16 padded-b-8 margin-t-8">
+  <view class="from-input-block flex flex-pack-justify flex-align-center last-input-block">
+    <text class="from-label">备注</text>
+    <view class="text-right color-light f-11">0/200</view>
+  </view>
+  <!-- <wux-textarea bind:change="onInputFrom" data-name="remarks" autoHeight cursorSpacing="80" placeholder="输入备注，200字以内" /> -->
+  <cm-textearea bindinput="onInputFrom" data-name="remarks"  placeholder="输入备注，200字以内" />
+</view>
+
+
+<view class="bg-write padded-l-16 margin-t-8">
+  <view class="from-input-block flex flex-align-center last-input-block">
+    <view class="f-13 color-light flex flex-align-center">
+      <text bindtap="argumentHandel" class="iconfont icon-chose {{argumentStatus ? 'icon-danxuanxuanzhong color-success' : 'icon-danxuanweixuanzhong'}}"></text> 
+      <text bindtap="href" data-url="/pages/webview/index?url=https://rrsd.rrkd.cn/Agreement/user.html" class="margin-l-8 color-blue">已阅读并同意《捎带服务协议》</text>
+    </view>
+  </view>
+</view>
+
+<view class="fix text-center padded-4 padded-l-16 padded-r-16 notice-bar f-11 border-box {{$state.fullSenClassName}}">
+  {{from== 'find' ? '捎带者接单后，会去店里取货再进行捎带' : '目的地附近买家在您出发前可下单'}}
+</view>
+
+<view class="padded-16"></view>
+<layout-body  hasFixed="bottom" />
+
+<cm-fixed-bar-text>
+  <sd-button wx:if="{{from== 'find'}}" bindsubmit="creatFindOrder" reportSubmit formType="submit" size="small" block height="108" type="transparent" radius='0'>提交</sd-button>
+  <sd-button wx:else bindsubmit="submit" reportSubmit formType="submit" size="small" block height="108" type="transparent" radius='0'>生成捎带店铺</sd-button>
+</cm-fixed-bar-text>
+
+<cm-picker id="sdai-picker-start" zindex="122">
+  <van-datetime-picker wx:if="{{showPicker}}"
+    type="datetime"
+    value="{{ setOutTime }}"
+    min-date="{{ minDate }}"
+    max-date="{{ maxDate }}"
+    bind:confirm="onConfirmStart"
+    bind:cancel="onCancelStart"
+  />
+</cm-picker>
+
+<cm-picker id="sdai-picker-end" zindex="122">
+  <van-datetime-picker wx:if="{{showPicker}}"
+    type="datetime"
+    value="{{ arriveTime }}"
+    min-date="{{ minDateEnd }}"
+    max-date="{{ maxDate }}"
+    minHour="8"
+    maxHour="22"
+    bind:confirm="onConfirmEnd"
+    bind:cancel="onCancelEnd"
+  />
+</cm-picker>
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+<wux-select id="wux-select" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

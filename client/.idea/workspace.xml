@@ -1,0 +1,1254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+<<<<<<< Updated upstream
+    <list default="true" id="6190288c-d96c-49af-84c0-178d7a01d62b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/with-help/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/with-help/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/global.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/global.config.js" afterDir="false" />
+    </list>
+=======
+    <list default="true" id="6190288c-d96c-49af-84c0-178d7a01d62b" name="Default Changelist" comment="帮人捎带首页添加参数 默认3000米范围" />
+>>>>>>> Stashed changes
+    <list id="43c2df01-1168-4fd4-aa6f-a6c2010cee59" name="Revert &quot;活动红包版本开发结束&quot;" comment="Revert &quot;活动红包版本开发结束&quot;&#10;&#10;This reverts commit 0ed01a3" />
+    <list id="474f2991-2e6b-4041-8b74-8c133ffc8138" name="Revert &quot;活动红包版本开发结束&quot;-2" comment="Revert &quot;活动红包版本开发结束&quot;&#10;&#10;This reverts commit 0ed01a3" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-540233675">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="90" />
+          <entry key="project.open.time.0" value="7" />
+          <entry key="project.open.time.1" value="4" />
+          <entry key="project.open.time.2" value="25" />
+          <entry key="project.open.time.3" value="34" />
+          <entry key="project.open.time.4" value="12" />
+          <entry key="project.open.time.5" value="7" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="91" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="118" />
+          <entry key="json" value="37" />
+          <entry key="wxml" value="58" />
+          <entry key="wxss" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="57" />
+          <entry key="JSON" value="37" />
+          <entry key="JavaScript" value="118" />
+          <entry key="SCSS" value="8" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="379" />
+          <entry key="txt" value="1168" />
+          <entry key="wxml" value="102" />
+          <entry key="wxss" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="102" />
+          <entry key="JavaScript" value="379" />
+          <entry key="PLAIN_TEXT" value="1168" />
+          <entry key="SCSS" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="91" />
+          <entry key="git.branch.checkout.remote" value="2" />
+          <entry key="git.branch.compare" value="1" />
+          <entry key="git.branch.create.new" value="6" />
+          <entry key="git.branch.delete.local" value="4" />
+          <entry key="git.branch.delete.remote" value="1" />
+          <entry key="git.branch.merge" value="37" />
+          <entry key="git.branch.rename" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/with-help/index/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/with-user/index/index.wxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="76" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>reverseGeocoder</find>
+      <find>moment.min</find>
+      <find>getSystemInfo</find>
+      <find>discountAmount</find>
+      <find>orderListByShopId</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+<<<<<<< Updated upstream
+        <entry key="$PROJECT_DIR$" value="onLine" />
+=======
+        <entry key="$PROJECT_DIR$" value="iteration0225" />
+>>>>>>> Stashed changes
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/utils/request.api.js" />
+        <option value="$PROJECT_DIR$/utils/wx.capacity.js" />
+        <option value="$PROJECT_DIR$/utils/public.tool.js" />
+        <option value="$PROJECT_DIR$/utils/wx.request.js" />
+        <option value="$PROJECT_DIR$/project.config.json" />
+        <option value="$PROJECT_DIR$/pages/webview/index.wxml" />
+        <option value="$PROJECT_DIR$/packageScope/pages/scope/index.wxml" />
+        <option value="$PROJECT_DIR$/packageShare/out/trip/index.js" />
+        <option value="$PROJECT_DIR$/packageTrip/add/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-help/index/index.json" />
+        <option value="$PROJECT_DIR$/pages/with-help/shop-detail/index.js" />
+        <option value="$PROJECT_DIR$/pages/with-help/shop-detail/index.json" />
+        <option value="$PROJECT_DIR$/pages/with-help/shop-detail/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-detail/index.js" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-detail/index.json" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-detail/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-list/index.js" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-list/index.json" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-list/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-search/index.js" />
+        <option value="$PROJECT_DIR$/pages/with-auto/shop-search/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-user/index/index.js" />
+        <option value="$PROJECT_DIR$/pages/with-user/index/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-user/letters/index.wxml" />
+        <option value="$PROJECT_DIR$/components/base/loading-image/index.wxml" />
+        <option value="$PROJECT_DIR$/components/base/loading-image/index.js" />
+        <option value="$PROJECT_DIR$/components/index-shop-card/index.wxml" />
+        <option value="$PROJECT_DIR$/components/gongGe/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-auto/index/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/webview/index.js" />
+        <option value="$PROJECT_DIR$/components/no-data-placeholder/index.js" />
+        <option value="$PROJECT_DIR$/pages/example/index.js" />
+        <option value="$PROJECT_DIR$/packageTrip/detail/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-help/shop-list/index.wxml" />
+        <option value="$PROJECT_DIR$/pages/with-help/shop-detail/index.wxml" />
+        <option value="$PROJECT_DIR$/utils/global.config.js" />
+        <option value="$PROJECT_DIR$/pages/with-auto/index/index.js" />
+        <option value="$PROJECT_DIR$/components/fixed-bar-shopping-card/index.js" />
+        <option value="$PROJECT_DIR$/components/fixed-bar-shopping-card/index.wxml" />
+        <option value="$PROJECT_DIR$/components/pay-card/index.wxml" />
+        <option value="$PROJECT_DIR$/assets/js/tmplmsg.js" />
+        <option value="$PROJECT_DIR$/packageTrip/add/index.js" />
+        <option value="$PROJECT_DIR$/components/order-card-list-trip/index.js" />
+        <option value="$PROJECT_DIR$/store/index.js" />
+        <option value="$PROJECT_DIR$/components/couple-block-simple/index.wxml" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/pages/with-help/shop-list/index.js" />
+        <option value="$PROJECT_DIR$/pages/with-help/index/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/with-help/index/index.wxml" />
+        <option value="$PROJECT_DIR$/packageTrip/detail/index.js" />
+        <option value="$PROJECT_DIR$/pages/with-help/index/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Angular</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="with-wechat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="with-wechat-client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="with-wechat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="with-wechat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="with-wechat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="with-wechat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="with-help" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="with-wechat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="with-wechat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="with-help" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="with-wechat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="with-wechat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="with-user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="with-wechat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="with-wechat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="with-user" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/pages" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6190288c-d96c-49af-84c0-178d7a01d62b" name="Default Changelist" comment="" />
+      <created>1545387740138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545387740138</updated>
+      <workItem from="1545387742737" duration="735000" />
+      <workItem from="1545878718200" duration="3331000" />
+      <workItem from="1545898131278" duration="314000" />
+      <workItem from="1546002043047" duration="89000" />
+      <workItem from="1546045979715" duration="183000" />
+      <workItem from="1546598943322" duration="147000" />
+      <workItem from="1546999720307" duration="126000" />
+      <workItem from="1547001985487" duration="17000" />
+      <workItem from="1547017415708" duration="493000" />
+      <workItem from="1547018406755" duration="21000" />
+      <workItem from="1547018491539" duration="232000" />
+      <workItem from="1547034215459" duration="233000" />
+      <workItem from="1547083719881" duration="208000" />
+      <workItem from="1547100564507" duration="3896000" />
+      <workItem from="1547173258525" duration="1098000" />
+      <workItem from="1547269341233" duration="362000" />
+      <workItem from="1547277772760" duration="1662000" />
+      <workItem from="1547288799506" duration="140000" />
+      <workItem from="1547441722616" duration="95000" />
+      <workItem from="1547456927692" duration="287000" />
+      <workItem from="1547548424216" duration="79000" />
+      <workItem from="1547718662709" duration="1559000" />
+      <workItem from="1547778125847" duration="1734000" />
+      <workItem from="1547803234056" duration="236000" />
+      <workItem from="1547804463339" duration="103000" />
+      <workItem from="1547805864301" duration="493000" />
+      <workItem from="1547866826309" duration="2127000" />
+      <workItem from="1547979232275" duration="915000" />
+      <workItem from="1548059782293" duration="1107000" />
+      <workItem from="1548077431701" duration="361000" />
+      <workItem from="1548121508417" duration="232000" />
+      <workItem from="1548121957621" duration="903000" />
+      <workItem from="1548123611056" duration="189000" />
+      <workItem from="1548125744683" duration="4242000" />
+      <workItem from="1548388931214" duration="2762000" />
+      <workItem from="1548399491091" duration="180000" />
+      <workItem from="1548399981641" duration="2518000" />
+      <workItem from="1548428817097" duration="460000" />
+      <workItem from="1548570326411" duration="146000" />
+      <workItem from="1548638509171" duration="1375000" />
+      <workItem from="1548653350324" duration="219000" />
+      <workItem from="1548660018857" duration="132000" />
+      <workItem from="1548660771299" duration="305000" />
+      <workItem from="1548742220150" duration="264000" />
+      <workItem from="1548745195180" duration="783000" />
+      <workItem from="1548752702517" duration="1917000" />
+      <workItem from="1548813664165" duration="306000" />
+      <workItem from="1548814396930" duration="440000" />
+      <workItem from="1548815745165" duration="267000" />
+      <workItem from="1548818590571" duration="692000" />
+      <workItem from="1548903871807" duration="2224000" />
+      <workItem from="1548913526540" duration="1204000" />
+      <workItem from="1549016489118" duration="511000" />
+      <workItem from="1549937798154" duration="1422000" />
+      <workItem from="1549950786238" duration="376000" />
+      <workItem from="1549964256970" duration="268000" />
+      <workItem from="1549964734897" duration="630000" />
+      <workItem from="1550459604323" duration="286000" />
+      <workItem from="1550470757286" duration="130000" />
+      <workItem from="1550470895219" duration="251000" />
+      <workItem from="1550718044466" duration="740000" />
+      <workItem from="1550720465121" duration="405000" />
+      <workItem from="1550730755541" duration="326000" />
+      <workItem from="1550734615325" duration="157000" />
+      <workItem from="1551071808257" duration="500000" />
+      <workItem from="1551080410848" duration="327000" />
+      <workItem from="1551081110082" duration="412000" />
+      <workItem from="1551146277539" duration="589000" />
+      <workItem from="1551947507108" duration="429000" />
+      <workItem from="1551954828210" duration="444000" />
+      <workItem from="1552031136344" duration="135000" />
+      <workItem from="1552284646921" duration="760000" />
+      <workItem from="1552300549662" duration="345000" />
+      <workItem from="1552356051856" duration="374000" />
+      <workItem from="1552368790531" duration="119000" />
+      <workItem from="1552380007177" duration="1034000" />
+      <workItem from="1552468409847" duration="303000" />
+      <workItem from="1553136012673" duration="323000" />
+      <workItem from="1553140219144" duration="115000" />
+      <workItem from="1553144542878" duration="231000" />
+      <workItem from="1553146677205" duration="67000" />
+      <workItem from="1553164552645" duration="1000" />
+      <workItem from="1553224568554" duration="505000" />
+      <workItem from="1553237386094" duration="1265000" />
+      <workItem from="1553248582250" duration="659000" />
+      <workItem from="1553485540681" duration="1834000" />
+      <workItem from="1553505506512" duration="1420000" />
+      <workItem from="1553590399561" duration="6894000" />
+      <workItem from="1553757970587" duration="2592000" />
+      <workItem from="1553843245873" duration="1793000" />
+      <workItem from="1554196406297" duration="5764000" />
+      <workItem from="1554711808560" duration="780000" />
+      <workItem from="1554772909780" duration="384000" />
+    </task>
+    <task id="LOCAL-00084" summary="埋点配置">
+      <created>1549964775103</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1549964775103</updated>
+    </task>
+    <task id="LOCAL-00085" summary="店铺详情：店铺环境图片修复">
+      <created>1549967856603</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1549967856603</updated>
+    </task>
+    <task id="LOCAL-00086" summary="新增埋点">
+      <created>1550459735212</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1550459735212</updated>
+    </task>
+    <task id="LOCAL-00087" summary="早餐类折扣标签，平台返利修改">
+      <created>1550470832173</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1550470832174</updated>
+    </task>
+    <task id="LOCAL-00088" summary="放开埋点测试">
+      <created>1550471161865</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1550471161865</updated>
+    </task>
+    <task id="LOCAL-00089" summary="全局信息配置文件重构">
+      <created>1550718118156</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1550718118156</updated>
+    </task>
+    <task id="LOCAL-00090" summary="早餐类、平台返利接入、部分优化">
+      <created>1550718190133</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1550718190133</updated>
+    </task>
+    <task id="LOCAL-00091" summary="全局信息配置文件重构优化：单例模式 结合 构造函数模式">
+      <created>1550720513740</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1550720513740</updated>
+    </task>
+    <task id="LOCAL-00092" summary="店铺类型wx:for,key指定，交互优化，早餐类地图icon调整">
+      <created>1550730859881</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1550730859882</updated>
+    </task>
+    <task id="LOCAL-00093" summary="发布行程时间修复">
+      <created>1550734648984</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1550734648985</updated>
+    </task>
+    <task id="LOCAL-00094" summary="购物车早餐优惠、防止连续点击接口请求代理、模版页入口页再逛逛icon、发布行程时间修正、是否首单接入、拨号异常提示">
+      <created>1551072079368</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1551072079369</updated>
+    </task>
+    <task id="LOCAL-00095" summary="新增分包： 帮人捎带主页_附近求捎带者 页面">
+      <created>1551080466207</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1551080466207</updated>
+    </task>
+    <task id="LOCAL-00096" summary="找人捎带">
+      <created>1551146355334</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1551146355335</updated>
+    </task>
+    <task id="LOCAL-00097" summary="找人捎带">
+      <created>1551146595807</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1551146595807</updated>
+    </task>
+    <task id="LOCAL-00098" summary="找人捎带">
+      <created>1551947539135</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1551947539136</updated>
+    </task>
+    <task id="LOCAL-00099" summary="找人捎带 修复">
+      <created>1551954854447</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1551954854448</updated>
+    </task>
+    <task id="LOCAL-00100" summary="找人捎带 修复">
+      <created>1552031154333</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1552031154333</updated>
+    </task>
+    <task id="LOCAL-00101" summary="找人捎带 修复">
+      <created>1552284680985</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1552284680986</updated>
+    </task>
+    <task id="LOCAL-00102" summary="找人捎带 修复">
+      <created>1552300570865</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1552300570865</updated>
+    </task>
+    <task id="LOCAL-00103" summary="找人捎带 修复">
+      <created>1552368848011</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1552368848012</updated>
+    </task>
+    <task id="LOCAL-00104" summary="找人捎带 修复">
+      <created>1552380300301</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1552380300301</updated>
+    </task>
+    <task id="LOCAL-00105" summary="找人捎带 修复">
+      <created>1552468437430</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1552468437431</updated>
+    </task>
+    <task id="LOCAL-00106" summary="找人捎带 修复">
+      <created>1552468763004</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1552468763004</updated>
+    </task>
+    <task id="LOCAL-00107" summary="迭代版本">
+      <created>1553136050464</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1553136050465</updated>
+    </task>
+    <task id="LOCAL-00108" summary="本地数据读取改为异步读取">
+      <created>1553140276496</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1553140276497</updated>
+    </task>
+    <task id="LOCAL-00109" summary="帮人捎带增加数据缓存">
+      <created>1553146711618</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1553146711618</updated>
+    </task>
+    <task id="LOCAL-00110" summary="修复">
+      <created>1553224640414</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1553224640415</updated>
+    </task>
+    <task id="LOCAL-00111" summary="修复">
+      <created>1553237396878</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1553237396879</updated>
+    </task>
+    <task id="LOCAL-00112" summary="修复">
+      <created>1553238461469</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1553238461469</updated>
+    </task>
+    <task id="LOCAL-00113" summary="修复">
+      <created>1553241017160</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1553241017160</updated>
+    </task>
+    <task id="LOCAL-00114" summary="修复">
+      <created>1553241089164</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1553241089164</updated>
+    </task>
+    <task id="LOCAL-00115" summary="修复">
+      <created>1553485570007</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1553485570007</updated>
+    </task>
+    <task id="LOCAL-00116" summary="修复">
+      <created>1553487444192</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1553487444192</updated>
+    </task>
+    <task id="LOCAL-00117" summary="修复">
+      <created>1553505533397</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1553505533397</updated>
+    </task>
+    <task id="LOCAL-00118" summary="修复">
+      <created>1553506704361</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1553506704361</updated>
+    </task>
+    <task id="LOCAL-00119" summary="修复">
+      <created>1553590872736</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1553590872736</updated>
+    </task>
+    <task id="LOCAL-00120" summary="修复">
+      <created>1553665602931</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1553665602931</updated>
+    </task>
+    <task id="LOCAL-00121" summary="修复">
+      <created>1553666606064</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1553666606064</updated>
+    </task>
+    <task id="LOCAL-00122" summary="修复">
+      <created>1553667056925</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1553667056925</updated>
+    </task>
+    <task id="LOCAL-00123" summary="修复">
+      <created>1553757991794</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1553757991797</updated>
+    </task>
+    <task id="LOCAL-00124" summary="修复">
+      <created>1553758365433</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1553758365433</updated>
+    </task>
+    <task id="LOCAL-00125" summary="修复">
+      <created>1553758918173</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1553758918173</updated>
+    </task>
+    <task id="LOCAL-00126" summary="修复">
+      <created>1553760526792</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1553760526792</updated>
+    </task>
+    <task id="LOCAL-00127" summary="修复">
+      <created>1553762947908</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1553762947908</updated>
+    </task>
+    <task id="LOCAL-00128" summary="修复">
+      <created>1553764592944</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1553764592944</updated>
+    </task>
+    <task id="LOCAL-00129" summary="Default Changelist">
+      <created>1554196929864</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1554196929864</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Default Changelist">
+      <created>1554258346117</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1554258346117</updated>
+    </task>
+    <task id="LOCAL-00131" summary="帮人捎带首页添加参数 默认3000米范围">
+      <created>1554259057647</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1554259057647</updated>
+    </task>
+    <task id="LOCAL-00132" summary="修复">
+      <created>1554711962148</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1554711962149</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
+    <option name="totallyTimeSpent" value="80043000" />
+=======
+    <option name="totallyTimeSpent" value="78885000" />
+>>>>>>> Stashed changes
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14728682" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.36242425" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32848486" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.4566265" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14735337" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.3626506" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.4566265" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="行程随机红包提测版" />
+    <MESSAGE value="行程随机红包提测版+ 提现输入类型修复+ 新增地址手机号输入类型修复" />
+    <MESSAGE value="行程随机红包提测版 修复" />
+    <MESSAGE value="行程随机红包上线版" />
+    <MESSAGE value="早餐类分享文案配置" />
+    <MESSAGE value="埋点配置" />
+    <MESSAGE value="店铺详情：店铺环境图片修复" />
+    <MESSAGE value="新增埋点" />
+    <MESSAGE value="早餐类折扣标签，平台返利修改" />
+    <MESSAGE value="放开埋点测试" />
+    <MESSAGE value="全局信息配置文件重构" />
+    <MESSAGE value="早餐类、平台返利接入、部分优化" />
+    <MESSAGE value="全局信息配置文件重构优化：单例模式 结合 构造函数模式" />
+    <MESSAGE value="店铺类型wx:for,key指定，交互优化，早餐类地图icon调整" />
+    <MESSAGE value="发布行程时间修复" />
+    <MESSAGE value="购物车早餐优惠、防止连续点击接口请求代理、模版页入口页再逛逛icon、发布行程时间修正、是否首单接入、拨号异常提示" />
+    <MESSAGE value="新增分包： 帮人捎带主页_附近求捎带者 页面" />
+    <MESSAGE value="找人捎带" />
+    <MESSAGE value="找人捎带 修复" />
+    <MESSAGE value="迭代版本" />
+    <MESSAGE value="本地数据读取改为异步读取" />
+    <MESSAGE value="帮人捎带增加数据缓存" />
+    <MESSAGE value="Default Changelist" />
+    <MESSAGE value="帮人捎带首页添加参数 默认3000米范围" />
+<<<<<<< Updated upstream
+    <MESSAGE value="修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="帮人捎带首页添加参数 默认3000米范围" />
+>>>>>>> Stashed changes
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/packageTrip/detail/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4137">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageShare/in/trip-tip/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="95" column="13" selection-start-line="93" selection-start-column="12" selection-end-line="95" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageWallet/list/voucher/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageWallet/list/voucher/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/order.status.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/fixed-bar-shopping-card/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="156" selection-start-line="7" selection-start-column="141" selection-end-line="7" selection-end-column="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/fixed-bar-shopping-card/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/pay-card/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/pay-card/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/sdai/image/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/store.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.wxss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/wxss/base.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-61" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/shop.configs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/global.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/order.tip.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/tmplmsg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/trip.tip.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageFindWith/near/index.wxml" />
+    <entry file="file://$PROJECT_DIR$/packageTrip/add/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageOrder/list/trip/index.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/order-card-list-trip/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/Array.extends.class.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/behavior.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/config.class.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workers/search.city.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageOrder/detail/with-auto/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1589">
+          <caret line="177" column="37" lean-forward="true" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageOrder/detail/with-auto/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="110" column="73" lean-forward="true" selection-start-line="110" selection-start-column="73" selection-end-line="110" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/url.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="86" column="19" selection-start-line="86" selection-start-column="2" selection-end-line="86" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-help/shop-detail/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="51" lean-forward="true" selection-start-column="51" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-help/shop-detail/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-auto/shop-detail/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1282">
+          <caret line="104" column="10" lean-forward="true" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/couple-block-simple/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-auto/shop-detail/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/couple-block-simple/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-560">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/wx.request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="176" column="35" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/wx.capacity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="67" column="21" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-help/shop-list/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="162" column="108" selection-start-line="162" selection-start-column="104" selection-end-line="162" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-help/index/index.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="126" column="9" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-help/index/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="128" selection-start-line="65" selection-start-column="128" selection-end-line="65" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-help/shop-list/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4013">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageOrder/list/trip/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageOrder/list/trip/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageTrip/detail/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1072">
+          <caret line="468" column="2" lean-forward="true" selection-start-line="468" selection-start-column="2" selection-end-line="468" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-auto/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="107" column="6" lean-forward="true" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1401">
+          <caret line="43" column="51" lean-forward="true" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="52" column="54" lean-forward="true" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-user/index/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="76" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/with-help/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

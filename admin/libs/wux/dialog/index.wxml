@@ -1,0 +1,23 @@
+<wux-popup visible="{{ in }}" z-index="{{ zIndex }}" closable="{{ closable }}" mask="{{ mask }}" mask-closable="{{ maskClosable }}" bind:close="onClose" bind:closed="onClosed">
+    <view slot="header" style="font-size: 30rpx">{{ title }}</view>
+    <view class="text-center">
+        <text class="text-left" style='font-size: 24rpx;font-weight: 400 !important;display:inline-block;line-height: 1.5; padding-bottom: 1em; color: rgb(112,112,112)'>{{ content }}</text>
+        <view class="wux-popup__input-container" wx:if="{{ prompt }}">
+            <label>
+                <input type="{{ prompt.fieldtype }}" class="wux-popup__input" value="{{ prompt.response }}" password="{{ prompt.password }}" placeholder="{{ prompt.placeholder }}" maxlength="{{ maxlength }}" bindinput="bindinput" />
+            </label>
+        </view>
+    </view>
+    <view slot="footer" class="wux-popup__buttons {{ verticalButtons ? 'wux-popup__buttons--vertical' : 'wux-popup__buttons--horizontal' }}">
+        <block wx:for="{{ buttons }}" wx:for-item="button" wx:key="">
+            <view
+                class="wux-popup__button {{ 'wux-popup__button--' + (button.type || 'default') }} {{ button.bold ? 'wux-popup__button--bold' : '' }}"
+                hover-class="wux-popup__button--hover"
+                data-index="{{ index }}"
+                bindtap="buttonTapped"
+            >
+                  <text class="" style="font-size: 30rpx">{{ button.text }}</text>
+            </view>
+        </block>
+    </view>
+</wux-popup>

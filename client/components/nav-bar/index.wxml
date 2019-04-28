@@ -1,0 +1,47 @@
+<layout-footer background='#fff'>
+
+    <view class="nav-bar text-center flex flex-pack-around flex-align-center f-11 {{fullSen ? 'fullSen' : ''}}">
+    <!-- <view class="flex-1 bav-bar-item {{activeindex== 'with-auto' ? 'color-red' : ''}}"
+        catchtap='hrefgo' data-url="/pages/with-user/index/index"
+    >
+        交易流水
+    </view> -->
+    <view class="flex-1 bav-bar-item {{activeindex== 'with-auto' ? 'color-success' : ''}}"
+        catchtap='hrefgo' data-url="/pages/with-auto/index/index"
+    >
+        <image class="rel" src="./../../assets/images/{{activeindex== 'with-auto' ? 'icon_tab_zsd_s' : 'icon_tab_zsd_n'}}@2x.png" >
+        <text wx:if="{{labels[0]}}" class="abs label">{{labels[0]}}</text>
+        </image>
+        <view>找人捎带</view> 
+    </view>
+
+    <view class="flex-1 bav-bar-item {{activeindex== 'with-help' ? 'color-success' : ''}}"
+        catchtap='hrefgo' data-url="/pages/with-help/index/index"
+    >
+
+        <cover-image wx:if="{{shownative}}" class="rel middleimg middle" src="./../../assets/images/{{activeindex== 'with-help' ? 'icon_tab_bsd_s' : 'icon_tab_bsd_n'}}@2x.png" style="margin-left: 56rpx;">
+        <cover-view wx:if="{{labels[0]}}" class="abs label">{{labels[0]}}</cover-view>
+        </cover-image>
+
+        <image wx:else class="rel middleimg middle" src="./../../assets/images/{{activeindex== 'with-help' ? 'icon_tab_bsd_s' : 'icon_tab_bsd_n'}}@2x.png" >
+        <text wx:if="{{labels[0]}}" class="abs label">{{labels[0]}}</text>
+        </image>
+
+        <view>帮人捎带</view> 
+    </view>
+
+    
+
+
+    <view class="flex-1 bav-bar-item {{activeindex== 'with-user' ? 'color-success' : ''}}"
+        catchtap='hrefgo' data-url="/pages/with-user/index/index"
+    >
+        <image mode='' class="rel" src="./../../assets/images/{{activeindex== 'with-user' ? 'icon_tab_my_s' : 'icon_tab_my_n'}}@2x.png" >
+        <text wx:if="{{labels[1]}}" class="abs label">{{labels[1]}}</text>
+        </image>
+        <view>我的</view> 
+        
+    </view>
+    </view>
+
+</layout-footer>

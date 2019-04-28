@@ -1,0 +1,66 @@
+<view class="min-full bg-write {{shopList.length ? 'page-in' : 'opacity'}}">
+
+  <view class="bg-write f-17 padded-16 padded-t-12 bold">
+    <view bindtap='actionsheetShow'>
+      {{ shopList[shopIndex].shopName }} <text class="iconfont icon-ios-arrow-down f-17 color-light"></text>
+    </view>
+  </view>
+
+  <view class="padded-t-8 bg-summary"></view>
+
+  <view class="tabs-bar rel bg-write">
+    <view class="rel" style="z-index: 1">
+      <wux-tabs default-current="1" bind:change="ontabChange">
+        <wux-tab key="1" title="在售商品"></wux-tab>
+        <wux-tab key="0" title="已下架商品"></wux-tab>
+      </wux-tabs>
+    </view>
+  </view>
+
+  <view class="bg-write padded-l-16 padded-r-16 padded-t-12 padded-b-4 has-fixed-bottom{{ $state.fullSen ? '-fullSen' : ''}}">
+    <view class="flex flex-align-center flex-pack-justify">
+      <text class="bold f-17">
+      <!-- 修改商品信息 -->
+      </text>
+      <text wx:if="{{goodsList.length}}" bindtap='choseAll' class="f-13 color-blue">批量选择{{tabChose== 1 ? '下' : '上'}}架</text>
+    </view>
+
+    <view class="goods-block flex flex-align-center flex-pack-justify" wx:for="{{goodsList}}" wx:key="{{index}}">
+      <view class="flex-1">
+        <cm-goods-block data="{{item}}"></cm-goods-block>
+      </view>
+      <view class="oper-right flex flex-align-center flex-pack-justify f-17">
+        <text catchtap='editHandel' data-index="{{index}}" data-spuId="{{item.spuId}}" data-id="{{shopList[shopIndex].id}}" class="iconfont icon-xiugai color-success"></text>
+        <text catchtap='choseGoodsHandel' data-index="{{index}}" class="iconfont {{item.chose ? 'icon-duoxuan color-blue' : 'icon-danxuanweixuanzhong color-light'}}" style="font-size: 1.2em;"></text>
+      </view>
+    </view>
+
+    <view class="padded-t-12">
+      <i-load-more wx:if="{{loadmore== 2}}" tip="暂无更多数据" loading="{{ false }}" />
+    </view>
+    <view wx:if="{{loadmore== 3}}" class="margin-t-16 padded-16 text-center color-light f-11">
+      <no-data-placeholder placeholder="还没有商品哟~" 
+        image="./../../assets/images/picHintNog@2x.png" 
+        buttontext="新增商品"
+        href="/pages/goods/add/index?id={{shopList[shopIndex].id}}"
+        />
+    </view>
+
+  </view>
+  
+
+  <cm-fixed-bar wx:if="{{tabChose== 1}}">
+    <view class="fixed-item f-14" bindtap='href' data-url="/pages/goods/add/index?id={{shopList[shopIndex].id}}">新增商品</view>
+    <view catchtap='downGoodsGroup' class="fixed-item f-14">批量下架</view>
+  </cm-fixed-bar>
+
+  <cm-fixed-bar wx:if="{{tabChose== 0}}">
+    <view catchtap='upGoodsGroup' class="fixed-item f-14" style="width: 100%;">批量上架</view>
+  </cm-fixed-bar>
+
+</view>
+
+<wux-dialog id="wux-dialog"></wux-dialog>
+
+<wux-select id="wux-select" />
+<wux-toptips id="wux-toptips" />

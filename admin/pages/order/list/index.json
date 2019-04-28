@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "订单管理",
+  "usingComponents": {
+    "wux-tabs": "/libs/wux/tabs/index",
+    "wux-tab": "/libs/wux/tab/index",
+    "cm-order-goods-bar": "/components/order-goods-bar/index",
+    "no-data-placeholder": "/components/no-data-placeholder/index",
+    "wux-select": "/libs/wux/select/index"
+  }
+}

@@ -1,0 +1,87 @@
+.shop-card{
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .1);
+  border-radius: 20rpx;
+  min-height: 200rpx;
+  margin-bottom: 24rpx;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+.shop-card:last-child{
+    margin-bottom: 0;
+}
+
+.shop-goods-swiper{
+  white-space: nowrap;
+}
+.shop-goods-swiper .shop-goods{
+  display: inline-block;
+}
+.shop-goods-swiper .goods-pic{
+  width: 192rpx;
+  height: 144rpx;
+  margin: 0 8rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.shop-goods-swiper .shop-goods:first-child
+{
+  margin-left: 28rpx;
+}
+.shop-goods-swiper .shop-goods:last-child{
+  margin-right: 28rpx
+}
+.shop-goods-swiper .goods-name{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,.3);
+  padding: 4rpx 6rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.shop-goods-swiper .goods-note{
+  left: 0;
+  top: 0;
+  padding: 4rpx 6rpx;
+}
+.shop-goods-swiper .goods-price{
+  margin: 0 16rpx;
+}
+.shop-goods-swiper .old-price{
+  font-size: .9em;
+  position: relative;
+  display: inline-block;
+}
+.shop-goods-swiper .old-price::after{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-top: 1rpx solid #bbb;
+  content: "";
+  display: block;
+  width: 100%;
+}
+.couple-bar .hr-line{
+  border-top: 1rpx solid rgb(224,223,224);
+}
+
+.couple-bar .couple-btn{
+  width: 196rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 56rpx;
+}
+
+.address{
+  max-width: 340rpx;
+}
+
+.avatar-bar-box{
+  /* margin-left: -12rpx; */
+}
+.f-16{ font-size: 32rpx; }
+
+.shop-logo-image{
+  width: 128rpx;
+  height: 128rpx;
+}

@@ -1,0 +1,32 @@
+.top-address{
+  min-height: 160rpx;
+  color: #666;
+  border-top: 1rpx solid rgb(224,224,224);
+}
+.slider{
+  width: 450rpx;
+  display: inline-block;
+  top: 34rpx;
+}
+.slider-number{
+  width: 175rpx;
+  display: inline-block;
+}
+textarea{
+  width: 100%;
+}
+
+.notice-bar{
+  background: rgb(250, 255, 250);
+  color: rgb(117,117,117);
+  bottom: 108rpx;
+  left: 0;
+  width: 100%;
+}
+.notice-bar.fullSen{
+  bottom: 160rpx;
+}
+
+.icon-chose{
+  font-size: 40rpx;
+}

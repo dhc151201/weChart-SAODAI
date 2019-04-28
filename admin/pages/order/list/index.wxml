@@ -1,0 +1,96 @@
+<view class="bg-write min-full">
+
+  <view class="bg-write tabs flex">
+    <!-- <view class="flex flex-pack-justify flex-align-center">
+      <view class="padded-l-16 padded-t-4 padded-b-8 f-13">嗲铺</view>
+    </view> -->
+    
+    <wux-tabs class="flex-1" default-current="tab1" bind:change="ontabChange">
+      <wux-tab key="2" title="新订单"></wux-tab>
+      <wux-tab key="5" title="已完成"></wux-tab>
+      <wux-tab key="6" title="已取消"></wux-tab>
+    </wux-tabs>
+
+    <view wx:if="{{shoplist.length}}" class="other-shop flex flex-align-center text-center" bindtap="openPickerShops">
+        其他店铺 <text class="iconfont icon-ios-arrow-down"></text>
+    </view>
+
+  </view>
+
+  <view style='padding-top: 110rpx;'></view>
+
+  <view class="padded-16 padded-t-12 padded-b-12">{{shoplist[shopIndex].shopName}}</view>
+
+  <wux-refresher id="wux-refresher" bind:pulling="onPulling" bind:refresh="onRefresh">
+
+    <view class=" padded-l-16 padded-r-16">
+
+      <view wx:for="{{orderList}}" wx:key="{{index}}" class="bg-write padded-l-16 padded-r-16 f-14 order-box margin-b-12" 
+        bindtap='href' data-url="/pages/order/detail/index?mainOrderId={{item.mainOrderId}}&shopId={{shoplist[shopIndex].id}}&sourceType={{item.sourceType}}"
+        >
+
+        <block wx:if="{{item.sourceType== 1}}">
+          <view class="padded-t-16 padded-b-16 flex flex-pack-justify flex-align-center order-top-bar">
+            <image mode='aspectFill' src="{{item.incidentallyUserInfo.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/85" class="head-pic margin-r-8"></image>
+            <view class="flex-1">
+              <view class="">{{item.incidentallyUserInfo.incidentallyName}}</view>
+              <view class="f-11 color-light">预计提货时间：{{item.incidentallyUserInfo.takeDeliveryTime}}</view>
+            </view>
+            <view class="phone-handel text-center" catchtap='makePhoneCall' data-phone="{{item.incidentallyUserInfo.phone}}">
+              <text class="iconfont icon-tubiao210 f-17 color-success"></text>
+            </view>
+          </view>
+        </block>
+        <block wx:elif="{{item.orderStatus != 6}}" >
+          <view class="padded-t-16 padded-b-16 flex flex-pack-justify flex-align-center order-top-bar">
+            <view class="flex-1">
+              <view class="">待接单</view>
+              <view class="f-11 color-light">期望送达时间：{{item.arriveTime}}</view>
+            </view>
+            <view class="phone-handel text-center color-success" style="width: 100rpx;" catchtap='accept' data-orderId="{{item.mainOrderId}}">
+              去接单
+            </view>
+          </view>
+        </block>
+        
+
+        <view class="padded-t-12 padded-b-4 f-11 color-light">买家：{{item.userInfo.userName}}</view>
+
+        <view class="margin-t-12 margin-b-12" wx:for="{{item.userInfo.skuInfos}}" wx:key="{{index}}">
+          <cm-order-goods-bar data="{{item}}"></cm-order-goods-bar>
+        </view>
+
+        <view class="padded-t-4 margin-b-12 goods-line-bottom"></view>
+
+        <view class="f-11 color-light margin-b-8">订单号：{{item.mainOrderNo}}</view>
+
+        <view class="f-14 flex flex-pack-justify flex-align-center padded-b-16">
+          <view>共 <text class="color-error bold">{{item.totalCount}}</text> 件</view>
+          <view>合计 
+            <text class="color-error padded-l-4">¥<text class="order-money bold">{{item.totalAmount}}</text></text>
+          </view>
+        </view>
+
+      </view>
+
+      <view class="padded-t-12">
+        <i-load-more wx:if="{{loadmore== 2}}" tip="暂无更多数据" loading="{{ false }}" />
+      </view>
+      <view wx:if="{{loadmore== 3}}" class="margin-t-16 padded-16 text-center color-light f-11">
+        <no-data-placeholder placeholder="还没有订单哟~" 
+        image="./../../assets/images/picHintNog@2x.png"
+        />
+      </view>
+
+  </view>
+
+  <view class="has-fixed-bottom{{ $state.fullSen ? '-fullSen' : ''}}"></view>
+
+  </wux-refresher>
+
+</view>
+
+<wux-dialog id="wux-dialog"></wux-dialog>
+
+<cm-nav-bar></cm-nav-bar>
+<wux-select id="wux-select" />

@@ -1,0 +1,7 @@
+swiper image{
+  width: 100%;
+  height: 100%;
+}
+.base-swiper image{
+  border-radius: 0 !important;
+}

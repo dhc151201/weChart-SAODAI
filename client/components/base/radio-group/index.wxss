@@ -1,0 +1,17 @@
+.block-false{
+  /* display: inline-block; */
+  margin: 10rpx;
+}
+.block-false:first-child{
+  margin-left: 0;
+}
+.block-false:last-child{
+  margin-right: 0;
+}
+
+.cm-radio-group .iconfont{
+  margin-right: 6rpx;
+}
+.cm-radio-group{
+  flex-wrap:  wrap;
+}

@@ -1,0 +1,71 @@
+page{
+  width: 100vw;
+  overflow-x: hidden;
+}
+.box, .bg{
+  width: 100%;
+  height: 160.8vw;
+  overflow-x: hidden;
+}
+.box-long, .bg-long{
+  width: 100%;
+  height: 196.57vw;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+}
+.bg{
+  left: 0;
+  z-index: -1
+}
+
+.bottom-texts{
+  bottom: 46rpx;
+  left: 0;
+  width: 100%;
+  color: rgb(119, 95, 43);
+  z-index: 10;
+}
+.bottom-texts.longImage{
+  bottom: 120rpx;
+}
+
+.btn{
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  display: inline-block;
+  width: 480rpx;
+  height: 136rpx;
+}
+
+.code{
+  display: block;
+  left: calc(50% - 80rpx);
+  bottom: 310rpx;
+  width: 160rpx;
+  height: 160rpx;
+  z-index: 3;
+}
+.code.longImage{
+  bottom: 450rpx;
+}
+
+.canvas{
+  left: 200vw;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: calc(1 * 160.8vw);
+}
+.canvas.long{
+  height: calc(1 * 196.57vw);
+}
+
+.gosetting{
+  border: 0 none;
+  background: transparent;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+      "cm-envelope": "/components/envelope/envelope",
+      "cm-mask": "/components/base/mask/index"
+  }
+}

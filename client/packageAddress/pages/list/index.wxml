@@ -1,0 +1,42 @@
+<view class="container min-full has-fixed-bottom padded-l-16 padded-r-16 padded-t-4">
+
+  <view class="list-box">
+    <view class="list-margin-padded">
+      <!-- list -->
+      <block>
+        <view class="list flex flex-pack-justify flex-align-center bg-write margin-t-12 margin-b-12 padded-16" wx:for="{{list}}" wx:key="{{index}}" bindtap="chose" data-index="{{index}}">
+
+          <view class="flex-1">
+
+            <view class="left bold">
+              <text class="f-3 padded-r-4">{{item.receiveName}}</text>
+              <text class="padded-l-16">{{item.receivePhone}}</text>
+            </view>
+
+            <view class="color-light f-13">{{item.receiveAddress + item.houseNo}}</view>
+          </view>
+
+          <text class="edit rel padded-l-16 margin-l-8" catchtap="edit" data-index="{{index}}">
+            <text class="iconfont icon-xiugai color-success f-20"></text>
+          </text>
+            
+          
+
+        </view>
+      </block>
+      <!-- 搜索结果提示 -->
+      <view wx:if="{{!list.length && !spinShow}}" style="padding-top: 25vh;">
+          <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无收货地址哟~" image="./../../assets/images/img_noorders@2x.png" />
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view bindtap='href' data-url="/packageAddress/pages/add/index">
+  <cm-fixed-bar >新增收货地址</cm-fixed-bar>
+</view>
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+

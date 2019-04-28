@@ -1,0 +1,14 @@
+<view class="goods-list-left f-14" >
+  <view class="flex flex-align-center flex-pack-justify">
+    <view class="pic">
+      <cm-loading-image width="144rpx" height="144rpx" radius="" src="{{data.headImage}}?imageView2/1/w/100/h/100/q/85"></cm-loading-image>
+    </view>
+    <view class="flex-1 flex flex-v flex-pack-justify right-bar">
+      <view class="">{{data.spuName}}</view>
+      <view style="line-height: 1.1;">
+        <text class="new-price color-success f-17 margin-r-12">¥{{data.salePrice}}</text>
+        <text wx:if="{{ data.salePrice < data.originPrice }}" class="old-price color-light f-13 rel">¥{{data.originPrice}}</text>
+      </view>
+    </view>
+  </view>
+</view>

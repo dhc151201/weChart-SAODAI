@@ -1,0 +1,14 @@
+.list{
+  border-radius: 16rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,0.05);
+}
+
+.edit::before{
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 6rpx;
+  height: 50rpx;
+  border-left: 1rpx solid rgb(224,224,224);
+}

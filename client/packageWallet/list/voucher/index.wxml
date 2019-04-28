@@ -1,0 +1,72 @@
+<import src="./../../../templates/load.more.wxml" />
+
+<view class="fix bg-write" style="width: 100%; z-index: 100;">
+    <wux-tabs defaultCurrent="{{tabChose}}" bindchange="tabChange">
+        <wux-tab key="money" title="现金红包{{moneyTotalCount ? '('+ moneyTotalCount + ')' : ''}}"></wux-tab>
+        <wux-tab key="card" title="商品券"></wux-tab>
+    </wux-tabs>
+</view>
+
+
+<view style="padding-top: 88rpx;"></view>
+
+<block wx:if="{{tabChose== 'money'}}">
+    <view class="flex flex-pack-justify flex-align-center" >
+        <view class="padded-16 padded-b-12">
+            累计领取红包 <text class="f-16 color-error">¥{{moneyTotalAmount || 0}}</text>   
+        </view>
+        <view class="padded-16 padded-b-12 color-light" bindtap="showOtherStatus">
+            {{status[statusIndex]}} <text class="iconfont icon-ios-arrow-down f-16"></text>   
+        </view>
+    </view>
+
+    <view wx:for="{{list}}" wx:key="{{item.id}}" class="money-list border-box rel ">
+
+        <image class="abs bg" src="{{$state.assetsUrl}}bg_coupons_w@2x.png" mode="scaleToFill" lazy-load="true" />
+        <image class="abs left-top-type" src="{{$state.assetsUrl}}img_coupons_hbxj@2x.png" mode="aspectFill" />
+          
+        <view class="flex flex-pack-justify flex-align-center">
+            <view class="color-error">
+                <text wx:if="{{item.cashAmount>0}}">¥<text class="number color-error">{{item.cashAmount}}</text></text>
+                <text wx:else ><text class="number color-error">*.**</text></text>
+                <view class="color-grey f-13 margin-b-12">{{item.cashName}}</view>
+                <view class="color-light f-11">有效期 <cm-time time="{{item.effectiveStartTime}}" /> 至 <cm-time time="{{item.effectiveEndTime}}" /></view>
+            </view>
+            <cm-loading-image width="128rpx" height="128rpx" src="{{$state.assetsUrl+ statusImage[item.status]}}?imageView2/1/w/128/h/128/q/100" radius="10"/>
+        </view>
+    </view>
+    <view wx:if="{{loadmore== 3}}" style="padding-top: 20vh;">  
+        <no-data-placeholder
+            imagewidth="324"
+            imageheight="150"
+            placeholderSmiple="暂时没有现金红包哟~"
+            image="./../../assets/images/img_noorders@2x.png"
+        />
+    </view>
+    <template is="loadmore" data="{{status: loadmore}}"/>
+      
+</block>
+<block wx:else>
+    <view style="padding-top: 20vh;">  
+        <no-data-placeholder
+            imagewidth="324"
+            imageheight="150"
+            placeholderSmiple="暂时没有可用商品券哟~"
+            image="./../../assets/images/img_noorders@2x.png"
+        />
+    </view>
+
+</block>
+
+
+  
+
+<layout-body />
+
+
+<wux-select id="wux-select" />
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+<cm-side-to-index wx:if="{{share== 'true'}}" id="side-to-index" zindex="200" bottom="100" right="8" />

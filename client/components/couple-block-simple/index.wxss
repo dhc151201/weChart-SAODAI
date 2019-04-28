@@ -1,0 +1,40 @@
+@import './../../assets/wxss/base.wxss';
+@import './../../assets/iconfont/iconfont.wxss';
+
+.couple-tit{
+  border-bottom: 1rpx solid rgb(224,224,224);
+  
+}
+.couple-bar{
+  margin: 40rpx 0;
+}
+.couple-bar:not(:last-child){
+  margin-bottom: 48rpx;
+}
+.couple-pic{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 72rpx;
+  border: 4rpx solid rgb(224,224,224);
+}
+.couple-btn{
+  width: 144rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 56rpx;
+  margin: 0;
+  padding: 0;
+  font-size: 26rpx;
+  white-space: nowrap;
+}
+.couple-from-to{
+  width: 260rpx;
+}
+.couple-from,
+.couple-to{
+  width: calc(50% - 16rpx)
+}
+
+.user-name{
+  width: 140rpx;
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "添加商品",
+  "navigationBarBackgroundColor": "#ffffff",
+  "usingComponents": {
+    "wux-icon": "/libs/wux/icon/index",
+    "cm-upload": "/components/upload/index",
+    "cm-radio-group": "/components/base/radio-group/index",
+    "cm-actionsheet": "/components/base/actionsheet/index"
+  }
+}

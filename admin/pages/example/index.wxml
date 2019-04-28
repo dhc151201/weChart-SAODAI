@@ -1,0 +1,20 @@
+<view class="padded-t-8 padded-r-16 padded-b-8 padded-l-16 f-14 bg-write min-full">
+  <view class="padded-t-12 padded-b-12">上传示例：{{title}}</view>
+
+  <view class="img-box padded-12">
+    <image wx:for="{{imageList}}" mode='aspectFit'
+      style="width: {{item.width ? item.width+ 'rpx' : '100%'}}; height: {{item.height ? item.height+ 'rpx' : '200rpx'}}"
+     src="{{ $state.assetsUrl }}{{ item.src }}"></image>
+  </view>
+
+  <view class="padded-t-12 padded-b-12 color-grey">
+    <view wx:for="{{summaryList}}">{{item}}</view> 
+  </view>
+
+  <view class="padded-b-16" style="padding-top: 65rpx;">
+    <view bindtap='navigateBack' hover-class="hover-class" class="btn btn-block btn-lg bg-success-ease">已经了解，去上传</view>
+  </view>
+
+</view>
+
+ <wux-dialog id="wux-dialog"></wux-dialog>

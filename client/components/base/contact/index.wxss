@@ -1,0 +1,12 @@
+button.contact{
+    display: inline;
+    border: 0 none;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    background: transparent;
+}
+button.contact::before,
+button.contact::after{
+    display: none;
+}

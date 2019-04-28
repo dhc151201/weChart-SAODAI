@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "设置捎带信息",
+  "usingComponents": {
+    "wux-slider": "/libs/wux/slider/index",
+    "wux-select": "/libs/wux/select/index",
+    "cm-fixed-bar-text": "/components/fixed-bar-text/index",
+    "wux-textarea": "/libs/wux/textarea/index",
+    "cm-picker": "/components/base/picker/index",
+    "van-datetime-picker": "/libs/vant/datetime-picker/index",
+    "cm-textearea": "/components/base/textearea/index"
+  }
+}

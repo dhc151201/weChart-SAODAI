@@ -1,0 +1,44 @@
+<!-- 找人捎带店铺详情页 捎带简约列表 -->
+
+<view class="couple-box padded-l-16 padded-r-16 padded-b-4 bg-write f-13">
+
+    <view class="flex flex-pack-justify flex-align-center padded-t-16 padded-b-12 couple-tit" bindtap="more" data-id="{{shopId}}" >
+      <text class="f-13 bold">{{ allNum || list.length}}人正在{{from== 'help' ? '求' : ''}}捎带</text>
+      <view class="iconfont icon-ios-arrow-forward color-light"></view>
+    </view>
+
+    <view wx:for="{{_list}}" wx:key="{{index}}" class="flex flex-pack-justify flex-align-center couple-bar" 
+      bindtap="go" data-id="{{item.id}}">
+
+      <image mode='aspectFill' src="{{item.userInfo.wxAvatarUrl || item.memberImageUrl}}" class="couple-pic margin-r-8 border-box"></image>
+
+      <view class="padded-r-4 flex-1">
+        <view class="bold aui-ellipsis-1 user-name">{{item.userInfo.wxNickname}}</view>
+        <view class="color-light f-11">捎带费：<text class="color-success">{{item.crosscityCharge || item.tripAmount || 0}}</text> 元</view>
+      </view>
+
+      <view class="padded-r-4 couple-from-to">
+        <view class="aui-ellipsis-1">
+          <!-- <text class="couple-from aui-ellipsis-1">自贡</text>
+          <text>i</text>
+          <text class="couple-to aui-ellipsis-1">乌鲁木齐</text> -->
+          <text class="color-grey padded-r-4">至</text>{{item.destCityName}}
+        </view>
+        <view class="color-light f-11">送达时间:{{item.arriveTime}}</view>
+      </view>
+
+      <view wx:if="{{item.myTrip}}" style="width: 176rpx;"></view>
+      <block wx:else>
+          <view wx:if="{{from== 'help'}}">
+            <sd-button catchsubmit="go" reportSubmit data-id="{{item.orderId}}" formType="submit" size="smaller" width="176" type="success">帮他捎带</sd-button>
+          </view>
+          <button wx:else class="btn bg-success-ease couple-btn text-center color-write">
+            找TA捎带
+          </button>
+      </block>
+        
+      
+      
+    </view>
+
+  </view>

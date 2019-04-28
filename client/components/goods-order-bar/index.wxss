@@ -1,0 +1,11 @@
+@import './../../assets/wxss/base.wxss';
+
+.goods-pic{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 8rpx;
+}
+
+.one-pay-number{
+  margin: 0 46rpx;
+}

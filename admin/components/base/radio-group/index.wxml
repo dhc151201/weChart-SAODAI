@@ -1,0 +1,10 @@
+<view class="cm-radio-group flex">
+  <view wx:for="{{list}}" wx:key="{{index}}" 
+  class="cm-radio flex flex-align-center {{block ? 'flex-pack-justify' : 'block-false'}}" 
+  data-index="{{index}}"
+  bindtap='onchange' style="min-width: {{width}}"
+  >
+    <text class="iconfont {{item.checked ? 'icon-danxuanxuanzhong color-success': 'icon-danxuanweixuanzhong'}} color-light f-17"></text>
+    <text>{{item.name}}</text>
+  </view>
+</view>

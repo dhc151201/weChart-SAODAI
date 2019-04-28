@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "邀请Ta开店",
+  "usingComponents": {
+    "cm-actionsheet": "/components/base/actionsheet/index",
+    "cm-side-to-index": "/components/side-to-index/index"
+  }
+}

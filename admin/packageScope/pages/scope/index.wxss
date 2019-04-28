@@ -1,0 +1,31 @@
+.bg-image{
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  border-radius: 0;
+}
+
+.login{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-top: 5vh;
+}
+.login-name{
+  margin-bottom: 56rpx;
+  top: -26rpx;
+}
+
+button{
+  /* border: 0 none; */
+  outline: none;
+  border-radius: 60rpx;
+  width: 622rpx;
+  height: 96rpx;
+  background: #fff;
+  border: 4rpx solid #333;
+}
+button::after, button::before{
+  display: none;
+}

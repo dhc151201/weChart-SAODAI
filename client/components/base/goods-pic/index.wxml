@@ -1,0 +1,7 @@
+<!-- 商品列表 下 商品图片组件 -->
+<view class="rel">
+  <cm-loading-image light width="{{width}}" height="{{height}}" src="{{src}}?imageView2/1/w/{{width}}/h/{{height}}/q/100" radius="{{raidus}}" />
+  <view wx:for="{{_note}}" wx:key="{{index}}" 
+    class="abs goods-note {{item.className}}"
+    >{{item.name}}</view>
+</view>

@@ -1,0 +1,17 @@
+@import "./../income/index.wxss";
+
+.top-line-v{
+    border-left: 1rpx solid #fff;
+    height: 80rpx;
+    width: 2rpx;
+}
+.btn-withdrawal{
+    background: rgb(255, 237, 184);
+    color: rgb(255, 172, 26) !important;
+    margin-top: 40rpx;
+    width: 70%;
+}
+.icon-summary{
+    color: rgb(255, 248, 228);
+    font-size: 30rpx;
+}

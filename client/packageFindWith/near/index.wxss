@@ -1,0 +1,67 @@
+/* packageFindWith/near/index.wxss */
+@import './../../assets/wxss/base.wxss';
+@import './../../assets/iconfont/iconfont.wxss';
+.section-m{
+  max-width: 330rpx;
+  /* top: 4rpx; */
+}
+.color-yellowishOrange {
+  color: #ffac1a;
+}
+.border-bot {
+  border-bottom: 1px solid #e0e0e0;
+}
+.padded-t-6 {
+  padding-top: 12rpx;
+}
+.order-box{
+  border-radius: 16rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,.05);
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+}
+.little-btn {
+  display: inline-block;
+  width: 160rpx;
+  height: 56rpx;
+  border-radius: 40rpx;
+  line-height: 56rpx;
+  margin-top: -8rpx;
+}
+.blue-bg {
+  background: #90cbf9;
+}
+.pink-bg {
+  background: #ff5e4b;
+  opacity: .4;
+}
+.blockstyle {
+  display: inline-block;
+  height: 34rpx;
+  line-height: 34rpx;
+  color: #fff;
+  padding: 0 12rpx;
+  border-radius: 16rpx;
+  margin-right: 8rpx;
+}
+.goods-num{
+  bottom: 0;
+  right: 0;
+  padding: 1rpx 6rpx;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  border-bottom-right-radius: 10rpx;
+}
+.font-style{
+  letter-spacing: 1rpx;
+  margin-top: 8rpx;
+}
+.icon-style {
+  width: 96rpx;
+  height: 40rpx;
+  margin-right: 8rpx;
+  vertical-align: middle;
+  margin-bottom: 8rpx;
+}

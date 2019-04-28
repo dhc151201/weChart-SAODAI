@@ -1,0 +1,66 @@
+.order-goods-panel{
+   
+
+}
+.address-box{
+    height: 144rpx;
+    color: #666;
+    border-top: 1rpx solid rgb(224,224,224);
+}
+.line-address{
+    height: 6rpx;
+    width: 100%;
+    background: #fff;
+}
+.icon-tianjia{
+    font-size: 50rpx !important;
+}
+.panel{
+    border-radius: 16rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0,0,0,.05);
+}
+.line{
+    border-top: 1rpx solid rgb(224,224,224);
+    padding-bottom: 18rpx;
+}
+.order-goods-panel .line{
+    padding-bottom: 0;
+}
+
+.label{
+    width: 160rpx;
+}
+
+.triper-bar{
+    padding-top: 36rpx;
+    padding-bottom: 36rpx;
+    border-top: 1rpx solid rgb(224,224,224);
+}
+.tripuserPhone::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50rpx;
+    border-left: 1rpx solid rgb(224,224,224);
+}
+
+.order-status-bg,
+.order-status-bar{
+    height: 144rpx;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.btn{
+    width: 240rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    line-height: 80rpx;
+    margin: 10rpx 30rpx;
+  }
+  .number{
+    font-size: 40rpx;
+    top: 2rpx;
+  }

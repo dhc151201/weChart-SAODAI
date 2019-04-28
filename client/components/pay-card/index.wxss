@@ -1,0 +1,44 @@
+@import './../../assets/wxss/base.wxss';
+@import './../../assets/iconfont/iconfont.wxss';
+
+.icon-shanchu{
+  font-size: 40rpx;
+}
+.chose-list-box{
+  padding-bottom: 108rpx;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: transform 300ms;
+  z-index: 50;
+}
+.chose-list-box.fullSen{
+  padding-bottom: calc(108rpx + 56rpx);
+}
+.chose-list-box.show{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.chose-list-box .header{
+  background: rgb(240, 241, 246);
+}
+.chose-list-box .body{
+  max-height: 52.5vh;
+  overflow-y: auto;
+}
+.chose-list:not(:last-child){
+  border-bottom: 1rpx solid rgb(240, 241, 246);
+}
+.chose-list:last-child{
+  margin-bottom: 20rpx;
+}
+.old-price{
+  margin: 0 24rpx;
+}
+
+.new-price{
+  min-width: 120rpx;
+  margin-right: 50rpx;
+}

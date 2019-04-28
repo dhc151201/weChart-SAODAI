@@ -1,0 +1,66 @@
+<view class="tip-box text-center">
+    <!-- 正常红包 -->
+    <view wx:if="{{type== 'normal'}}" class="tip-body rel {{className}}" style='{{Style}}'>
+        <!-- close -->
+        <image wx:if="{{showClose}}" src="./../../assets/images/icon_popupw_close@2x.png" bindtap="closeTip" class="abs icon-close"></image>
+        <!-- bg -->
+        <image class="abs tip-bg" src="{{$state.assetsUrl}}img_Popupw-hb@2x.png?imageView2/1/w/560/h/580/q/100" ></image>
+        <!-- content -->
+        <view class="f-16 tip-title padded-t-8" >{{data.templateName || '邀请现金红包到账'}}</view>
+        <view class="tip-number color-error">¥<view class="number">{{data.amount}}</view></view>
+        <view class="f-13 tip-summery color-grey" >{{data.templateDesc || ''}}</view>
+        <!-- btn -->
+        <image bindtap="tipSure" class="tip-sure" src="{{$state.assetsUrl}}btn_Popupw_hb@2x.png?imageView2/1/w/400/h/88/q/100" ></image>
+    </view>
+
+    <!-- 长形红包 -->
+    <view wx:elif="{{type== 'large'}}" class="tip-body rel {{className}}" style='{{Style}}'>
+        <!-- close -->
+        <image wx:if="{{showClose}}" src="./../../assets/images/icon_popupw_close@2x.png" bindtap="closeTip" class="abs icon-close"></image>
+        <!-- bg -->
+        <image class="abs tip-bg" src="{{$state.assetsUrl}}bg_popupw_xchb@2x.png?imageView2/1/w/560/h/720/q/100" ></image>
+        <!-- content -->
+        <view class="f-16 tip-title padded-t-8" >{{data.templateName || '分享行程红包' }}</view>
+        <view class="tip-number color-error">
+            <!-- 最高 -->
+            <block wx:if="{{!data.id}}">
+                ¥<view class="number rel">10
+                    <image class="abs number-icon" src="{{$state.assetsUrl}}img_popupw_zgkl@2x.png"></image>
+                </view>
+            </block>
+            <!-- 未知? -->
+            <block wx:elif="{{data.status!= 3}}">
+                <image class="rel number-icon-help" src="{{$state.assetsUrl}}icon_xchb_random@2x.png"></image>
+            </block>
+            <!-- 具体数值 -->
+            <block wx:else>
+                ¥<view class="number">{{data.amount}}</view>
+            </block>
+        </view>
+        <view class="f-13 tip-summery color-grey padded-l-8 padded-r-8" >{{data.templateDesc || '每日首次发捎带行程,领现金红包'}}</view>
+        <!-- btn -->
+        <image bindtap="tipSure" class="btn-content-bg" src="{{$state.assetsUrl}}{{data.status== 3 && data.isRead ? 'btn_xchb_ gray@2x' : 'btn_popupw_xchb@2x'}}.png?imageView2/1/w/400/h/88/q/100" ></image>
+
+        <view wx:if="{{!data.id}}" class="btn-content rel flex flex-v flex-pack-center color-write">
+            <view bindtap="href" data-url="/pages/with-help/shop-list/index" >{{data.btnText}}</view>
+        </view>
+        <view wx:elif="{{data.status== 3}}" bindtap="tipSure" class="btn-content rel flex flex-v flex-pack-center color-write">
+            <view wx:if="{{data.isRead}}">已领取</view>
+            <view wx:else>领取</view>
+        </view>
+        <button wx:elif="{{data.shareTrip}}" bindtap="href" data-url="/pages/with-help/shop-list/index" class="btn-content rel flex flex-v flex-pack-center color-write">
+            <view>{{btnText}}</view>
+            <view class="f-11">
+                倒计时：<cm-countdown minutes="10" startTime="{{data.createTime}}" serverTime="{{data.currentDate}}"/>
+            </view>
+            
+        </button>
+        <button wx:else open-type="share" data-sourceid="{{data.sourceId}}" data-type="trip-tip" class="btn-content rel flex flex-v flex-pack-center color-write">
+            <view>{{btnText}}</view>
+            <view class="f-11">
+                倒计时：<cm-countdown minutes="10" startTime="{{data.createTime}}" serverTime="{{data.currentDate}}"/>
+            </view>
+            
+        </button>
+    </view>
+</view>

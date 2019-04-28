@@ -1,0 +1,44 @@
+.left, .right{
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.left::after, .right::after{
+  content: "";
+  display: block;
+}
+
+.left{
+  background: rgb(245,245,245);
+  width: 184rpx;
+  color: #666;
+}
+
+.left .list{
+  height: 104rpx;
+}
+.left .list.color-success{
+  border-left: 8rpx solid #ffac1a;
+  border-right: 8rpx solid transparent;
+}
+
+.right{
+  flex-wrap: wrap;
+  padding-top: 32rpx;
+  padding-bottom: 12rpx;
+}
+.note{
+  display: inline-block;
+  height: 56rpx;
+  line-height: 54rpx;
+  text-align: center;
+  min-width: 144rpx;
+  border-radius: 56rpx;
+  margin: 12rpx 18rpx;
+  border: 1rpx solid rgb(189,189,189);
+  box-sizing: border-box;
+}
+
+.note.bg-success{
+  border-color: #ffac1a;
+}

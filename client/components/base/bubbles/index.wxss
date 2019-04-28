@@ -1,0 +1,14 @@
+.bubbles{
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    background: rgb(255,59,48);
+    color: #fff;
+    border-radius: 30rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    font-size: 22rpx;
+    min-width: 32rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "cm-label-item": "/components/base/label-item/index"
+  }
+}

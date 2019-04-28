@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/user/index/index",
+    "pages/order/list/index",
+    "pages/shop/detail/index",
+    "pages/order/detail/index",
+    "pages/goods/list/index",
+    "pages/shop/list/index",
+    "pages/user/join/index",
+    "pages/shop/add/index",
+    "pages/goods/add/index",
+    "pages/shop/information/index",
+    "pages/example/index",
+    "pages/goods/type/index",
+    "pages/shop/edit/index",
+    "pages/user/moneyRun/index",
+    "pages/shop/notes/index",
+    "pages/webview/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "捎带商家管理",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 15000
+  },
+  "usingComponents": {
+    "i-load-more": "./libs/ivew/load-more/index",
+    "wux-refresher": "./libs/wux/refresher/index",
+    "wux-toast": "./libs/wux/toast/index",
+    "wux-button": "./libs/wux/button/index",
+    "wux-dialog": "./libs/wux/dialog/index",
+    "wux-loading": "./libs/wux/loading/index",
+    "wux-toptips": "./libs/wux/toptips/index",
+    "cm-nav-bar": "./components/nav-bar/index",
+    "cm-avatar": "./components/base/avatar/index",
+    "cm-avatar-bar": "./components/base/avatar-bar/index",
+    "cm-empty-layout": "./components/base/empty-layout/index",
+    "cm-loading-image": "./components/base/loading-image/index"
+  },
+  "workers": "workers",
+  "subpackages": [
+    {
+      "root": "packageMap",
+      "name": "packageMap",
+      "pages": [
+        "pages/map/search/index",
+        "pages/map/city/index"
+      ]
+    },
+    {
+      "root": "packageScope",
+      "pages": [
+        "pages/scope/index"
+      ]
+    },
+    {
+      "root": "packageAddress",
+      "pages": [
+        "pages/list/index",
+        "pages/add/index"
+      ]
+    }, 
+    {
+      "root": "packageShare",
+      "pages": [
+        "out/shop/index",
+        "in/shop/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/order/list/index": {
+      "network": "all",
+      "packages": [
+        "packageMap"
+      ]
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取用户地理位置"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+      "wxb3c9cf1fb1e3dc79"
+  ]
+}

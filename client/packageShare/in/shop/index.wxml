@@ -1,0 +1,13 @@
+<view class="rel box{{longImage ? '-long': ''}}">
+  <image src="{{ $state.assetsUrl }}{{ longImage ? 'share_bg_shop_x.png' : 'share_bg_shop.png' }}" class="abs bg{{longImage ? '-long': ''}}"></image>
+
+  <view class="abs f-11 text-center bottom-texts {{longImage && 'longImage'}}">
+    <button class="btn" bindtap='addShopHandel'>
+      <image class="btn" src='{{$state.assetsUrl}}share_btn_shop@2x.png'></image>
+    </button>
+  </view>
+
+</view>
+
+
+<cm-side-to-index wx:if="{{share== 'true'}}" id="side-to-index" zindex="200" bottom="100" right="8" />

@@ -1,0 +1,24 @@
+@import './../../../assets/wxss/base.wxss';
+
+/* 商品标签 */
+.goods-note{
+  display: inline-block;
+  height: 32rpx;
+  padding: 0 12rpx;
+  line-height: 32rpx;
+  font-size: 22rpx;
+}
+.goods-note{
+  z-index: 1;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 10rpx;
+}
+.goods-note.green{
+  background: -webkit-linear-gradient(left, rgb(86, 171, 47), rgb(168, 224, 99)); 
+  color: #fff;
+}
+.goods-note.hot{
+  background: -webkit-linear-gradient(left, rgb(235, 51, 37), rgb(244, 92, 67)); 
+  color: #fff;
+}

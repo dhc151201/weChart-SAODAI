@@ -1,0 +1,9 @@
+<!-- fixed bottom 分享bar -->
+<cm-fixed-bar>
+  <button open-type="share" data-index="1" class="fixed-bar-share-item btn">分享给好友</button>
+  <view catchtap='shareHandel' data-index="2" class="fixed-bar-share-item bg-success-ease color-write">分享到朋友圈</view>
+</cm-fixed-bar>
+
+<image wx:if="{{_isShowGuide}}" class="share-guide fix {{fullSen ? 'fullSen' : ''}}" src="./../../assets/images/img_share_tpp@2x.png" mode="aspectFill" />
+  
+  

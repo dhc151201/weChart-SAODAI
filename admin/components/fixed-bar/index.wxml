@@ -1,0 +1,4 @@
+<!-- fixed 布局 bar 如分享到/结算/购物车 外层 -->
+<view class="flex flex-pack-justify flex-align-center bg-write fixed-bar {{fullSen ? 'fullSen' : ''}}" style="background: {{background}}">
+  <slot></slot>
+</view>

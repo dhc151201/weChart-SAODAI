@@ -1,0 +1,51 @@
+<import src="./../../../templates/load.more.wxml" />
+
+<view class="tabs-box bg-write fix">
+    <wux-tabs defaultCurrent="{{tabChose}}" bindchange="tabChange">
+      <wux-tab key="waitingPay" title="已接单"></wux-tab>
+      <wux-tab key="waiting" title="待接单"></wux-tab>
+    </wux-tabs>
+</view>
+
+<view class="tab-content border-box">
+    
+    <block wx:if="{{tabChose== 'waitingPay'}}">
+        <cm-order-card-list orderInfo="{{waitingPayList}}" />
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_waitingPay== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无已接单订单哟~" image="./../../assets/images/img_noorders@2x.png" />
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_waitingPay}}" />
+    </block>
+
+    <block wx:elif="{{tabChose== 'waiting'}}">
+        <cm-order-card-list orderInfo="{{waitingList}}" />
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore_waiting== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder imagewidth="324" imageheight="150" placeholder="暂无待接单订单哟~" image="./../../assets/images/img_noorders@2x.png" />
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore_waiting}}" />
+    </block>
+      
+    
+
+</view>
+
+<block wx:if="{{tabChose== 'waitingPay'}}">
+    <layout-body  hasFixed="bottom" />
+    <fixed-bar>
+        <view class="flex-1 fixed-btm-item flex flex-pack-center flex-align-center">
+            捎带收入<text class="color-error">¥{{tripAmount || 0}}</text>
+        </view>
+        <view class="flex-1 fixed-btm-item flex flex-pack-center flex-align-center">
+            订单总额¥{{amount || 0}}
+        </view>
+    </fixed-bar>
+</block>
+<layout-body wx:else />
+
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

@@ -1,0 +1,7 @@
+<template name="no-data">
+  <view class="text-center padded-16 padded-t-12 padded-b-12">
+    <view class="padded-b-16 padded-t-8" style="border-radius: 8rpx;">
+      <text class="f-11 color-light" slot="empty">{{str}}</text>
+    </view>
+  </view>
+</template>

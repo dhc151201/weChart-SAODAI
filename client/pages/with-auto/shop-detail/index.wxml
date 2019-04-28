@@ -1,0 +1,50 @@
+<import src="./../../../templates/load.more.wxml"/>
+
+<cm-shop-media-card info="{{shopInfo}}" bind:touchmove="hideSideToIndexComp" bind:touchend="showSideToIndexComp"/>
+
+<view class="margin-b-8" wx:if="{{tripList.length}}" bind:touchmove="hideSideToIndexComp" bind:touchend="showSideToIndexComp">
+    <cm-couple-block-simple shopId="{{shopInfo.id}}" list="{{tripList}}" from="{{from}}"></cm-couple-block-simple>
+</view>
+
+<!-- <view class="bg-write tab-box rel">
+    <view class="rel" style="z-index: 1;">
+        <wux-tabs defaultCurrent="{{tabChose}}" bindchange="tabchange">
+            <wux-tab key="linegoods" title="在售商品"></wux-tab>
+            <wux-tab key="shopinfo" title="商家信息"></wux-tab>
+        </wux-tabs>
+    </view>
+</view> -->
+
+<view class="bg-write padded-16" bind:touchmove="hideSideToIndexComp" bind:touchend="showSideToIndexComp">
+
+    <!-- 在售商品 -->
+    <view hidden="{{tabChose== 'shopinfo'}}">
+
+        <cm-pay-card list="{{goodsList}}" bind:submit="submit" btnText="{{!tripList.length ? '找人捎带' : '立即下单'}}" shopId="{{shopInfo.id}}" discountRate="{{shopInfo.discountRate}}" discountName="{{shopInfo.discountName}}" />
+
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder placeholder="该店铺下暂无商品哟~" image="./../../assets/images/picHintNog@2x.png"/>
+        </view>
+        <template wx:else is="loadmore" data="{{status: loadmore}}"/>
+
+    </view>
+
+    <!-- 商家信息 -->
+    <view hidden="{{tabChose== 'linegoods'}}">
+        <cm-shop-detail-block info="{{shopInfo}}" bind:change="shopChange"/>
+        <layout-body />
+    </view>
+
+</view>
+
+<layout-body wx:if="{{tabChose== 'linegoods'}}" hasFixed="bottom"/>
+<layout-body wx:else />
+
+<wux-toast id="wux-toast"/>
+<wux-dialog id="wux-dialog"/>
+
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+<cm-side-to-index wx:if="{{share== 'true'}}" id="side-to-index" bottom="200" right="8"/>

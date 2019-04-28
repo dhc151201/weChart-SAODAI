@@ -1,0 +1,21 @@
+<!--components/filtrate/index.wxml-->
+<view class="rel" catchtap='showOptions'>
+
+  <slot name="left"></slot>
+  <text>距离优先</text>
+  <slot name="right"></slot>
+  <!-- options -->
+  <view style="display: {{showOrderByBox ? 'block' : 'none'}}; top: {{absoluteTop}}rpx; right: {{absoluteRight}}rpx;" class="abs bg-write options-box f-4" catchtap>
+
+    <view class="options-body">
+
+      <slot name="options"></slot>
+      <block wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}">
+        <view bindtap='chose' data-index="{{index}}" class="title {{choseIndex == index ? 'chosed': ''}}">综合排序</view>
+      </block>
+      
+    </view>
+    
+  </view>
+
+</view>

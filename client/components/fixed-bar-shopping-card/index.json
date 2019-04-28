@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "fixed-bar": "./../fixed-bar/index",
+        "cm-bubbles": "./../base/bubbles/index"
+    }
+}

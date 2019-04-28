@@ -1,0 +1,261 @@
+<image class="top-bg" src="{{$state.assetsUrl}}bg_my_c@2x.png"></image>
+<view class="top-bg-write"></view>
+
+<!-- <sd-spin size="small" show="{{showSpinTop}}" padding="32rpx 0"></sd-spin> -->
+
+<layout-body hasFixed="bottom">
+    <wux-refresher id="wux-refresher" bind:pulling="onPulling" bind:refresh="onRefresh">
+
+        <view class="flex flex-pack-justify user-info">
+            <cm-loading-image width="96rpx" height="96rpx" src="{{$state.user.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/100" radius="96"/>
+            <view class="flex-1 padded-l-8">
+                <view class="f-17 color-write bold">{{$state.user.wxNickname}}</view>
+                <view class="f-11 flex">
+                    <block wx:if="{{profession.length}}">
+                        <cm-note wx:if="{{$state.user.wxGender== '男'}}" radius="30" color="#FF9F00" background="#FFDF90">♂{{$state.user.wxGender}}</cm-note>
+                        <cm-note wx:if="{{$state.user.wxGender== '女'}}" radius="30" color="#FF9F00" background="#FFDF90">♀{{$state.user.wxGender}}</cm-note>
+                        <cm-note wx:for="{{profession}}" wx:key="{{index}}" radius="30" color="#FF9F00" background="#FFDF90">{{item}}</cm-note>
+                    </block>
+                    <text wx:else class="f-11 color-write">去完善资料试试~</text>
+
+                </view>
+            </view>
+            <view class='rel'>
+                <image class="icon-top-bar margin-r-16" bindtap="href" data-url="/pages/with-user/information/index" src="./../../../assets/images/icon_my_set@2x.png"></image>
+                <image class="icon-top-bar" bindtap="href" data-url="/pages/with-user/letters/index" src="./../../../assets/images/icon_my_news@2x.png">
+                    <text wx:if="{{allNum> 0}}" class="abs allnum">{{allNum}}</text>
+                </image>
+                
+            </view>
+        </view>
+
+        <view class="income-box bg-write flex flex-pack-justify flex-align-center text-center color-grey">
+            <view class="income-item" bindtap="href" data-url="/packageWallet/list/income/index">
+                <view class="f-20 bold color-default">{{wallet.totalAmount || 0}}</view>
+                累计收入
+            </view>
+            <text class="line-v"></text>
+            <view class="income-item" bindtap="href" data-url="/packageWallet/list/balance/index">
+                <view class="f-20 bold color-default">{{wallet.amount || 0}}</view>
+                我的余额
+            </view>
+            <text class="line-v"></text>
+            <view class="income-item" bindtap="href" data-url="/packageWallet/list/voucher/index" >
+                <view class="f-20 bold color-default rel">
+                    {{voucher || 0}}
+                    <cm-label-hot wx:if="{{voucherNoRead}}" class="hot abs">new</cm-label-hot>
+                </view>
+                红包卡券
+            </view>
+        </view>
+
+
+        <view class="padded-16 flex flex-pack-justify flex-align-center">
+            <text class="f-17 bold">我买的</text>
+            <view class="color-grey" bindtap="href" data-url="/packageOrder/list/with-auto/index">
+                全部订单
+                <text class="iconfont icon-ios-arrow-forward f-17"></text>
+            </view>
+        </view>
+
+        <view class="flex flex-pack-justify flex-align-center order-nav text-center border-box">
+            <view class="rel" bindtap="href" data-url="/packageOrder/list/with-auto/index?tabChose=waitingPay">
+                <cm-bubbles wx:if="{{bubbles[0]> 0}}" class="abs bubbles" >{{bubbles[0]}}</cm-bubbles>
+                <image src="./../../../assets/images/icon_my_pay@2x.png"></image>
+                待支付
+            </view>
+            <view class="rel"  bindtap="href" data-url="/packageOrder/list/with-auto/index">
+                <cm-bubbles wx:if="{{bubbles[1]> 0}}" class="abs bubbles" >{{bubbles[1]}}</cm-bubbles>
+                <image src="./../../../assets/images/icon_my_take@2x.png"></image>
+                待收货
+            </view>
+            <view bindtap="href" data-url="/packageOrder/list/with-auto/index?tabChose=successed">
+                <image src="./../../../assets/images/icon_my_finish@2x.png"></image>
+                已完成
+            </view>
+            <view bindtap="href" data-url="/packageOrder/list/with-auto/index?tabChose=cancel">
+                <image src="./../../../assets/images/icon_my_cancel@2x.png"></image>
+                已取消
+            </view>
+        </view>
+
+
+        <view class="padded-16 padded-b-0 margin-t-4 flex flex-pack-justify flex-align-center">
+            <text class="f-17 bold">我帮人捎带的</text>
+            <view bindtap="href" data-url="/pages/webview/index?url=https://rrsd.rrkd.cn/rrsd_strategy/index.html" class="f-11 color-blue padded-l-8 padded-r-16 padded-t-4" style="line-height: 1;">捎带攻略</view>
+            <view class="flex-1 "></view>
+            <view class="color-grey" bindtap="href" data-url="/packageOrder/list/with-help/index">
+                全部订单
+                <text class="iconfont icon-ios-arrow-forward f-17"></text>
+            </view>
+        </view>
+
+
+        <view class="help-order-box padded-l-16 padded-r-16 bg-write rel padded-t-16" wx:for="{{tripList}}" wx:key="{{item.tripInfo.id}}"
+            wx:if="{{item.tripInfo.id}}">
+
+            <image class="abs trip-top-status-image" src="{{$state.assetsUrl}}icon_my_doing_2x.png" />
+              
+
+            <!-- 行程始发目的地 -->
+            <view class="trip-box flex flex-pack-justify flex-align-center text-center f-17 bold"
+                bindtap='href' data-url="/packageTrip/detail/index?tripId={{item.tripInfo.id}}"
+            >
+                <view class="trip-from">{{item.tripInfo.startLocalName_comp}}
+                    <view class="f-11 color-grey">
+                        <cm-time time="{{item.tripInfo.realSetOutTime}}"/>
+                    </view>
+                </view>
+                <image class="trip-center-line" src="./../../../assets/images/icon_go@2x.png"></image>
+                <view class="trip-to">{{item.tripInfo.destLocalName_comp}}
+                    <view class="f-11 color-grey">
+                        <cm-time time="{{item.tripInfo.realArriveTime}}"/>
+                    </view>
+                </view>
+            </view>
+
+            <block wx:if="{{item.doing.length}}">
+                <view class="line-c"></view>
+                <!-- 接单中 -->
+                <view class="colum-tit flex flex-pack-justify flex-align-center margin-b-8">
+                    <text class="bold">接单中</text>
+                    <view>
+                        <van-switch wx:if="{{item.tripInfo.tripStatus== 0}}" checked="{{ item.tripInfo.tripStatus== 0 }}"
+                                    size="40rpx" active-color="rgba(255, 190, 26, 0.3)" inactive-color="#fff"
+                                    data-index="{{index}}" data-id="{{item.tripInfo.id}}"
+                                    data-status="{{item.tripInfo.tripStatus}}" bind:change="initiativeUpdateStateByTripId">接单中
+                        </van-switch>
+                        <van-switch wx:else checked="{{ item.tripInfo.tripStatus== 0 }}" size="40rpx"
+                                    active-color="rgba(255, 190, 26, 0.3)" inactive-color="#fff" data-index="{{index}}"
+                                    data-id="{{item.tripInfo.id}}" data-status="{{item.tripInfo.tripStatus}}"
+                                    bind:change="initiativeUpdateStateByTripId">已暂停
+                        </van-switch>
+                    </view>
+                </view>
+                <block wx:for="{{item.doing}}" wx:key="{{index}}">
+                    <view bindtap='href' data-url="/packageOrder/detail/with-help/index?orderId={{item.orderId}}"
+                        wx:if="{{index< 3 || showAccepted}}"
+                        class="flex flex-pack-justify flex-align-center runing-trip-list">
+                        <cm-loading-image width="56rpx" height="56rpx"
+                                        src="{{item.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/85" radius="56"/>
+                        <view class="padded-l-8 padded-r-8 runing-trip-name aui-ellipsis-1 border-box">{{item.wxNickname}}
+                        </view>
+                        <view class="flex-1">预计收入 {{item.revenue}} 元</view>
+                        <view class="" catchtap="nullFun">
+                            <sd-button wx:if="{{item.status== 1}}" catchsubmit="accept" reportSubmit data-id="{{item.orderId}}" formType="submit" size="smaller" width="120" type="success">接单</sd-button>
+                            <!-- <button wx:if="{{item.status== 1}}" catchtap='accept' class="bg-success-ease f-13 btn"
+                                    data-id="{{item.orderId}}" hover-class='hover-class'>接单
+                            </button> -->
+                            <view wx:elif="{{item.status>= 2}}" class="f-13 color-grey">已接单</view>
+                        </view>
+
+                    </view>
+
+                </block>
+                <view wx:if="{{item.doing.length> 3 }}" bindtap="showAcceptedHandel"
+                    class="padded-b-16 color-blue f-11 text-center">{{showAccepted ? '收起部分' : '展开全部'}}商店
+                </view>
+            </block>
+
+
+            <block wx:if="{{item.waitingTake.length}}">
+                <view class="line-c"></view>
+                <!-- 待提货 -->
+                <view class="colum-tit flex flex-align-center margin-b-8">
+                    <text class="bold">待提货</text>
+                </view>
+                <view class="flex flex-pack-justify flex-align-center getting-trip-list" wx:for="{{item.waitingTake}}"
+                    wx:key="{{index}}" bindtap="href"
+                    data-url="/packageShop/takeDetail/index?shopId={{item.shopId}}&tripId={{item.tripId}}">
+                    <view class="flex-1">
+                        <view class='f-13 bold'>{{item.shopName}}</view>
+                        <view class="f-11 color-grey aui-ellipsis-1" style="max-width: 400rpx;">
+                            {{item.address}}
+                        </view>
+                        <view class="f-11 color-grey">
+                            营业时间 {{item.hour.startTime}}-{{item.hour.endTime}}
+                            <text class="padded-l-16 margin-l-16"></text>
+                            距您
+                            <cm-distance value="{{item.distance}}"/>
+                        </view>
+                    </view>
+                    <button class="bg-success-ease f-13 btn" hover-class='hover-class'>确认提货</button>
+                </view>
+            </block>
+
+
+            <block wx:if="{{item.forDelivery.length}}">
+                <view class="line-c"></view>
+                <!-- 待提货 -->
+                <view class="colum-tit flex flex-align-center margin-b-8">
+                    <text class="bold">待送货</text>
+                </view>
+                <view class="flex flex-pack-justify flex-align-center runing-trip-list" wx:for="{{item.forDelivery}}"
+                    wx:key="{{index}}" bindtap="href"
+                    data-url="/packageOrder/detail/with-help/index?orderId={{item.orderId}}">
+                    <cm-loading-image width="56rpx" height="56rpx" src="{{item.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/85"
+                                    radius="56"/>
+                    <view class="padded-l-8 flex-1">
+                        <view class="runing-trip-name">{{item.wxNickname}}</view>
+                        <view class="f-11 color-grey">{{item.address}}</view>
+                    </view>
+
+                    <!-- <sd-button wx:if="{{item.status== 3}}" catchsubmit="accept" reportSubmit data-id="{{item.orderId}}" formType="submit" size="smaller" width="120" type="success">我已送达</sd-button> -->
+                    <button wx:if="{{item.status== 3}}" class="bg-success-ease f-13 btn" hover-class='hover-class'>我已送达
+                    </button>
+                    <text wx:elif="{{item.status== 4}}" class="f-11 color-light">待签收</text>
+                    <text wx:elif="{{item.status== 5}}" class="f-11 color-light">已签收</text>
+
+                </view>
+            </block>
+
+            <block wx:if="{{item.reMember.length}}">
+                <view class="flex flex-pack-justify flex-align-center trip-findWith-bar margint-16 margin-b-16 f-13"
+                    bindtap="href" data-url="/packageFindWith/near/index?from=grab&tripId={{item.tripInfo.id}}"
+                >
+                    <cm-avatar-bar width="72" height="72" max="4" data="{{item.reMember}}"></cm-avatar-bar>
+                    <view class="flex-1 padded-l-8 bold">
+                        {{ item.reMember.length> 1 ? 'TA们' : item.reMember[0].wxNickname }}正在求捎带
+                    </view>
+                    <view class="wheel color-write flex flex-pack-center flex-align-center">
+                        抢单
+                    </view>
+                </view>
+            </block>
+
+            <view class="line-c"></view>
+            <view class="flex flex-pack-justify flex-align-center help-order-static">
+                <view>捎带 {{item.tripStac.orderCount}} 单</view>
+                <view>预计收入 {{item.tripStac.projectedIncome}} 元</view>
+            </view>
+
+        </view>
+
+        <view wx:if="{{!tripList.length}}" style="padding: 8vh 0 10vh;">
+            <no-data-placeholder
+                    imagewidth="324"
+                    imageheight="150"
+                    placeholder="您没有进行的捎带"
+                    placeholderSmiple="把身边的好货带出去吧!"
+                    image="./../../assets/images/img_noorders@2x.png"
+                    buttontext="帮人捎带"
+                    href="/pages/with-help/shop-list/index"
+            />
+        </view>
+
+        <view style="padding-top: 50rpx;"></view>
+
+    </wux-refresher>
+
+</layout-body>
+
+<cm-nav-bar activeindex="with-user"></cm-nav-bar>
+
+<wux-toast id="wux-toast"/>
+<wux-dialog id="wux-dialog"/>
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+<cm-mask zindex="310" id="mask-tip-order">
+     <cm-envelope bindsure="orderTipSureHandel" data="{{orderTipinfo}}" ></cm-envelope>
+</cm-mask>
+

@@ -1,0 +1,94 @@
+<import src="./../../../templates/load.more.wxml"/>
+
+<view class="top rel" bind:touchmove="hideSideToIndexComp" bind:touchend="showSideToIndexComp">
+
+    <image class="abs shop-cover-pic" src="{{$state.assetsUrl}}bg_allshop@2x.png" mode="aspectFill"></image>
+
+    <view class="top-info border-box rel">
+
+        <view class="color-write f-20">
+            全国特色实体店
+            <image style="width: 120rpx; height: 36rpx;" src="./../../../assets/images/icon_allshop_offline@2x.png" mode="aspectFill"/>
+        </view>
+
+        <scroll-view scroll-x class="tab-box rel">
+            <view class="color-light flex">
+                <text class="tab-item"></text>
+                <view class="tab-item {{_index== 0 ? 'active' : ''}}" data-index="0" bindtap="chosetap">全部</view>
+                <view wx:for="{{tagList}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index+ 1}}"
+                    catchtap="chosetap" class="color-light tab-item {{_index== index+ 1 ? 'active' : ''}}">
+                    {{item.name}}
+                </view>
+                <text class="tab-item"></text>
+            </view>
+        </scroll-view>
+        <image bindtap="href" data-url="/packageShop/typeList/index" style="width: 120rpx; height: 100rpx;"
+            class="color-light tab-item abs more-item" src="./../../../assets/images/icon_allshop_more@2x.png"
+            mode="aspectFill" />
+
+    </view>
+
+</view>
+
+<view class="padded-16" bind:touchmove="hideSideToIndexComp" bind:touchend="showSideToIndexComp">
+    <view class="padded-16 bg-write shop-list-box {{ shopList.length ? 'has-list' : '' }}">
+
+        <view class="flex flex-pack-justify flex-align-center">
+            <view class="title rel f-17 bold">{{_index!= 0 ? tagList[_index- 1].name : '全部实体店' }}</view>
+            <view bindtap="showArea" class="f-13 flex flex-align-center color-grey">
+                {{cityName}}<text class="iconfont icon-down icon-ios-arrow-down f-17"></text>
+            </view>
+        </view>
+        
+
+        <block wx:if="{{shopList.length}}">
+            <view wx:for="{{shopList}}" wx:key="{{index}}" class="flex shop-list"
+                  bindtap="href" data-hreftype="redirectTo" data-url="/pages/with-auto/shop-detail/index?from=find&shopId={{item.shopId}}"
+            >
+                <cm-loading-image src="{{item.logoImageUrl}}?imageView2/1/w/128/h/128/q/100" width="128rpx"
+                                  height="128rpx" radius="128"/>
+                <view class="">
+                    <view class="padded-l-8 padded-b-16">
+                        <view class="f-14 bold">
+                            {{item.shopName}}
+                        </view>
+                        <view class="f-11 color-light">
+                            {{item.address}} I 距您
+                            <cm-distance value="{{item.distance}}"/>
+                        </view>
+                        <view class="f-11">
+                            <cm-note wx:if="{{item.discountName}}" background="#FFE8E8" color="#FF5E4B">{{item.discountName}}</cm-note>
+                            <cm-note wx:for="{{item.tags}}" wx:key="{{index}}">{{item.name}}</cm-note>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.trips}}" class="f-11 color-light flex flex-align-center">
+                        <cm-avatar-bar data="{{item.trips}}" max="3"></cm-avatar-bar>
+                        <text class="padded-l-8">正在捎带</text>
+                    </view>
+                </view>
+
+            </view>
+
+        </block>
+
+        <!-- 搜索结果提示 -->
+        <view wx:if="{{loadmore== 3}}" style="padding-top: 25vh;">
+            <no-data-placeholder placeholder="该分类下暂无店铺哟~" image="./../../assets/images/picHintNog@2x.png"/>
+        </view>
+
+    </view>
+
+    <template is="loadmore" data="{{status: loadmore}}"/>
+
+</view>
+
+<layout-body />
+
+<cm-picker id="area" zindex="122">
+  <van-area bindcancel="areaCancel" bindconfirm="areaConfirm" area-list="{{ areaList }}" columns-num="{{ 2 }}" title="城市选择" />
+</cm-picker>
+
+
+<cm-side-to-index wx:if="{{share== 'true'}}" id="side-to-index" bottom="200" right="8"/>
+
+

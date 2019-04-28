@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cm-goods-paycard-bar": "./../goods-paycard-bar/index",
+    "fixed-bar": "./../fixed-bar/index",
+    "cm-mask": "./../base/mask/index",
+    "cm-stepper": "./../base/stepper/index",
+    "wux-gallery": "/libs/wux/gallery/index",
+    "cm-dialog-chose-goods-property": "./../dialog-chose-goods-property/index",
+    "cm-fixed-bar-shopping-card": "./../fixed-bar-shopping-card/index"
+  }
+}

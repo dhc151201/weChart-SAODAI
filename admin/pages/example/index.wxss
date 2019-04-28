@@ -1,0 +1,9 @@
+.img-box{
+  border-radius: 12rpx;
+  background: rgb(245,245,245);
+}
+
+.img-box image{
+  height: 480rpx;
+  width: 100%;
+}

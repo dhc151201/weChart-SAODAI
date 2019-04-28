@@ -1,0 +1,15 @@
+<view class="" bindtap="showTextarea">
+    <view wx:if="{{_showTextarea}}" class="textarea-box">
+        <textarea class="self" placeholder='{{placeholder}}' focus="{{_showTextarea}}" auto-height="{{true}}"
+            maxlength="{{maxlength}}" value="{{_value}}" cursorSpacing="80"
+            bindblur='hideTextarea' bindinput='oninput'
+        ></textarea>
+    </view>
+    
+    <view wx:else >
+         <view wx:if="{{!_value}}" class="placeholder">{{placeholder}}</view>
+        <view wx:else class="value">{{_value}}</view>
+    </view>
+   
+</view>
+  

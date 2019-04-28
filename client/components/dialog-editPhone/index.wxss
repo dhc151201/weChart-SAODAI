@@ -1,0 +1,61 @@
+@import './../../assets/iconfont/iconfont.wxss';
+@import './../../assets/wxss/base.wxss';
+
+.box{
+    width: 560rpx;
+    padding: 56rpx;
+    border-radius: 16rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0,0,0,.05);
+}
+.from-bg{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 208rpx;
+    z-index: 0;
+}
+.top-section{
+    height: 152rpx;
+    z-index: 1;
+}
+.tit{
+    color: rgb(158, 105, 12);
+}
+.tit-sm{
+    color: rgb(204, 154, 50)
+}
+
+.from-item-label{
+    margin-top: 46rpx;
+}
+.from-item-input{
+    height: 60rpx;
+}
+
+.icon-close{
+    font-size: 50rpx;
+}
+.line{
+    border-top: 1px solid rgb(224,224,224);
+}
+
+.btn{
+    margin: 0;
+    border-radius: 88rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.icon-close-panel{
+    right: 0rpx;
+    top: -90rpx;
+    font-size: 60rpx;
+}
+.pl-bar{
+    height: 0;
+}
+
+._get-phone{
+    font-size: 26rpx;
+    border: 1rpx solid rgb(200,200,200)
+}

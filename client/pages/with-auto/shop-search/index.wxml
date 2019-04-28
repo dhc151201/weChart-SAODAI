@@ -1,0 +1,87 @@
+<import src="./../../../templates/load.more.wxml"/>
+
+<view class="fix bg-write search-bar border-box flex flex-pack-justify flex-align-center">
+    <cm-search-bar showCancel value="{{keyword}}" bindinput="onInputFromBefore" data-name="keyword" placeholder='输入您想找人捎带的商品' class="flex-1"/>
+    <text bindtap="onSearch" class="color-success padded-l-16">搜索</text>
+</view>
+
+<view class="flex flex-v min-full {{(loadmore== 3 && keyword) ? '' : 'bg-write'}}">
+
+    <view class="flex-1 border-box search-content padded-l-16 padded-r-16 spin-article">
+
+        <block wx:if="{{!searchList.length && !requested}}">
+            <!-- 历史搜索 -->
+            <view wx:if="{{historyWords.length}}" class="flex flex-pack-justify flex-align-center padded-t-16">
+                <text class="color-grey">搜索历史</text>
+            </view>
+            <view class="label-item-box">
+                <cm-label-item bindtap="onSearch" wx:for="{{historyWords}}" wx:key="{{index+ item}}" 
+                    data-keyword="{{item}}" active="{{keyword == item}}">{{item}}
+                </cm-label-item>
+            </view>
+
+            <!-- 热门搜索 -->
+            <view wx:if="{{hotwords.length}}" class="flex flex-pack-justify flex-align-center padded-t-16">
+                <text class="color-grey">热门搜索</text>
+            </view>
+            <view class="label-item-box">
+                <cm-label-item bindtap="onSearch" wx:for="{{hotwords}}" wx:key="{{item}}" data-keyword="{{item}}"
+                    active="{{keyword == item}}">{{item}}
+                </cm-label-item>
+            </view>
+        </block>
+
+
+        <block wx:else>
+            <!-- 搜索结果列表 -->
+            <view class="flex shop-list border-box" wx:for="{{searchList}}" wx:key="{{item.id}}"
+                bindtap="href" data-hreftype="redirectTo" data-url="/pages/with-auto/shop-detail/index?from=find&shopId={{item.id}}">
+                <cm-loading-image width="96rpx" height="96rpx" radius="96" src="{{item.logoImageUrl}}?imageView2/1/w/96/h/96/q/100"/>
+                <view class="padded-l-8 f-11 flex-1 {{item.skuList.length ? 'padded-b-4' : 'padded-b-16'}}">
+                    <view class="bold f-14">{{item.shopName}}</view>
+                    <view class="color-light flex flex-pack-justify">
+                        <text class="shop-address aui-ellipsis-2">{{item.address}}</text>
+                        <text class="distance">距您{{item.distance}}</text>
+                    </view>
+                    <view class="padded-b-12">
+                        <cm-note wx:for="{{item.tags}}" wx:key="{{index}}">老字号</cm-note>
+                    </view>
+
+                    <view class="flex flex-pack-justify flex-align-end" wx:if="{{item.skuList.length}}" style="width: 472rpx;">
+                        <!-- 商品展示 -->
+                        <view class="flex-1" hover-class="none" hover-stop-propagation="false">
+                            <cm-goods-paycard-bar wx:for="{{item.skuList}}" wx:key="{{index}}" goodsInfo="{{item}}"/>
+                        </view>
+                        <view class="margin-b-8" catchtap="nullFun">
+                            <sd-button catchsubmit="findWithHandel" reportSubmit data-id="{{item.id}}" formType="submit" size="smaller" type="success">找人捎带</sd-button>
+                        </view>
+                    </view>
+                    
+
+                </view>
+            </view>
+
+            <!-- 搜索结果提示 -->
+            <view wx:if="{{loadmore== 3}}" class="text-center">
+                <image class="search-image" src="{{$state.assetsUrl}}img_wusousuo@2x.png" mode="aspectFill"/>
+                <view class="margin-t-12">您想找的店铺搜索不出来</view>
+                <view class="f-13 color-light">快添加进来吧</view>
+                <cm-invitation-shop-join/>
+                <!-- <no-data-placeholder placeholder="该分类下暂无店铺哟~" image="./../../assets/images/picHintNog@2x.png" /> -->
+            </view>
+            <view wx:else class="shop-list border-box"
+                  style="overflow: hidden;padding: 1rpx 0;border:0 none;background: #f0f1f6;">
+                <template is="loadmore" data="{{status: loadmore}}"/>
+            </view>
+
+        </block>
+
+        <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+    </view>
+</view>
+
+<layout-body />
+
+<wux-dialog id="wux-dialog"/>
+

@@ -1,0 +1,10 @@
+<!-- <cm-filter-actionsheet id="filter-actionsheet" bindsure="filterSure" bindcancel="filterCancel">
+    <view wx:for="{{filters}}" class="">
+        <view class="padded-16 padded-b-0 color-grey f-13">
+            {{item.title}}
+        </view>
+        <view class="picker-label-box padded-16 padded-t-0">
+            <cm-label-item bindtap="select" active >{{}}</cm-label-item>
+        </view>
+    </view>
+</cm-filter-actionsheet> -->

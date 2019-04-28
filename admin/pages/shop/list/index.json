@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的店铺",
+  "navigationBarBackgroundColor": "#ffffff",
+  "usingComponents": {
+    "cm-column": "/components/base/column/index"
+  }
+}

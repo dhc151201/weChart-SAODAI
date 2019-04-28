@@ -1,0 +1,36 @@
+.top-info{
+  background: rgb(245, 245, 245);
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.shop-list{
+  padding: 24rpx 32rpx 24rpx 0;
+  border-top: 1rpx solid rgb(244,244,244)
+}
+
+.reason{
+  padding: 20rpx 64rpx;
+  background: rgb(245,245,245);
+  border-radius: 16rpx;
+  margin-top: 24rpx;
+  margin-bottom: 16rpx;
+}
+
+.shop-list-avatar{
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.shop-list-avatar .lebal{
+  z-index: 10;
+  background: rgba(0,0,0,.3);
+  height: 40rpx;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.shop-list-avatar .lebal.active{
+  background: rgba(255, 172, 26,.3);
+}

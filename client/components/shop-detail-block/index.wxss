@@ -1,0 +1,54 @@
+@import './../../assets/iconfont/iconfont.wxss';
+@import './../../assets/wxss/base.wxss';
+
+.info-block{
+  padding-left: 24rpx;
+  position: relative;
+}
+.info-block .title{
+  position: relative;
+}
+.info-block .title::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: -24rpx;
+  top: 16rpx;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 100%;
+  background: rgb(255, 172, 26);
+}
+.info-block .content{
+  color: #666;
+  line-height: 1.5;
+}
+view>.info-block:not(:last-child)::after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% + 32rpx);
+  border-top: 1rpx solid rgb(224,224,224);
+}
+.info-block.last::after{
+  border: 0 none !important;
+}
+
+.time-worker{
+  width: 50%;
+  line-height: 2;
+}
+
+.shop-image-list{
+  width: calc(33% - 6rpx);
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx; 
+}
+
+.bg-summary{
+  margin-left: -32rpx;
+  margin-right: -32rpx;
+}

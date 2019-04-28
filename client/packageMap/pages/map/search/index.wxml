@@ -1,0 +1,101 @@
+<view class="bg-write page-box f-13">
+  
+  <view class="top-search flex flex-align-center margin-b-16">
+
+    <view class="top-search-city bg-info flex flex-align-center" bindtap='href' data-url="/packageMap/pages/map/city/index">
+      <text>{{choseCity || $state.location.ad_info.city}}</text>
+      <text class="iconfont icon-ios-arrow-down color-light"></text>
+    </view>
+
+    <view class="flex-1">
+      <cm-search-bar bindinput="onInput"></cm-search-bar>
+    </view>
+
+  </view>
+
+  <view class="line"></view>
+
+  <view class="padded-l-16 padded-t-16 ">
+    <text class="iconfont icon-ios-pin color-light"></text>
+    当前定位
+  </view>
+
+  <view class="flex flex-pack-justify flex-align-end margin-t-12 padded-r-16">
+    <view class="bold" style='padding-left: 72rpx;' 
+      data-index="1" data-adcode="{{$state.location.ad_info.adcode}}"
+      data-title="{{$state.location.formatted_addresses.recommend}}" 
+      data-province="{{$state.location.ad_info.province}}"
+      data-city="{{$state.location.ad_info.city}}" data-address="{{$state.location.address}}"
+      data-lat="{{$state.location.location.lat}}" data-lng="{{$state.location.location.lng}}"
+      bindtap='searchResultList'
+    >
+      {{$state.location.formatted_addresses.recommend}}
+      <!-- <text class="color-success" style='font-weight: 300;'>重新定位</text> -->
+    </view>
+    <view class="color-light" bindtap='choseMap'>
+      <text class="iconfont icon-ios-pin color-blue"></text>
+      地图选址
+    </view>
+  </view>
+
+</view>
+
+<view class="result-box bg-write margin-t-8 f-13" wx:if="{{sugData.length}}">
+  <view class="color-light padded-t-8 padded-b-8">搜索结果：</view>
+  <view class="result-list flex flex-pack-justify f-14" wx:for="{{sugData}}" wx:key="{{index}}"
+    data-index="{{index}}" data-adcode="{{item.ad_info.adcode}}"
+    data-title="{{item.title}}" 
+    data-province="{{item.ad_info.province}}"
+    data-city="{{item.ad_info.city}}" data-address="{{item.address}}"
+    data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}"
+    bindtap='searchResultList'>
+      <view class="padded-r-16">
+        <view>{{item.title}}</view>
+        <view class="color-light f-11" style="line-height: 1.2">{{item.address}}</view>
+      </view>
+      <view class="padded-l-16 color-light f-11" style="white-space:nowrap;">
+        {{item._distance}}
+      </view>
+  </view>
+</view>
+
+<view class="result-box bg-write margin-t-8 f-13" wx:if="{{history.length}}">
+  <view class="color-light padded-t-8 padded-b-8">最近访问</view>
+  <view class="result-list flex flex-pack-justify f-14" wx:for="{{history}}" wx:key="{{item.title}}"
+    data-index="{{index}}" data-adcode="{{item.adcode}}" 
+    data-title="{{item.title}}" 
+    data-province="{{item.province}}"
+    data-city="{{item.city}}" data-address="{{item.address}}"
+    data-lat="{{item.lat}}" data-lng="{{item.lng}}"
+    bindtap='searchResultList'>
+      <view class="padded-r-16">
+        <view>{{item.title}}</view>
+        <view class="color-light f-11" style="line-height: 1.2">{{item.address}}</view>
+      </view>
+      <view class="padded-l-16 color-light f-11" style="white-space:nowrap;">
+        {{item._distance}}
+      </view>
+  </view>
+</view>
+
+<view class="result-box bg-write margin-t-8 f-13" wx:if="{{opiData.length}}">
+  <view class="color-light padded-t-8 padded-b-8">
+    <text class="iconfont icon-ios-pin color-light" style="margin-left: -40rpx;"></text>
+    您附近的地址
+  </view>
+  <view class="result-list flex flex-pack-justify f-14" wx:for="{{opiData}}" wx:key="{{index}}"
+    data-index="{{index}}" data-adcode="{{item.ad_info.adcode}}" 
+    data-title="{{item.title}}"
+    data-province="{{item.ad_info.province}}"
+    data-city="{{item.ad_info.city}}" data-address="{{item.address}}"
+    data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}"
+    bindtap='searchResultListNear'>
+      <view class="padded-r-16">
+        <view>{{item.title}}</view>
+        <view class="color-light f-11" style="line-height: 1.2">{{item.address}}</view>
+      </view>
+      <view class="padded-l-16 color-light f-11" style="white-space:nowrap;">
+        {{item._distance}}
+      </view>
+  </view>
+</view>

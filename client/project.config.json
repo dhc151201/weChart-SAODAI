@@ -1,0 +1,109 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"uglifyFileName": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxb3c9cf1fb1e3dc79",
+	"projectname": "%E6%8D%8E%E5%B8%A6%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": 0,
+					"name": "分享行程入口 - 二维码",
+					"pathName": "packageTrip/detail/index",
+					"query": "scene=915%2Cauto%2Ctrue",
+					"scene": 1011
+				},
+				{
+					"id": 1,
+					"name": "h5活动页 - 二维码",
+					"pathName": "pages/webview/index",
+					"query": "url=http%3A%2F%2Flocalhost%3A3000%2Ftest.html",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "邀请店铺入驻分享入口",
+					"pathName": "packageShare/in/shop/index",
+					"query": "share=true&scene=AEOKL4GV&url=http%3A%2F%2Ftestsd.rrkd.cn%3A8030%2Fh5_invite_shop%2Findex.html%3FsharePath%3DpackageShare%2Fin%2Fshop%2Findex",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "分享行程邀请获得随机红包- 入口",
+					"pathName": "packageShare/in/trip-tip/index",
+					"query": "tripId=588&share=true",
+					"scene": "1011"
+				},
+				{
+					"id": 4,
+					"name": "附近求捎带者列表",
+					"pathName": "packageFindWith/near/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "找人捎带 - 订单详情",
+					"pathName": "packageOrder/detail/with-auto/index",
+					"query": "orderId=1000000246&from=find&share=true",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布行程",
+					"pathName": "packageTrip/add/index",
+					"query": "shopId=279,282,284,289,292,293,294,295,296,297",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "auth授权",
+					"pathName": "pages/webview/index",
+					"query": "url=http%3A%2F%2Flocalhost%3A3000%2Fauth.html",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "phone授权",
+					"pathName": "packageTrip/detail/index",
+					"query": "tripId=1202&from=create",
+					"scene": null
+				}
+			]
+		}
+	}
+}

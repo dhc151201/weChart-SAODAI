@@ -1,0 +1,11 @@
+@import "./../../assets/wxss/base.wxss";
+
+.no-data-placeholder image{
+  height: 216rpx;
+  width: 184rpx;
+}
+
+.no-data-placeholder button{
+  width: 480rpx;
+  border-radius: 50rpx;
+}

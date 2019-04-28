@@ -1,0 +1,32 @@
+.avatar-box,
+.avatar-box image{
+  display: inline-block;
+  border-radius: 100%;
+}
+.avatar-box{
+  
+}
+.normal{
+  width: 112rpx;
+  height: 112rpx;
+}
+.large{
+  width: 150rpx;
+  height: 150rpx;
+}
+.small{
+  width: 88rpx;
+  height: 88rpx;
+}
+.smaller{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+image.loadedStatus-false{
+  background: #eee;
+}
+
+.shadow-true{
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,.3);
+}

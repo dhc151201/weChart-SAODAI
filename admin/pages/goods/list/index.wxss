@@ -1,0 +1,28 @@
+.tabs-bar::after{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+  border-bottom: 1rpx solid rgb(224,224,224);
+}
+
+.goods-block{
+  margin: 40rpx 0;
+}
+
+.oper-right{
+  width: 120rpx;
+  margin-left: 30rpx;
+}
+
+.fixed-item{
+  height: 108rpx;
+  line-height: 108rpx;
+  width: 50%;
+  text-align: center;
+  /* color: rgb(177, 177, 177); */
+  /* color: #ffac1a; */
+}

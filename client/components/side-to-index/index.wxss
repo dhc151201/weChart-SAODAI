@@ -1,0 +1,25 @@
+.fix{
+    position: fixed;
+    transition: all 300ms;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    z-index: 1000;
+}
+image{
+    width: 114rpx;
+    height: 108rpx;
+}
+
+/* @-webkit-keyframes move{
+    0%, 100%{
+      transform: translate3d(0, 0, 0);
+    }
+    50%{
+      transform: translate3d(0, -20rpx, 0);
+    }
+  } */
+  
+  .fix.out{
+    opacity: 0.3;
+    transform: translate3d(70%, 0, 0);
+  }

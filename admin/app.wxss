@@ -1,0 +1,98 @@
+@import './assets/iconfont/iconfont.wxss';
+@import './assets/wxss/base.wxss';
+@import './assets/wxss/from.wxss';
+page{
+  background: rgb(245, 245, 245);
+  min-height: 100vh;
+  color: #212121;
+  line-height: 1.5;
+  width: 100vw;
+  overflow-x: hidden;
+}
+cover-view{
+  line-height: 1.5;
+}
+
+.container {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+} 
+.min-full{
+  min-height: 100vh;
+}
+.full{
+  height: 100vh;
+}
+
+.has-fixed-bottom{
+  padding-bottom: 108rpx;
+  box-sizing: border-box;
+}
+.has-fixed-bottom-fullSen{
+  padding-bottom: calc(108rpx + 34rpx);
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 动画组 */
+.animation-in{
+  transition: all 300ms;
+  height: 300rpx;
+  opacity: 1;
+}
+.animation-out{
+  height: 0 !important;
+  transition: height 300ms;
+  opacity: 0;
+}
+
+
+@-webkit-keyframes easeIn{
+  form{
+    opacity: 0
+  }
+  to{
+    opacity: 1
+  }
+}
+@-webkit-keyframes easeOut{
+  form{
+    opacity: 1
+  }
+  to{
+    opacity: 0
+  }
+}
+
+
+@-webkit-keyframes scaleIn{
+  form{
+    transform: scale(0)
+  }
+  to{
+    transform: scale(1)
+  }
+}
+@-webkit-keyframes scaleOut{
+  form{
+    transform: scale(1)
+  }
+  to{
+    transform: scale(0)
+  }
+}
+.opacity{
+  opacity: 0;
+}
+.page-in{
+  -webkit-animation: easeIn 500ms forwards;
+}
+.page-out{
+  -webkit-animation: easeOut 300ms forwards;
+}

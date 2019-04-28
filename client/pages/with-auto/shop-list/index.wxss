@@ -1,0 +1,109 @@
+.top{
+    height: 208rpx;
+    width: 100vw;
+    overflow: hidden;
+}
+.shop-cover-pic{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.top-info{
+    height: 208rpx;
+    background: rgba(0,0,0,.5);
+    padding: 48rpx 32rpx 0;
+}
+
+.tab-box{
+    width: 650rpx;
+    top: 28rpx;
+    /* overflow-x: auto; */
+    /* overflow-y: hidden; */
+    margin-left: -28rpx;
+    /* margin-right: 82rpx; */
+    /* padding-right: 122rpx; */
+    word-break: keep-all;
+    height: 82rpx;
+    z-index: 100;
+}
+.tab-box::after{
+    content: "";
+    display: block;
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 80rpx;
+    height: 100%;
+    /* background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgb(0,0,0) );  */
+}
+.tab-item{
+    position: relative;
+    z-index: 10;
+    padding: 12rpx;
+    border-bottom: 6rpx solid transparent;
+    box-sizing: border-box;
+    /* display: block; */
+}
+.tab-item:first-child{
+    /* margin-left: 12rpx; */
+}
+.tab-item.active{
+    position: relative;
+    color: rgb(255, 172, 26);
+    border-bottom-color: rgb(255, 172, 26);
+}
+/* .tab-item.active::after{
+    content: "";
+    display: block;
+    bottom: 0;
+    left: 12rpx;
+    position: absolute;
+    width: calc(100% - 24rpx);
+    border-bottom: 6rpx solid rgb(255, 172, 26);
+} */
+.more-item{
+    right: -16rpx;
+    bottom: -16rpx;
+    /* background: #fff; */
+    z-index: 1;
+    position: absolute;
+}
+
+
+.shop-list-box{
+    border-radius: 20rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0,0,0,.1);
+    min-height: calc(100vh - 208rpx - 64rpx);
+    box-sizing: border-box;
+}
+.shop-list-box.has-list{
+    min-height: calc(100vh - 208rpx - 264rpx);
+}
+.shop-list{
+    padding: 40rpx 0;
+}
+.shop-list:not(:last-child){
+    border-bottom: 1rpx solid rgb(224,224,224);
+}
+.title{
+    padding-left: 16rpx;
+}
+.title::before{
+    content: "";
+    display: block;
+    left: 0;
+    top: 8rpx;
+    height: 32rpx;
+    position: absolute;
+    border-left: 8rpx solid rgb(255, 172, 26);
+}
+
+
+.no-data-placeholder{
+    padding-top: 15vh;
+}
+  
+  

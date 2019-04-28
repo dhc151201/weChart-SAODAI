@@ -1,0 +1,10 @@
+.panel{
+    border-radius: 16rpx;
+    box-shadow: 0 5rpx 15rpx rgba(0,0,0,.05);
+    margin: 24rpx 32rpx;
+    padding: 32rpx;
+}
+
+.label-left{
+    width: 200rpx;
+}

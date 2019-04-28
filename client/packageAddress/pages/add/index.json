@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增收货信息",
+  "usingComponents": {
+    "cm-fixed-bar": "./../../../components/fixed-bar-text/index"
+  }
+}

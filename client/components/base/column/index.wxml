@@ -1,0 +1,17 @@
+<!-- 栏目 -->
+
+<view class="column-box">
+  <view class="column-margin-padded">
+    <view class="flex flex-pack-justify flex-align-center">
+
+      <view class="html-left f-17">
+        <slot name="left"></slot>
+      </view>
+
+      <view class="html-right f-14">
+        <slot name="right"></slot>
+      </view>
+
+    </view>
+  </view>
+</view>

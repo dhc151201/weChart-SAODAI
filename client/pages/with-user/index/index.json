@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "我的",
+    "usingComponents": {
+        "cm-note": "/components/base/note/index",
+        "cm-nav-bar": "/components/nav-bar/index",
+        "van-switch": "/libs/vant/switch/index",
+        "wux-refresher": "/libs/wux/refresher/index",
+        "cm-bubbles": "/components/base/bubbles/index",
+        "cm-mask": "/components/base/mask/index",
+        "cm-envelope": "/components/envelope/envelope",
+        "cm-label-hot" : "/components/base/label-hot/index",
+        "sd-spin": "/libs/sdai/spin/index"
+    }
+}

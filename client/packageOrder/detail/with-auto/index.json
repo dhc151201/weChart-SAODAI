@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "fixed-bar": "/components/fixed-bar/index",
+    "fixed-bar-text": "/components/fixed-bar-text/index",
+    "cm-order-shop-goodslist": "/components/order-shop-goodslist/index",
+    "wux-timeline": "/libs/wux/timeline/index",
+    "cm-contact": "/components/base/contact/index",
+    "wux-refresher": "/libs/wux/refresher/index",
+    "cm-side-to-index": "/components/side-to-index/index",
+    "wux-notice-bar": "/libs/wux/notice-bar/index",
+    "wux-timeline-item": "/libs/wux/timeline-item/index"
+  }
+}

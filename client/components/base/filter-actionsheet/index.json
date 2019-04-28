@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "i-drawer": "/libs/ivew/drawer/index",
+        "sd-button-group": "/libs/sdai/from/button-group/index"
+    }
+}

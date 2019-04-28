@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "TA能捎带的微店",
+  "onReachBottomDistance": 0,
+  "usingComponents": {
+      "cm-note": "/components/base/note/index",
+      "fixed-bar": "/components/fixed-bar/index",
+      "cm-fixed-bar-share": "/components/fixed-bar-share/index",
+      "cm-fixed-bar-text": "/components/fixed-bar-text/index",
+      "cm-goods-paycard-bar": "/components/goods-paycard-bar/index",
+      "cm-pay-card": "/components/pay-card/index",
+      "cm-dialog-editPhone": "/components/dialog-editPhone/index",
+      "wux-select": "/libs/wux/select/index",
+      "cm-mask": "/components/base/mask/index",
+      "cm-side-to-index": "/components/side-to-index/index",
+      "cm-envelope": "/components/envelope/envelope"
+  }
+}

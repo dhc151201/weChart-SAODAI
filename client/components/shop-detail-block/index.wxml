@@ -1,0 +1,94 @@
+<view class="f-17">{{info.shopName}}</view>
+    <view>
+
+      <view class="info-block last" bindtap="showOtherShops" wx:if="{{info.otherShops.length}}">
+        <view class="title padded-b-8 margin-t-16 f-14">其它{{info.otherShops.length}}家分店
+          <text class="iconfont icon-ios-arrow-down f-17 rel" style="top: 4rpx;">
+            
+          </text>
+            
+        </view>
+        <view class="content f-13 padded-b-16">
+          <view wx:for="{{info.otherShops}}" wx:key="{{item.id}}" wx:if="{{index< 2}}">{{item.shopName}}</view>
+        </view>
+      </view>
+
+      <view class="padded-t-8 bg-summary"></view>
+
+      <view class="padded-l-16">
+
+        <view class="info-block">
+          <view class="title padded-b-8 margin-t-16 f-14">地址</view>
+          <view class="content f-13 padded-b-16">
+            {{info.address}}
+          </view>
+        </view>
+
+        <view class="info-block" wx:if="{{info.shopTelphone}}">
+          <view class="title padded-b-8 margin-t-16 f-14">电话</view>
+          <view class="content f-13 padded-b-16">
+            {{info.shopTelphone}}
+          </view>
+        </view>
+
+        <view class="info-block">
+          <view class="title padded-b-8 margin-t-16 f-14">营业时间</view>
+          <view class="content f-13 padded-b-16">
+            <view class="flex">
+              <view class="time-worker">
+                <view wx:for="{{[1, 2, 3, 4]}}" wx:key="{{index}}">
+                  <text class="padded-r-16">{{weekName[info.hoursList[item].weekDay]}}</text>
+                  {{info.hoursList[item].startTime}} - {{info.hoursList[item].endTime}}
+                </view>
+              </view>
+              <view class="time-worker padded-l-16">
+                <view wx:for="{{[5,6, 0]}}" wx:key="{{index}}">
+                  <text class="padded-r-16">{{weekName[info.hoursList[item].weekDay]}}</text>
+                  {{info.hoursList[item].startTime}} - {{info.hoursList[item].endTime}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <block wx:if="{{info.feature}}">
+          <view class="padded-t-8 bg-summary"></view>
+
+          <view class="padded-l-16 padded-r-16">
+
+            <view class="info-block">
+              <view class="title padded-b-8 margin-t-16 f-14">特色</view>
+              <view class="content f-13 padded-b-16">
+                <view>
+                  <cm-note wx:for="{{info.tagList}}" wx:key="{{index}}">{{item.name}}</cm-note>
+                </view>
+                <view>{{info.feature || ''}}</view>
+              </view>
+            </view>
+          </view>
+
+      </block>
+
+      <block wx:if="{{info.shopImages.length}}">
+          <view class="padded-t-8 bg-summary"></view>
+
+          <view class="padded-l-16 padded-r-16">
+
+            <view class="info-block">
+              <view class="title padded-b-8 margin-t-16 f-14">店铺环境</view>
+              <view class="content f-13 padded-b-16">
+                <view class="flex flex-align-center flex-pack-justify" style="flex-wrap: wrap">
+                  <image wx:for="{{info.shopImages}}" bindtap="showGallery" data-index="{{index}}" wx:key="{{index}}" class="shop-image-list" src="{{item}}?imageView2/1/w/200/h/200/q/100"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+
+      </block>
+
+    </view>
+
+    <wux-select id="wux-select" />
+    <wux-gallery catchtouchmove="nullFun" id="wux-gallery" />

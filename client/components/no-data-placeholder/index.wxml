@@ -1,0 +1,21 @@
+<view class="flex flex-v flex-pack-center flex-align-center no-data-placeholder"
+    style="min-height: {{ height }}"
+  >
+  
+      
+      <image class="no-data-image" wx:if="{{image}}" mode='aspectFit' src="{{image}}"
+        style="width: {{imagewidth}}rpx; height: {{imageheight}}rpx;"
+      ></image>
+
+      <view class="f-13" style="padding-bottom: {{placeholderSmiple ? 0 : 72}}rpx;">
+        {{ placeholder }}
+      </view>
+      <view class="f-11 color-light" style="padding-bottom: 32rpx;">
+        {{ placeholderSmiple }}
+      </view>
+
+      <button wx:if="{{buttontext}}" class="btn bg-success-ease" hover-class='hover-class' bindtap='href' data-url="{{href}}" bindtap="submit">{{ buttontext }}</button>
+
+
+ 
+</view>

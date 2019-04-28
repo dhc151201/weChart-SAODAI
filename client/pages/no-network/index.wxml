@@ -1,0 +1,11 @@
+<view style="padding-top: 20vh;"></view>
+<no-data-placeholder
+    imagewidth="324"
+    imageheight="150"
+    placeholder="获取数据失败，请点击重试"
+    image="./../../assets/images/img_noorders@2x.png"
+    buttontext="再试一次" bind:submit="tryHandel"
+/>
+
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

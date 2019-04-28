@@ -1,0 +1,9 @@
+.list{
+  color: #ffac1a;
+  padding: 24rpx 0;
+  font-size: 34rpx;
+  text-align: center;
+}
+.list.border-bottom{
+  border-bottom: 1rpx solid #ddd;
+}

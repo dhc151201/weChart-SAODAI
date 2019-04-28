@@ -1,0 +1,24 @@
+<view class="nav-bar text-center flex flex-pack-around flex-align-center f-11 {{fullSen ? 'fullSen' : ''}}">
+  <!-- <view class="flex-1 bav-bar-item {{activeindex== 'with-auto' ? 'color-red' : ''}}"
+    catchtap='hrefgo' data-url="/pages/with-user/index/index"
+  >
+    交易流水
+  </view> -->
+  <view class="flex-1 bav-bar-item {{activeindex== 'order-list' ? 'color-success' : ''}}"
+    catchtap='hrefgo' data-url="/pages/order/list/index"
+  >
+    <image class="rel" src="./../../assets/images/{{activeindex== 'order-list' ? 'tabIconIndentS' : 'tabIconIndentN'}}@2x.png" >
+      <text wx:if="{{labels[0]}}" class="abs label">{{labels[0]}}</text>
+    </image>
+    <view>订单管理</view> 
+  </view>
+  <view class="flex-1 bav-bar-item {{activeindex== 'user-index' ? 'color-success' : ''}}"
+    catchtap='hrefgo' data-url="/pages/user/index/index"
+  >
+    <image mode='' class="rel" src="./../../assets/images/{{activeindex== 'user-index' ? 'tabIconMyS' : 'tabIconMyN'}}@2x.png" >
+      <text wx:if="{{labels[1]}}" class="abs label">{{labels[1]}}</text>
+    </image>
+    <view>我的</view> 
+    
+  </view>
+</view>

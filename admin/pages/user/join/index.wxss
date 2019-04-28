@@ -1,0 +1,6 @@
+label{
+  width: 33%;
+}
+.radio-text{
+  top: 6rpx;
+}

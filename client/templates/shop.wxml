@@ -1,0 +1,10 @@
+<template name="shopInfo">
+    <view class="flex flex-pack-justify flex-align-center padded-b-16">
+        <cm-loading-image light width="88rpx" height="88rpx"
+            src="{{data.logoImageUrl}}?imageView2/1/w/100/h/100/q/85" radius="{{88}}" />
+        <view class="flex-1 f-11 color-grey padded-l-8">
+            <cm-note wx:for="{{data.categorys}}" wx:if="{{index< 3}}" wx:key="{{index}}" color="rgb(255,172,26)" background="rgb(255,246,232)">{{item}}</cm-note>
+            <view>{{data.address}}</view>
+        </view>
+    </view>
+</template>

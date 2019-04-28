@@ -1,0 +1,13 @@
+<swiper class="base-swiper" indicator-dots="{{indicatorDots}}" circular="{{true}}"
+  autoplay="{{autoplay}}" interval="{{interval}}"
+  duration="{{duration}}" loop="{{loop}}"
+  display-multiple-items="{{showNum}}" 
+  previous-margin="{{previousmargin}}rpx" next-margin="{{nextmargin}}rpx"
+  style="height: {{height}}rpx; width: {{width}}"
+  >
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item style="padding: 0 {{split}}rpx">
+      <image mode='aspectFill' bindtap='tap' data-index="{{index}}" src="{{item}}" class="slide-image" style='display: block; border-radius: {{raidus}}rpx !important'/>
+    </swiper-item>
+  </block>
+</swiper>

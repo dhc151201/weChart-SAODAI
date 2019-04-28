@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cm-note": "./../base/note/index"
+  }
+}

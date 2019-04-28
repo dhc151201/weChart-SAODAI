@@ -1,0 +1,13 @@
+.top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.search-bar{
+  z-index: 10;
+  height: 64rpx;
+  background: rgb(245, 245, 245);
+  border-radius: 64rpx;
+}

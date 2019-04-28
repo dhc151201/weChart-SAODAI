@@ -1,0 +1,16 @@
+<view class="flex flex-pack-center flex-align-center no-data-placeholder"
+    style="min-height: {{ height }}"
+  >
+  <view>
+
+      <image wx:if="{{image}}" mode='aspectFit' src="{{image}}"></image>
+
+      <view class="padded-t-8 f-13" style="padding-bottom: 120rpx;">
+        {{ placeholder }}
+      </view>
+
+      <button wx:if="{{buttontext}}" class="btn bg-success-ease" hover-class='hover-class' bindtap='href' data-url="{{href}}">{{ buttontext }}</button>
+
+
+  </view>
+</view>

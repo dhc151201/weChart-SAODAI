@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的收货信息",
+  "usingComponents": {
+    "wux-button": "./../../../libs/wux/button/index",
+    "cm-shop-base-card": "./../../../components/shop-media-card/index",
+    "cm-fixed-bar": "./../../../components/fixed-bar-text/index"
+  }
+}

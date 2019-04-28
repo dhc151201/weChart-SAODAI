@@ -1,0 +1,181 @@
+<import src="./../../templates/load.more.wxml" />
+<import src="./../../templates/shop.wxml" />
+
+<view catchtouchmove="nullFun">
+    
+    <image class="top-bg abs" src="{{$state.assetsUrl}}bg_yellow@2x.png"></image>
+    <view class="" style="padding-top: 1rpx;"></view>
+    <view class="top-ticket rel"
+        bindtap="tripOrder"
+        bind:touchmove="hideSideToIndexComp"
+        bind:touchend="showSideToIndexComp" >
+        <image class="abs ticket-bg" src="{{$state.assetsUrl}}bg_134_2x.png"></image>
+        <!-- 捎带者信息、行程状态信息 -->
+        <view class="padded-l-16 padded-r-16 padded-t-12 padded-b-12 flex flex-pack-justify flex-align-center">
+            <cm-loading-image width="80rpx" height="80rpx" src="{{SimpleUser.wxAvatarUrl}}?imageView2/1/w/100/h/100/q/85" radius="{{96}}" />
+            <view class="f-11 padded-l-8 flex-1">
+                <view class="f-17 blod aui-ellipsis-1" style="width: 300rpx;">{{SimpleUser.wxNickname}}</view>
+                <view wx:if="{{from== 'create'}}"></view>
+                <view wx:elif="{{tripInfo.myTrip}}" class="padded-r-16 trip-footer flex flex-pack-justify flex-align-center">
+                    <view>
+                        我已接 <text class="color-success">{{tripStac.orderCount}}</text> 单
+                    </view>
+                    <view>
+                        预计捎带收入 <text class="color-success">¥{{tripStac.projectedIncome}}</text>
+                    </view>
+                </view>
+                <view wx:else class="flex flex-pack-justify flex-align-center padded-b-0 f-11">
+                    <view class="flex-1 border-box">
+                        <text class="color-success">{{customer.length}}</text> 人下单
+                    </view>
+                    <view class="padded-r-4" >
+                        <view catchtap="showRemarks" wx:if="{{tripInfo.remarks}}" class="f-11 color-blue">捎带备注</view>
+                    </view>
+                </view>
+
+            </view>
+            <!-- 行程卡片top right状态操作区 -->
+            <block wx:if="{{!tripInfo.myTrip}}" class="f-11">
+            </block>
+            <block wx:else>
+                <view class="{{tripInfo.tripStatus== 0 ? 'bg-success-ease' : 'cancel' }} trip-status-select color-write f-13 text-center" catchtap="showOtherStatus">
+                    {{tripStatusStr[tripInfo.tripStatus]}} <text wx:if="{{tripInfo.tripStatus!= 2}}" class="iconfont icon-down icon-ios-arrow-down f-17 color-write rel"></text>
+
+                </view>
+            </block>
+
+        </view>
+
+        <!-- 行程地址始发目的地信息 -->
+        <view class="line-c"></view>
+        <view class="trip-box flex f-11 padded-16 padded-t-12 padded-b-12">
+            
+            <view><cm-note radius="6" color="#fff" background="#ffac1a">送达</cm-note></view>
+            <view class="trip-to flex-1" style="font-size: 32rpx; line-height: 1;margin-top: 6rpx;">
+                <view class="flex flex-align-center bold">
+                    <view class="aui-ellipsis-1" style="max-width: 510rpx;">
+                        {{tripInfo.destAddress}}
+                    </view>
+                    <text catchtap="showstartAddress" class="iconfont icon-gantanhao color-blue"></text>
+                </view>
+                <view class="f-13 padded-t-4"><cm-time time="{{tripInfo.arriveTime}}"  /></view>
+            </view>
+        
+
+        </view>
+
+    </view>
+
+    <view class="flex flex-pack-justify"  bind:touchmove="hideSideToIndexComp" bind:touchend="showSideToIndexComp">
+        <scroll-view scroll-y class="left f-13 {{(!tripInfo.myTrip && tripInfo.tripStatus!= 0) ? 'no-bottom-fixed' : ''}}">
+            <view wx:for="{{shopList}}" wx:key="{{index}}" data-id="{{item.id}}" data-index="{{index}}"
+            class="left-item border-box flex flex-align-center {{item.active && 'active'}}"
+            bindtap='changeShopHandel'
+            >
+                <view class="aui-ellipsis-2">{{item.name}}</view>
+                <text wx:if="{{item.discountRate> 0}}" class='abs new-price-shop'>{{item.discountRate* 10}}折</text>
+            </view>
+        </scroll-view>
+        <view class="right flex-1 padded-l-12 padded-r-12 border-box {{(!tripInfo.myTrip && tripInfo.tripStatus!= 0) ? 'no-bottom-fixed' : ''}}">
+            
+            <!-- 商品列表 -->
+                <scroll-view wx:if="{{tripInfo.myTrip || tripInfo.tripStatus!= 0}}" scroll-y="{{scrollY || true}}" class="scroll-goods" bindscrolltolower="scrolltolower" style="height: {{innerScrollHeight}};">
+
+                    <!-- 店铺简介 -->
+                    <template is="shopInfo" data="{{data: shopList[shopIndex]}}" />
+
+                    <cm-goods-paycard-bar showGallery="{{false}}" showDesc wx:for="{{goodsList}}" wx:key="{{index}}" goodsInfo="{{item}}" />
+
+                    <!-- 搜索结果提示 -->
+                    <view wx:if="{{loadmore== 3}}" style="padding-top: 25vh;">
+                        <no-data-placeholder placeholder="暂无已商品哟~" image="./../../assets/images/picHintNog@2x.png" />
+                    </view>
+                    <template wx:else is="loadmore" data="{{status: loadmore}}" />
+
+                </scroll-view>
+
+                <cm-pay-card wx:else
+                    list="{{goodsList}}"
+                    bind:submit="submit" btnText="{{tripId ? '立即下单' : '找人捎带'}}"
+                    tripInfo="{{tripInfo}}" shopId="{{shopInfo.id}}" 
+                    discountRate="{{shopInfo.discountRate}}" maxDiscountsVel="{{maxDiscountsVel}}" discountName="{{shopInfo.discountName}}" 
+                    bindscrolltolower="scrolltolower" isScrollView scrollY="{{scrollY || true}}"
+                    scrollViewStyle="height: {{innerScrollHeight}};"
+                    loadmoreStatus="{{loadmore}}"
+                    shopInfo="{{shopList[shopIndex]}}"
+                >
+                    
+                </cm-pay-card>
+
+
+        </view>
+    </view>
+
+
+</view>
+
+<wux-select id="wux-select" />
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+
+<cm-dialog-editPhone id="dialog-phone" bindsubmit="editPhone" />
+
+
+<cm-mask id="sdai-mask" zindex="140" catchtap='hidestartAddress'>
+    <view class="bg-write padded-16 pandel color-grey f-13">
+        <view class="flex">
+            <view class="padded-r-12 text-right address-left">
+                出发地：
+            </view>
+            <view class=" flex-1">
+                {{tripInfo.startAddress}}
+            </view>
+        </view>
+        <view class="flex">
+            <view class="padded-r-12 text-right address-left">
+                目的地：
+            </view>
+            <view class=" flex-1">
+                {{tripInfo.destAddress}}
+            </view>
+        </view>
+        <view class="flex">
+            <view class="padded-r-12 text-right address-left">
+                出发时间：
+            </view>
+            <view class=" flex-1">
+                <cm-time time="{{tripInfo.setOutTime}}" />
+            </view>
+        </view>
+        <view class="flex">
+            <view class="padded-r-12 text-right address-left">
+                到达时间：
+            </view>
+            <view class=" flex-1">
+                <cm-time time="{{tripInfo.arriveTime}}" />
+            </view>
+        </view>
+
+    </view>
+</cm-mask>
+
+<block wx:if="{{tripInfo.myTrip}}">
+    <layout-body hasFixed="bottom"/>
+    <cm-fixed-bar-share wx:if="{{tripInfo.tripStatus== 0 }}" bindshareHandel="onshareHandel" isShowGuide="{{from== 'create'}}"/>
+    <cm-fixed-bar-text wx:elif="{{tripInfo.tripStatus== 1}}" bindtap="startTrip" background="-webkit-linear-gradient(left, rgb(224, 224, 224), rgb(189, 189, 189))">已暂停接单，重新开启</cm-fixed-bar-text>
+    <cm-fixed-bar-text wx:elif="{{tripInfo.tripStatus== 2}}" bindtap="href" data-url="/pages/with-help/shop-list/index" background="-webkit-linear-gradient(left, rgb(224, 224, 224), rgb(189, 189, 189))">已取消接单，重新开启</cm-fixed-bar-text>
+</block>
+
+<cm-side-to-index wx:if="{{share== 'true'}}" id="side-to-index" bottom="200" right="8" />
+
+<cm-mask zindex="300" id="mask-tip-trip">
+     <cm-envelope bindsure="tripTipSureHandel" bindclose="tripTipCloseHandel" data="{{tripRedPacket}}" showClose type="large" ></cm-envelope>
+</cm-mask>
+
+<cm-mask zindex="310" id="mask-tip-share">
+     <cm-envelope bindsure="shareTipSureHandel" bindclose="shareTipCloseHandel" data="{{shareRedPacket}}" showClose ></cm-envelope>
+</cm-mask>
+
+

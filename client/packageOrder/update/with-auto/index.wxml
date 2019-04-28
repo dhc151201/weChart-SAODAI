@@ -1,0 +1,108 @@
+
+<view class="flex flex-pack-justify flex-align-center bg-write padded-16 address-box border-box"
+    bindtap="href" data-url="/packageAddress/pages/list/index?after=/packageOrder/update/with-auto/index"
+    >
+    <block wx:if="{{!choseAddress}}">
+        <view class="">
+            <text class="iconfont icon-tianjia color-blue f-17 padded-r-4"></text>
+        </view>
+        <view class="flex-1">
+            请点击添加收货人地址
+        </view>
+    </block>
+      
+    <block wx:else> 
+        <view class="f-13 color-light">
+            <view class="f-14 color-default">
+                {{choseAddress.receiveName}} <text class="padded-l-16 margin-l-8">{{choseAddress.receivePhone}}</text>           
+            </view>
+            {{choseAddress.receiveAddress+ choseAddress.houseNo}}
+        </view>
+    </block>
+      
+    <view class="">
+        
+    </view>
+    <text class="iconfont icon-ios-arrow-forward color-light f-17"></text>
+</view>
+<image class="line-address fl" src="./../../../assets/images/img_redblueline@2x.png" mode="aspectFill" />
+  
+<view wx:if="{{info}}" class="padded-l-16 padded-r-16 padded-t-8 padded-b-8 margin-t-12 bg-write f-11 color-grey">
+    捎带人
+    <view class="flex flex-pack-justify flex-align-center f-14 margin-t-4">
+        <cm-loading-image width="72rpx" height="72rpx" src="{{info.incidentallierImageUrl}}?imageView2/1/w/100/h/100/q/85" radius="{{72}}" />
+        <view class="flex-1 bold padded-l-8 aui-ellipsis-1" style="width: 50%;">
+            {{info.incidentallyName || ''}}
+        </view>
+        <view class="color-success">
+            大约 {{info.arriveTime}}送达
+        </view>
+    </view> 
+</view>
+  
+
+
+<view wx:if="{{info}}" class="padded-l-16 padded-r-16 margin-b-12 margin-t-16">
+    <view class="panel order-goods-panel bg-write padded-l-16 padded-r-16 rel">
+        <block wx:for="{{info.details}}" wx:key="{{index}}">
+            <view wx:if="{{index}}" class="line"></view>
+            <cm-order-shop-goodslist data="{{item}}" />
+        </block>
+    </view>
+</view>
+
+<view wx:if="{{info}}" class="padded-l-16 padded-r-16 margin-b-12">
+    <view class="panel bg-write padded-l-16 padded-r-16 padded-t-12 padded-b-12">
+        <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+            <text>商品总价</text>
+            <text>¥{{info.goodsAmount}}</text>
+        </view>
+        <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+            <text>捎带费</text>
+            <text>¥{{info.tripAmount}}</text>
+        </view>
+        <block wx:if="{{info.discountAmount}}">
+            <view class="line"></view>
+            <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+                <text>平台优惠</text>
+                <text>-¥{{info.discountAmount}}</text>
+            </view>
+        </block>
+        <view class="line"></view>
+        <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+            <text>共 <text class="color-error bold">{{info.skuCount}}</text> 件商品</text>
+            <text>合计<text class="color-error bold">¥<text class="f-17">{{info.allAmountStr}}</text></text></text>
+        </view>
+        <view class="flex flex-align-center f-11">
+            <sd-radio size="36" chose="{{isRadiochange}}" bindchange="radiochangeHandel">
+                <text class="padded-l-8"></text>
+            </sd-radio>
+            <text >已阅读并同意</text>
+            <text class="color-blue" bindtap="href" data-url="/pages/webview/index?url=https://rrsd.rrkd.cn/Agreement/user.html">《捎带会员服务条款》</text>
+        </view>
+    </view>
+</view>
+
+<layout-body  hasFixed="bottom"/>
+
+<fixed-bar>
+    <view class="flex-1 bold padded-l-16">
+        ¥ <text class='number rel'>{{info.allAmountStr}}</text><text class="f-11 color-light">（含捎带费）</text>
+    </view>
+    <text wx:if="{{info.status== 0}}" class="color-grey padded-16 margin-l-8" bindtap="orderCancel">取消</text>
+    <view wx:if="{{info.discountAmount}}" catchtap="payHandel" class="btn bg-success-ease color-write text-center f-17 padded-t-4" style="line-height: 1.2;">
+        微信支付
+        <view class="f-13">
+            已优惠¥{{info.discountAmount}}
+        </view>
+    </view>
+    <view wx:else catchtap="payHandel" class="btn bg-success-ease color-write text-center f-17">
+        微信支付
+    </view>
+</fixed-bar>
+  
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

@@ -1,0 +1,35 @@
+<form class="full bg-write" bindsubmit="onSubmit" style="display: block;">
+
+  <image src="{{ $state.assetsUrl }}bg_enter.png" style="width: 100%;height: 728rpx;"></image>
+
+  <view class="padded-l-16">
+    <view class="from-input-block flex flex-align-center">
+      <text class="from-label">商户类型</text>
+      <radio-group bindchange="radioChange" class="f-13 flex-1 flex flex-pack-around flex-align-center">
+        <label class="radio" wx:for="{{items}}">
+          <radio color="#ffac1a" value="{{item.name}}" checked="{{item.checked}}" />
+          <text class="rel radio-text">{{item.value}}</text>
+        </label>
+      </radio-group>
+      <input hidden name="bsType" value="{{bsType}}" ></input>
+    </view>
+  </view>
+
+  <view class="padded-l-16">
+    <view class="from-input-block flex flex-align-center">
+      <text class="from-label">商户名称</text>
+      <input cursor-spacing="140" name="merchantName" class="flex-1 f-14" placeholder='输入企业或者店铺名称'></input>
+    </view>
+  </view>
+
+  <view class="padded-16" style="padding-top: 65rpx;">
+    <button form-type="submit" hover-class="hover-class" class="btn btn-block btn-lg bg-success-ease">立即入驻</button>
+  </view>
+  <view class="text-center f-13 padded-b-16">
+    <button class="flex-1 btn contact-btn" open-type="contact">联系客服</button>
+  </view>
+
+</form>
+
+<import src="./../../../templates/behavior.wxml" />
+<template is="behavior" />

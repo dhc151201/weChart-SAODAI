@@ -1,0 +1,34 @@
+@import './../../assets/iconfont/iconfont.wxss';
+@import './../../assets/wxss/base.wxss';
+
+
+.shop-cover-pic{
+  width: 100vw;
+  height: 192rpx;
+}
+
+.shop-info-card{
+  left: 32rpx;
+  top: -172rpx;
+  width: 686rpx;
+  height: 192rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,.05);
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+}
+.iconstyle{
+  display: inline-block;
+  width: 40rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-left: 4rpx;
+}
+
+.distance-view{
+  white-space: nowrap;
+}
+
+.shopName{
+  display: inline-block;
+  max-width: 300rpx;
+}

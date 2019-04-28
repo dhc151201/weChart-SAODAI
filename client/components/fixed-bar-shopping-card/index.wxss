@@ -1,0 +1,29 @@
+@import './../../assets/wxss/base.wxss';
+
+.card-box{
+    margin: 0 30rpx;
+    width: 104rpx;
+  }
+  .card-box image,
+  .card-box cover-image{
+    width: 104rpx;
+    height: 104rpx;
+    top: -70rpx;
+    z-index: 1;
+  }
+  .card-box .all-number{
+    right: -18rpx;
+    top: -66rpx;
+    z-index: 5;
+  }
+  .btn{
+    width: 240rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    line-height: 80rpx;
+    margin: 10rpx 30rpx;
+  }
+  .number{
+    font-size: 40rpx;
+    top: 2rpx;
+  }

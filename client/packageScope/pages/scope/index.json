@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#F1CD39",
+  "usingComponents": {
+    "wux-button": "./../../../libs/wux/button/index",
+    "wux-spin": "/libs/wux/spin/index"
+  }
+}

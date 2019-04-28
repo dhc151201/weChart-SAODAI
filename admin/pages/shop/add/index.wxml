@@ -1,0 +1,102 @@
+<scroll-view class="full" scroll-y="{{uploadLogo== 0}}" catchtouchmove='nullFun'>
+
+  <form bindsubmit="onSubmit">
+
+    <view class="bg-write text-center padded-b-16 padded-t-16">
+
+      <wux-spin nested spinning="{{uploadLogo== 1}}">
+        <view class="upload-box f-14 flex flex-v flex-pack-center flex-align-center rel" bindtap='actionsheetShow'>
+          <view class="iconfont icon-tianjia color-blue f-40 margin-b-12"></view>
+          上传logo
+          <image wx:if="{{logoImageUrl}}" mode='scaleToFill' src="{{logoImageUrl+ '?imageView2/1/w/100/h/100/q/85'}}" class="abs logo-image"></image>
+        </view>
+      </wux-spin>
+
+      <input hidden name="logoImageUrl" value="{{logoImageUrl}}"></input>
+
+      <text class="color-blue f-13 padded-t-8" bindtap='hrefExampleHandel'>
+        <text class="color-light">
+        <!-- 512*512尺寸 -->
+        </text> 查看示例
+      </text>
+    </view>
+
+    <view class="margin-t-8 bg-write padded-l-16 from-block">
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">店铺名称</text>
+        <input bindinput='onInputFrom' data-name="shopName" class="flex-1 f-14" name="shopName" placeholder='请输入店铺名称'></input>
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">经营者</text>
+        <input bindinput='onInputFrom' data-name="principalName" name="principalName" class="flex-1 f-14" placeholder='姓名'></input>
+      </view>
+
+      <view class="from-input-block flex flex-align-center">
+        <text class="from-label">联系电话</text>
+        <input bindinput='onInputFrom' data-name="principalTelphone" name="principalTelphone" type="number" value="{{principalTelphone}}" class="flex-1 f-14" placeholder='输入经营者的手机号码'
+          maxlength='11'
+        ></input>
+        <!-- <button open-type='getPhoneNumber' hover-class="hover-class" class="btn btn-block btn-sm bg-success-ease" 
+        bindgetphonenumber="ongetphonenumber">微信授权</button> -->
+      </view>
+
+      <view class="from-input-block flex flex-align-center"
+        bindtap='href' data-url="/packageMap/pages/map/search/index?after=/pages/shop/add/index"
+        >
+        <text class="from-label">店铺地址</text>
+        <view hidden="{{!choseAddress.address}}" class="flex-1 f-14">{{choseAddress.address}}</view>
+        <input hidden="{{choseAddress.address}}" value="{{choseAddress.address}}" name="address" disabled class="flex-1 f-14" placeholder='选择'></input>
+        <wux-icon color="rgb(204,204,204)" type="ios-arrow-forward" size="20"></wux-icon>
+      </view>
+
+      <view class="from-input-block flex flex-align-center last-input-block"
+        bindtap='href' data-url="/pages/goods/type/index"
+        >
+        <text class="from-label">经营品类</text>
+        <view hidden="{{!categoryList}}" class="flex-1 f-14">{{categoryList}}</view>
+        <input hidden='{{categoryList}}' name="categoryList" disabled class="flex-1 f-14" placeholder='选择'></input>
+        <wux-icon color="rgb(204,204,204)" type="ios-arrow-forward" size="20"></wux-icon>
+      </view>
+
+      <input hidden name="cityCode" value="{{choseAddress.cityCode}}"></input>
+      <input hidden name="cityName" value="{{choseAddress.cityName}}"></input>
+      <input hidden name="lat" value="{{choseAddress.lat}}"></input>
+      <input hidden name="lng" value="{{choseAddress.lng}}"></input>
+      <input hidden name="bsStartTime" value="09:00"></input>
+      <input hidden name="bsEndTime" value="21:00"></input>
+
+    </view>
+
+    <view class="margin-t-8 bg-write padded-l-16 from-block ">
+      <view class="from-input-block flex flex-align-center last-input-block">
+        <text class="from-label">店铺返利</text>
+        <input bindinput='onInputFrom' data-name="rebate" name="rebate" type="number" class="flex-1 f-14" placeholder='0 - 50'></input>
+        <text class="f-14">%</text>
+      </view>
+    </view>
+
+    <view class="text-center color-light padded-4 f-13">给捎带者返利，利于提高店铺销量</view>
+
+    <view class="padded-l-16 padded-r-16 f-11 color-light flex flex-align-center">
+      <cm-radio-group list="{{shopHoursRadios}}" bind:change="onShopHoursType"></cm-radio-group>  
+      <text class="color-blue margin-l-8" bindtap='href' data-url="/pages/webview/index?htmlUrl={{WEBVIEW}}/Agreement/shop.html">已阅读并同意店铺入驻协议</text> 
+    </view>
+
+    <view class="padded-16" style="padding-top: 65rpx;">
+      <button form-type="submit" hover-class="hover-class" class="btn btn-block btn-lg bg-success-ease">{{typeInStringBtn[$state.typeIn]}}</button>
+    </view>
+
+  </form>
+
+</scroll-view>
+
+<cm-empty-layout show="{{showLoading}}"></cm-empty-layout>
+
+<cm-actionsheet id="sdai-actionsheet">
+  <cm-upload bindprogress="onuploadProgress" bindchange="onuploadChange" bindsuccess="onuploadSuccess"></cm-upload>
+</cm-actionsheet>
+
+<wux-toptips id="wux-toptips" />
+<wux-dialog id="wux-dialog"></wux-dialog>

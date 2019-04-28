@@ -1,0 +1,47 @@
+<view class="order-box padded-16 bg-write" wx:for="{{orderInfo}}" wx:key="{{index}}" data-index="{{index}}"
+    bindtap='detailGo'
+    >
+        <!-- 捎带人信息及状态 -->
+        <view class="flex flex-align-center">
+            <cm-loading-image width="72rpx" height="72rpx" src="{{item.memberImageUrl}}?imageView2/1/w/100/h/100/q/100" radius="72" />
+            <view class="flex-1 padded-l-8">
+                <view class="flex flex-pack-justify flex-align-center">
+                    <view class="bold f-14">{{item.memberName}}</view>
+                    <view bindtap="makePhoneCall" data-phone="{{item.receiveUserPhone}}" class="iconfont icon-tubiao210 color-success f-17 padded-l-16"></view>
+                </view>
+                <view class="flex flex-pack-justify flex-align-center">
+                    <view class="f-11 color-grey flex flex-align-center">
+                       {{item.receiveUserAddress}} 
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 订单商品图片及数量 -->
+        <view class="flex flex-align-center padded-t-16 margin-t-4 f-11 padded-l-4">
+            <view class="rel {{index && 'margin-l-8'}}" wx:for="{{item.skus}}" wx:key="{{index}}" wx:if="{{index< 4}}">
+                <cm-loading-image width="144rpx" height="144rpx" src="{{item.skuImageUrl}}?imageView2/1/w/100/h/100/q/85" radius="10" />
+                <text class="abs goods-num">x{{item.skuCount}}</text>
+            </view>
+        </view>
+        <!-- 订单状态及商品总计 -->
+        <view class="padded-t-16 padded-b-16 color-semi flex flex-pack-justify flex-align-center f-11">
+            <text class="flex-1">捎带收入¥{{item.tripAmount || 0}}，订单合计¥{{item.amount || 0}}</text>
+            <!-- <text class="flex-1" ></text> -->
+            <view>
+            共 {{item.skuAcount}} 件 
+            </view>
+            <text class="iconfont icon-ios-arrow-forward color-light"></text>
+        </view>
+        <!-- 订单统计及操作提示区域 -->
+        <view class="order-footer f-14 flex flex-pack-justify flex-align-center padded-t-16">
+            <view class="flex-1">
+                <view wx:if="{{item.status== 2}}" class="color-light f-11">待提货</view>
+                <view wx:elif="{{item.status== 3}}" class="color-light f-11">待送达</view>
+                <view wx:elif="{{item.status== 4}}" class="color-light f-11">待签收</view>
+                <view wx:elif="{{item.status== 5}}" class="color-light f-11">已完成</view>
+                <view wx:elif="{{item.status== 6}}" class="color-light f-11">订单已取消</view>
+            </view>
+            <button  wx:if="{{item.status== 3}}" class="bg-success-ease f-13 btn" hover-class='hover-class'>确认送达</button>
+        </view>
+
+    </view>

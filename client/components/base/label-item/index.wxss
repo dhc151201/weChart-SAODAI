@@ -1,0 +1,22 @@
+
+/* 标签组 */
+.label-item{
+  height: 64rpx;
+  line-height: 64rpx;
+  margin: 12rpx;
+  padding: 0 32rpx;
+  border: 1rpx solid rgb(224, 224, 224);
+  border-radius: 64rpx;
+  display: inline-block;
+}
+/* 空心标签 激活状态*/
+.label-item.active{
+  border-color: #ffac1a;
+  color: #ffac1a;
+}
+/* 实心标签 激活状态*/
+.label-item.solid.active{
+  background: #ffac1a;
+  border-color: #fff;
+  color: #fff;
+}

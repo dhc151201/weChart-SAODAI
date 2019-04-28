@@ -1,0 +1,220 @@
+<wux-notice-bar wx:if="{{info.status!= 1 && info.status!= 6 && info.status!= 5 && info.systemTime < info.trip.arriveTime}}" mode="closable" content="送达时间超24小时捎带者仍未提货，系统将自动退款" />
+
+<view wx:if="{{from== 'find'}}" class="flex flex-pack-justify flex-align-center bg-write padded-16 triper-bar rel" style="z-index: 10;">
+    <view class="flex-1 padded-l-16">
+        <view class="bold f-14"><text class="iconfont icon-ios-pin color-success rel" style="top: 2rpx;left: -4rpx;margin-left: -34rpx; font-size: 34rpx;"></text>{{ info.receive.receiveUserAddress }}</view>
+        <view class="f-11 color-light">{{info.receive.receiveUserName}} - {{info.receive.receiveUserPhone}}</view>
+    </view>
+    <view class="tripuserPhone rel">
+        <view bindtap="makePhoneCall" data-phone="{{info.receive.receiveUserPhone}}" class="iconfont icon-tubiao210 color-success f-17 padded-l-16"></view>
+    </view>
+</view>
+<view wx:else class="flex flex-pack-justify flex-align-center bg-write padded-16 triper-bar rel" style="z-index: 10;">
+    <cm-loading-image width="72rpx" height="72rpx" src="{{info.trip.incidentallierImageUrl}}?imageView2/1/w/100/h/100/q/85" radius="72" />
+    <view class="flex-1 padded-l-8">
+        <view class="bold f-14">捎带者:{{ info.trip.incidentallyName }}</view>
+        <view class="f-11 color-light">行程信息：{{info.trip.startCityName}} - {{info.trip.destCityName}}</view>
+    </view>
+    <view class="tripuserPhone rel">
+        <view bindtap="makePhoneCall" data-phone="{{info.trip.incidentallyPhone}}" class="iconfont icon-tubiao210 color-success f-17 padded-l-16"></view>
+    </view>
+</view>
+
+<wux-refresher id="wux-refresher" bind:pulling="onPulling" bind:refresh="onRefresh">
+
+    <view class="padded-l-16 padded-r-16 margin-b-12">
+        <view class="panel order-goods-panel bg-write padded-l-16 padded-r-16 rel">
+            <image src="{{$state.assetsUrl}}bg_order@2x.png" class="abs order-status-bg bg-success-ease"></image>
+            <view class="abs order-status-bar padded-l-16 padded-r-16 flex flex-align-center">
+                <view class="color-write f-13">
+                    <view class="f-17">
+                        {{OrderStatus[ info.statusStrIndex ]}}
+                        <!-- {{statusStr[info.status]}}{{info.payStatus== 5 ? '退款已成功' : ''}} -->
+                        <text wx:if="{{info.status== 5}}" bindtap="showTimeLine" class="iconfont padded-l-8 icon-ios-arrow-down f-17 rel" style="top:4rpx;"></text>
+                    </view>
+                    <!-- <block wx:if="{{info.status== 3}}">
+                        <view class="f-14">
+                            送达时间超24小时捎带者仍未提货
+                        </view>
+                        <view class="f-14">
+                            系统将自动退款
+                        </view>
+                    </block> -->
+                    <view wx:if="{{info.status== 0}}" class="f-14">
+                        订单待支付
+                    </view>
+                    <block wx:else>
+                        <view wx:if="{{info.status== 6 && info.payStatus> 1}}" 
+                            class="margin-t-4 f-11 order-refundDetail color-success text-center" 
+                            bindtap="href" data-url="/packageOrder/recede/with-auto/index?orderId={{info.orderId}}"
+                            >退款详情
+                        </view>
+                        <view wx:if="{{info.status!= 1 && info.status!= 6 && info.status!= 5 }}">
+                            预计送达时间  <cm-time time="{{info.trip.arriveTime}}" /><text wx:if="{{info.systemTime > info.trip.arriveTime}}">{{info.systemTime > info.trip.arriveTime ? ' 已超时': ''}}</text><text bindtap="showTimeLine" class="iconfont padded-l-8 icon-ios-arrow-down f-17 rel" style="top:4rpx;"></text>
+                        </view>
+                    </block>
+                    
+                </view>
+            </view>
+
+            <view class="padded-t-16" wx:if="{{showtimeline}}">
+                <wux-timeline>
+                    <wux-timeline-item wx:if="{{info.status> 4}}" 
+                        dotStyle="{{info.status== 5 ? 'border-color: rgb(255,172,26); color: rgb(255,172,26)' : ''}}">
+                        <view class="{{info.status== 5 ? 'color-success' : 'color-light'}}">
+                            <cm-time time="{{info.finishTime}}" /> 我已收货，订单完成
+                        </view>
+                    </wux-timeline-item>
+                    <wux-timeline-item wx:if="{{info.status> 3}}" 
+                        dotStyle="{{info.status== 4 ? 'border-color: rgb(255,172,26); color: rgb(255,172,26)' : ''}}">
+                        <view class="{{info.status== 4 ? 'color-success' : 'color-light'}}">
+                            <cm-time time="{{info.signTime}}" /> 捎带者已送达，待确认收货
+                        </view>
+                    </wux-timeline-item>
+                    <wux-timeline-item wx:if="{{info.status> 2}}" 
+                        dotStyle="{{info.status== 3 ? 'border-color: rgb(255,172,26); color: rgb(255,172,26)' : ''}}">
+                        <view class="{{info.status== 3 ? 'color-success' : 'color-light'}}">
+                            <cm-time time="{{info.details[0].takeTime}}" /> 捎带者已提货
+                        </view>
+                    </wux-timeline-item>
+                    <wux-timeline-item wx:if="{{info.status> 1}}" 
+                        dotStyle="{{info.status== 2 ? 'border-color: rgb(255,172,26); color: rgb(255,172,26)' : ''}}">
+                        <view class="{{info.status== 2 ? 'color-success' : 'color-light'}}">
+                            <cm-time time="{{info.receiveTime}}" /> 捎带者已接单
+                        </view>
+                    </wux-timeline-item>
+                    <wux-timeline-item wx:if="{{info.status> 0}}" 
+                        dotStyle="{{info.status== 1 ? 'border-color: rgb(255,172,26); color: rgb(255,172,26)' : ''}}">
+                        <view class="{{info.status== 1 ? 'color-success' : 'color-light'}}">
+                            <cm-time time="{{info.payTime}}" /> 捎带者待接单
+                        </view>
+                    </wux-timeline-item>
+                </wux-timeline>
+                <view class="line"></view>
+            </view>
+
+            <block wx:for="{{info.details}}" wx:key="{{index}}">
+                <view wx:if="{{index}}" class="line"></view>
+                <cm-order-shop-goodslist data="{{item}}" shopLink />
+            </block>
+        </view>
+    </view>
+
+    <view class="padded-l-16 padded-r-16 margin-b-12">
+        <view class="panel bg-write padded-l-16 padded-r-16 padded-t-12 padded-b-12">
+            <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+                <text>商品总价</text>
+                <text>¥{{info.goodsAmount}}</text>
+            </view>
+            <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+                <text>捎带费</text>
+                <text>¥{{info.tripAmount}}</text>
+            </view>
+            <block wx:if="{{info.discountAmount}}">
+                <view class="line"></view>
+                <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+                    <text>平台优惠</text>
+                    <text>-¥{{info.discountAmount}}</text>
+                </view>
+            </block>
+              
+            <view class="line"></view>
+            <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+                <text>共 <text class="color-error bold">{{info.count}}</text> 件商品</text>
+                <text>合计<text class="color-error bold">¥<text class="f-17">{{info.allAmountStr}}</text></text></text>
+            </view>
+        </view>
+    </view>
+
+    <view class="padded-l-16 padded-r-16 margin-b-12">
+        <view class="panel bg-write padded-l-16 padded-r-16 padded-t-12 padded-b-12">
+            <view class="flex flex-pack-justify margin-t-8 margin-b-8">
+                <text class="label">收货信息：</text>
+                <view class="flex-1 flex flex-pack-justify">
+                    <view>
+                        <view>{{info.receive.receiveUserName}}  {{info.receive.receiveUserPhone}}</view>
+                        <view class="f-13 color-light">{{info.receive.receiveUserAddress}}</view>
+                    </view>
+                    <view bindtap="makePhoneCall" data-phone="{{info.receive.receiveUserPhone}}" class="iconfont icon-tubiao210 color-success f-17 padded-l-16"></view>
+                </view>
+            </view>
+            
+            <view class="line"></view>
+            <view class="flex flex-pack-justify flex-align-center margin-b-8">
+                <text class="label">收货方式：</text>
+                <text class="flex-1 color-success">{{info.receiveType> -1 ? goodsPuttype[info.receiveType] : '自提/同城邮'}}</text>
+            </view>
+            <!-- <view class="flex flex-pack-justify flex-align-center margin-t-8 margin-b-8">
+                <text class="label">备注：</text>
+                <text class="flex-1">{{info.receive.a}}</text>
+            </view> -->
+        </view>
+    </view>
+
+    <view class="padded-l-16 padded-r-16 margin-b-12">
+        <view class="panel bg-write padded-l-16 padded-r-16 padded-t-12 padded-b-12">
+            <view class="flex flex-pack-justify margin-b-8 f-11 color-grey">
+                <view class=""><view>订单号：</view>{{info.orderNo}}</view>
+                <view><view>提交时间：</view><cm-time time="{{info.createTime}}" /></view>
+            </view>
+            <view class="flex flex-pack-justify flex-align-center margin-t-12">
+                <view class="color-blue f-13"><cm-contact>在线客服</cm-contact></view>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{info.status== 0}}" style="padding: 50rpx;"></view>
+
+</wux-refresher>
+
+
+<block wx:if="{{info.status== 0}}">
+
+    <view wx:if="{{from== 'find'}}" class="fix bg-write f-11 text-center color-success padded-b-12 padded-t-12 find-order-notice">
+        无人接单前您可随时取消订单，资金全额退回
+        <layout-body hasFixed="bottom" />
+    </view>
+
+    <layout-body hasFixed="bottom" />
+    <fixed-bar>
+        <view class="flex-1 bold padded-l-16">
+            ¥ <text class='number rel'>{{info.allAmountStr || 0}}</text><text class="f-11 color-light">（含捎带费）</text>
+        </view>
+        <text class="color-grey padded-16 margin-l-8" bindtap="orderCancel">取消</text>
+        
+        <view wx:if="{{info.discountAmount}}" catchtap="payWx" style="width: 220rpx;" class="btn sure-successed bg-success-ease color-write text-center f-17 padded-t-4" style='line-height: 1.2;'>
+            微信支付
+            <view class="f-13">
+                已优惠¥{{info.discountAmount}}
+            </view>
+        </view>
+        <view wx:else catchtap="payWx" style="width: 220rpx;" class="btn sure-successed bg-success-ease color-write text-center f-17">
+            微信支付
+        </view>
+    </fixed-bar>
+</block>
+<block wx:elif="{{info.status< 5 && info.status> 2}}">
+    <layout-body hasFixed="bottom" />
+    <fixed-bar-text bindtap="signIn">确认收货</fixed-bar-text>
+</block>
+<block wx:elif="{{from== 'find' && info.status== 1 && info.payStatus== 2}}">
+    <layout-body hasFixed="bottom" />
+    <!-- <fixed-bar-text bindtap="orderCancel">取消订单</fixed-bar-text> -->
+    <fixed-bar>
+        <view class="flex flex-1 text-center" hover-class="none" hover-stop-propagation="false">
+            <view class="flex-1 flex flex-align-center flex-pack-center" style="height: 108rpx;" bindtap="orderCancel">取消订单</view>
+            <sd-button width="400" height="108" openType="share" radius="0" type="success">分享给好友</sd-button>
+        </view>
+         
+    </fixed-bar>
+</block>
+<block wx:else >
+    <layout-body />
+</block>
+
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
+
+<cm-side-to-index wx:if="{{share== 'true'}}" id="side-to-index" zindex="200" bottom="100" right="8" />

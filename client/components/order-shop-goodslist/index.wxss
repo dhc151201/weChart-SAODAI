@@ -1,0 +1,11 @@
+@import './../../assets/wxss/base.wxss';
+@import './../../assets/iconfont/iconfont.wxss';
+
+.shop-title{
+    padding: 40rpx 0;
+}
+
+.status-cancel{
+    background: rgba(255, 172, 26, 0.1);
+    padding: 2rpx 16rpx;
+}

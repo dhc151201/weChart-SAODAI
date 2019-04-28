@@ -1,0 +1,26 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "找人捎带",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "cm-skeleton": "/components/base/skeleton/index",
+    "cm-swiper": "/components/base/swiper/index",
+    "cm-column": "/components/base/column/index",
+    "cm-gongge": "/components/gongGe/index",
+    "cm-shop-card": "/components/index-shop-card/index",
+    "cm-avatar-bar": "/components/base/avatar-bar/index",
+    "wux-select": "/libs/wux/select/index",
+    "cm-picker": "/components/base/picker/index",
+    "cm-label-item": "/components/base/label-item/index",
+    "wux-slider": "/libs/wux/slider/index",
+    "wux-refresher": "/libs/wux/refresher/index",
+    "cm-filter-actionsheet": "/components/base/filter-actionsheet/index",
+    "van-collapse": "/libs/vant/collapse/index",
+    "van-collapse-item": "/libs/vant/collapse-item/index",
+    "cm-note": "/components/base/note/index",
+    "sd-refresher": "/libs/sdai/refresher/index",
+    "sd-spin": "/libs/sdai/spin/index"
+  }
+}

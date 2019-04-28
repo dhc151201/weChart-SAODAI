@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "wux-select": "/libs/wux/select/index",
+    "wux-gallery": "/libs/wux/gallery/index"
+  }
+}

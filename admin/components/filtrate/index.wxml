@@ -1,0 +1,58 @@
+<!--components/filtrate/index.wxml-->
+<view class="rel" catchtap='showOptions'>
+
+  <slot name="left"></slot>
+  <text>筛选</text>
+  <slot name="right"></slot>
+
+  <!-- options -->
+  <view style="display: {{showOptionBox ? 'block' : 'none'}}; top: {{absoluteTop}}rpx; right: {{absoluteRight}}rpx;" class="abs bg-write options-box f-4" catchtap>
+
+    <view class="options-body">
+
+      <slot name="options"></slot>
+      <block>
+        <view class="title">标题</view>
+        <view class="options">
+          <view class="option-item">选项</view>
+          <view class="option-item">选项</view>
+        </view>
+      </block>
+      <block>
+        <view class="title">标题</view>
+        <view class="options">
+          <view class="option-item">选项</view>
+          <view class="option-item">选项</view>
+        </view>
+      </block>
+      <block>
+        <view class="title">标题</view>
+        <view class="options">
+          <view class="option-item">选项</view>
+          <view class="option-item">选项</view>
+        </view>
+      </block>
+      <block>
+        <view class="title">标题</view>
+        <view class="options">
+          <view class="option-item">选项</view>
+          <view class="option-item">选项</view>
+        </view>
+      </block>
+      <block>
+        <view class="title">标题</view>
+        <view class="options">
+          <view class="option-item">选项</view>
+          <view class="option-item">选项</view>
+        </view>
+      </block>
+    </view>
+
+    <view class="options-footer flex text-center f-3">
+      <view class="cancel">清除</view>
+      <view class="flex-1 sure color-write">确定</view>
+    </view>
+    
+  </view>
+
+</view>

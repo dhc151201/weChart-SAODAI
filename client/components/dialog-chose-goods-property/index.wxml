@@ -1,0 +1,42 @@
+<!-- mask -->
+<cm-mask id="sdai-mask" zindex="120" catchtap="hideCard"/>
+<!-- 更多规格选择，属性选择 卡片 -->
+<view wx:if="{{isShowCard}}" class="fix card-box full flex flex-pack-center flex-align-center" bindtap='hideCard'>
+  <view class="html" catchtap='nullFun'>
+
+    <view class="head rel color-write">
+      <image mode='aspectFill' class="abs" src="{{$state.assetsUrl}}bg_xgg@2x.png"></image>
+      <text bindtap="hideCard" class="abs close iconfont icon-ios-close-circle f-17"></text>
+      <view class="abs shop-info flex flex-align-end border-box padded-12">
+        <text class="f-17 bold">{{goodsInfo.spuName}}({{goodsInfo.skuSpec}})</text>
+      </view>
+    </view>
+
+    <view class="body padded-16 bg-write">
+      <block wx:for="{{propTypes}}" wx:key="{{index}}">
+        <view class="chose-block-tit color-light">{{item.title}}</view>
+        <view class="label-items color-grey" >
+          <cm-label-item wx:for="{{item.name}}" wx:key="{{index}}"
+           data-id="{{item.id}}" data-name="{{item.name}}"
+           active="{{propChose['_'+ item.id] == item.name}}" type="{{propChose['_'+ item.id] == item.name ? 'solid' : ''}}"
+           bindtap="propChoseHandel">{{item.name}}</cm-label-item>
+        </view>
+      </block>
+    </view>
+
+    <view class="footer padded-l-16 padded-r-16 padded-t-12 padded-b-12">
+      <view class="flex flex-pack-justify flex-align-center">
+        <view>¥<text class="f-20 bold">{{ goodsInfo.salePrice || goodsInfo.skus[0].salePrice }}</text>
+        </view>
+        <cm-stepper value="{{goodsInfo.choseNum || choseNumFromCard}}" bind:change="change_self" />
+      </view>
+      <view class="chose-labels f-11 color-light">
+        {{propChoseName}}
+      </view>
+
+      <button bindtap="addCardHandel" class="btn bg-success-ease color-write f-17 margin-t-12">加入购物车</button>
+
+    </view>
+
+  </view>
+</view>

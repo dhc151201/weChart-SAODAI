@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "切换城市",
+  "usingComponents": {
+    "wux-spin": "./../../../../libs/wux/spin/index",
+    "cm-empty-layout": "./../../../../components/base/empty-layout/index"
+  }
+}

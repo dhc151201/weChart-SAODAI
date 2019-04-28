@@ -1,0 +1,11 @@
+<view class="avatar-bar-box">
+  <view class="avatar-bar-margin-padded">
+    <image wx:for="{{list}}" wx:key="index" class="avatar"
+    src="{{item.headPortraitUrl}}"
+    style="z-index:{{index}};width: {{width}}rpx; height: {{height}}rpx"
+    ></image>
+    <view wx:if="{{data.length > max}}" class="avatar"
+    style="z-index:{{max}};width: {{width}}rpx; height: {{height}}rpx; line-height: 1.3"
+    >...</view>
+  </view>
+</view>

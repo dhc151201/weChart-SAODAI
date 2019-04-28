@@ -1,0 +1,3 @@
+<view catchtouchmove='nullFun'>
+  <view hidden="{{hidden}}" class="mask {{out ? 'out' : ''}} {{enter ? 'enter' : '' }}"></view>
+</view>

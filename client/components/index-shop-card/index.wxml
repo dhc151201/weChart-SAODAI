@@ -1,0 +1,66 @@
+<view class="shop-card bg-write" wx:for="{{data}}" wx:key="{{item.id}}"
+  bindtap="href" data-url="/pages/with-auto/shop-detail/index?shopId={{item.shopId}}&from=canpay"
+>
+  <!-- 店铺信息 -->
+  <view class="flex padded-l-16 padded-r-16">
+    <!-- <wux-image lazyLoad width="128rpx" height="128rpx"
+        shape="circle"
+        src="{{item.logoImageUrl}}?imageView2/1/w/128/h/128/q/100">
+    </wux-image> -->
+    <cm-loading-image light src="{{item.logoImageUrl}}?imageView2/1/w/128/h/128/q/100" width="128rpx" height="128rpx" radius="100"></cm-loading-image>
+    <view class="flex-1 padded-l-12  border-box">
+      <view class="f-16 bold aui-ellipsis-1" style="width: 440rpx;">{{item.shopName}}</view>
+      <view class="flex flex-pack-justify flex-align-center f-11 color-light border-box">
+        <view class="aui-ellipsis-1 margin-r-16 address flex-1">{{item.address}}</view>
+        <cm-distance value="{{item.minTripdestDistance}}" beforeText="距您"></cm-distance>
+      </view>
+      <!-- 标签 -->
+      <view class="f-11">
+        <cm-note wx:if="{{item.discountName}}" background="#FFE8E8" color="#FF5E4B">{{item.discountName}}</cm-note>
+        <cm-note wx:for="{{item.shopTags}}" wx:if="{{index< 3}}" wx:key="{{item.id}}">{{item.name}}</cm-note>
+      </view>
+    </view>
+  </view>
+  <!-- goods swiper -->
+  <scroll-view scroll-x class="shop-goods-swiper margin-t-16">
+    <view class="shop-goods" wx:for="{{item.skus}}" wx:key="{{item.id}}">
+      <view class="goods-pic rel f-11 color-write">
+        <cm-loading-image light src="{{item.imageUrl}}?imageView2/1/w/192/h/144/q/100" width="192rpx" height="144rpx" radius="10"></cm-loading-image>
+        <view class="abs goods-name border-box aui-ellipsis-1">{{item.skuName}}</view>
+        <view class="abs goods-note color-success">{{item.tags[0].name}}</view>
+      </view>
+      <view class="goods-price color-success f-11">
+        ¥ <cm-money class="f-13" value="{{item.salePrice}}" />
+        <view wx:if="{{item.originPrice > item.salePrice}}" class="old-price color-light margin-l-4">¥<cm-money value="{{item.originPrice}}" /></view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 捎带者列表 -->
+  <view class='padded-l-16 padded-r-16 padded-t-12 couple-bar'>
+    <view class="margin-b-16 hr-line"> </view>
+    <view class="flex flex-pack-justify flex-align-center f-14 margin-b-4">
+      <view>捎带人</view>
+      <view class="color-success"><cm-time time="{{item.arriveTime}}" />送达</view>
+    </view>
+    <!-- 只有一个人骚带 -->
+    <view wx:if="{{item.trips.length== 1}}" class="flex flex-pack-justify flex-align-center f-13">
+      <view class="flex avatar-bar-box">
+        <cm-avatar-bar width="72" height="72" data="{{item.trips}}"></cm-avatar-bar>
+      </view>
+      <text class="padded-l-8 flex-1">{{item.trips[0].userName || ''}}</text>
+      <view>
+        <view class="couple-btn bg-success-ease color-write text-center"
+          catchtap="href"
+          data-url="/packageTrip/detail/index?tripId={{item.trips[0].tripId}}&shopId={{item.shopId}}&from=auto"
+        >请Ta捎带</view>
+      </view>
+    </view>
+    <!-- 有多人捎带 -->
+    <view wx:if="{{item.trips.length> 1}}" class="flex flex-pack-justify flex-align-center avatar-bar-box">
+      <cm-avatar-bar width="72" height="72" data="{{item.trips}}" max="5"></cm-avatar-bar>
+      <view>
+        <view class="couple-btn bg-success-ease color-write text-center" >请Ta捎带</view>
+      </view>
+    </view>
+  </view>
+</view>

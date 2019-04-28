@@ -1,0 +1,104 @@
+<import src="./../../../templates/no-data.wxml" />
+
+<wux-refresher id="wux-refresher" bind:pulling="onPulling" bind:refresh="onRefresh">
+
+  <view class="bg-write">
+
+    <view class="flex flex-pack-justify flex-align-center padded-l-16 padded-r-16 f-14 color-grey top-info">
+      <view>商户名：{{merchantInfo.name}}</view>
+      <view class="f-11 color-light">商户ID {{merchantInfo.merchantNo}}</view>
+    </view>
+
+
+    <block wx:if="{{enteredShops.length}}">
+      <cm-column>
+        <view class="bold" slot="left">已入驻店铺</view>
+      </cm-column>
+      <view wx:for="{{enteredShops}}" wx:key="{{item.id}}" 
+        bindtap='href' data-url="/pages/shop/detail/index?id={{item.id}}"
+        class='shop-list margin-l-16 f-14'>
+        <view class="flex flex-pack-justify flex-align-center">
+          <view class="rel shop-list-avatar">
+            <!-- <cm-avatar size="small" src="{{item.logoImageUrl}}"></cm-avatar> -->
+            <cm-loading-image width="136rpx" height="136" radius="136" src="{{item.logoImageUrl+ '?imageView2/1/w/100/h/100/q/85'}}"></cm-loading-image>
+            <view class="abs lebal color-write f-11 text-center {{item.state!= 3 && 'active'}}">
+              {{item.state!= 3  ? '已认证' : '待认证'}}
+            </view>
+          </view>
+          <view class="margin-l-8 flex-1">
+            <view>{{item.shopName}}</view>
+            <view class="color-light f-11" style='line-height: 1.3;'>
+              <view class="aui-ellipsis">地址:{{item.address}}</view>
+              <view>营业时间:{{item.hoursList[0].startTime+ " - "+ item.hoursList[0].endTime}}</view>
+              <view>电话:{{item.shopTelphone}}</view>
+            </view>
+            
+          </view>
+          <view class='color-light f-13 padded-l-16 margin-l-12'>
+            <view>
+              <text class="padded-r-4">{{!item.skuCount ? '无商品' : ''}}</text>
+              <text v-if="{{item.skuCount}}" class="{{item.useState && 'color-blue'}}">{{item.useState ? '营业中' : '未上架'}}</text>
+            </view>
+
+            <view class="text-right padded-t-12" catchtap='href' data-url="/pages/shop/edit/index?id={{item.id}}">
+              <text class="iconfont icon-xiugai f-17 color-success"></text>
+            </view>
+            
+          </view>
+        </view>
+      </view>
+
+      <view class="padded-t-8 bg-summary"></view>
+
+    </block>
+    
+
+    <!-- <template wx:if="{{!enteredShops.length && requested}}" is="no-data" data="{{str: '暂无已入驻店铺, 赶快新增门店吧～'}}"/> -->
+    <block wx:if="{{waitEnteredShops.length}}">
+
+      <cm-column>
+        <view class="bold" slot="left">待入驻店铺</view>
+      </cm-column>
+
+      <view wx:for="{{waitEnteredShops}}" wx:key="{{item.id}}" class='shop-list margin-l-16 f-14'
+        bindtap='href' data-url="/pages/shop/{{ ( item.state== 3 || item.state== 2 ) ? 'information' : 'edit'}}/index?id={{item.id}}"
+        >
+        <view class="flex flex-pack-justify flex-align-center">
+          <view>
+            <!-- <cm-avatar size="small" src="{{item.logoImageUrl}}"></cm-avatar> -->
+            <cm-loading-image width="136rpx" height="136" radius="136" src="{{item.logoImageUrl+ '?imageView2/1/w/100/h/100/q/85'}}"></cm-loading-image>
+          </view>
+          <view class="margin-l-8 flex-1">
+            <view>{{item.shopName}}</view>
+            <view class="color-light f-11" style='line-height: 1.3;'>
+              <view class="aui-ellipsis">地址:{{item.address}}</view>
+              <!-- <view>营业时间:{{item.hoursList[0].startTime+ " - "+ item.hoursList[0].endTime}}</view> -->
+              <view v-if="{{item.shopTelphone}}">电话:{{item.shopTelphone}}</view>
+            </view>
+
+          </view>
+          <view class='f-13 padded-l-16 margin-l-12 {{item.state== 2? "color-error" : "color-light"}}'>{{stateStr[item.state]}}</view>
+        </view>
+        <!-- 原因 -->
+        <view wx:if="{{item.state== 2}}" class="reason color-grey">{{item.reason}}</view>
+      </view>
+
+    </block>
+    <!-- <template wx:if="{{!waitEnteredShops.length && requested}}" is="no-data" 
+    data="{{str: '暂无待入驻店铺, 赶快新增门店吧～'}}" /> -->
+
+  
+
+  </view>
+
+  <view class="padded-16" style="padding-top: 65rpx;">
+    <view hover-class="hover-class" bindtap='href' data-url="/pages/shop/add/index" class="btn btn-block btn-lg bg-success-ease">新增门店</view>
+  </view>
+  <view class="text-center f-13 padded-b-16">
+    <button class="flex-1 btn contact-btn" open-type="contact">联系客服</button>
+  </view>
+
+</wux-refresher>
+
+<import src="./../../../templates/behavior.wxml" />
+<template is="behavior" />

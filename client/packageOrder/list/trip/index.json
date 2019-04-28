@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+      "wux-tabs": "/libs/wux/tabs/index",
+      "wux-tab": "/libs/wux/tab/index",
+      "fixed-bar": "/components/fixed-bar/index",
+      "cm-order-card-list": "/components/order-card-list-trip/index"
+  }
+}

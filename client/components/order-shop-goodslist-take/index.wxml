@@ -1,0 +1,26 @@
+<view class="margin-b-16 flex" wx:for="{{orderInfo.skus}}" wx:key="{{index}}" wx:if="{{showAll || index< showNum}}">
+    <cm-loading-image width="128rpx" height="128rpx" src="{{item.skuImageUrl}}?imageView2/1/w/128/h/128/q/100" radius="{{10}}" />
+    <view class="padded-l-8 padded-r-16 flex-1 flex flex-v flex-pack-justify">
+        <view class="flex flex-pack-justify flex-align-center f-13">
+            <text>{{item.skuName}} {{item.skuSpec ? "("+ item.skuSpec+ ")" : '' }}</text>
+            <text>×{{item.skuCount}}</text>
+        </view>
+        <view class="flex-1 f-11  color-grey">{{item.propName || ''}}</view>
+        <view class="flex flex-pack-justify flex-align-center f-13">
+            <text class="color-error bold">¥{{item.salePrice}}</text>
+            <text wx:if="{{item.payStatus == 2}}" class="status-cancel color-success">已退款</text>
+        </view>
+    </view>
+    <text 
+        bindtap="chose" data-index="{{index}}"
+        class="padded-b-16 padded-l-16 iconfont icon-chose {{item.chose ? 'icon-duoxuan color-blue' : 'icon-danxuanweixuanzhong color-light'}}"></text>
+</view>
+
+<view class="text-center" wx:if="{{orderInfo.skus.length> showNum && !showAll}}">
+    <text bindtap="showAllHandel" class="color-blue f-13 padded-16 padded-t-4">展开全部商品</text>
+</view>
+
+<view class="flex flex-pack-justify flex-align-center padded-b-16">
+    <view>共 <text class="color-error">{{choseNumber || 0}}</text> 件</view>
+    <view><text>共计</text> <text class="color-error">¥<text class="f-17 bold">{{chosePrice || 0}}</text></text> </view>
+</view>

@@ -1,0 +1,135 @@
+@import "./../../components/pay-card/index.wxss";
+
+page{
+    background: #fff;
+}
+
+.top-bg{
+    height: 240rpx;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.top-ticket{
+    height: 268rpx;
+    margin: 24rpx 32rpx 36rpx;
+}
+.top-ticket.h152{
+    height: 304rpx;
+}
+.ticket-bg{
+    width: calc(100% + 10rpx);
+    height: calc(100% + 10rpx);
+    top: 0;
+    left: -4rpx;
+    z-index: -1;
+}
+
+.cancel.trip-status-select{
+    background: rgb(224,224,224);
+}
+
+.trip-status-select{
+    border-radius: 32rpx;
+    height: 56rpx;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    line-height: 56rpx;
+    white-space: nowrap;
+}
+
+.trip-box{
+    /* height: 140rpx; */
+}
+.trip-from,
+.trip-to{
+    
+}
+.trip-center-line{
+    width: 44rpx;
+    height: 12rpx;
+}
+.line-c{
+    border-top: 1rpx dashed rgb(224,224,224);
+    /* margin-bottom: 40rpx; */
+    margin-left: 32rpx;
+    margin-right: 32rpx;
+}
+
+.trip-footer{
+    /* height: 102rpx; */
+    color: #666;
+}
+
+
+.left,
+.right{
+    overflow-y: auto;
+    height: calc(100vh - 428rpx);
+}
+.left.no-bottom-fixed,
+.right.no-bottom-fixed{
+    height: calc(100vh - 428rpx + 108rpx);
+}
+.left{
+    width: 184rpx;
+    background: rgb(250,250,250);
+    box-sizing: border-box;
+    padding-bottom: 30rpx;
+}
+.left-item{
+    width: 184rpx;
+    padding: 4rpx 40rpx;
+    min-height: 112rpx;
+    position: relative;
+}
+.left-item.active{
+    background: #fff;
+    font-weight: 600;
+}
+.left-item.active::before{
+    content: "";
+    position: absolute;
+    width: 8rpx;
+    height: 32rpx;
+    left: 8rpx;
+    top: calc(50% - 16rpx );
+    background: -webkit-linear-gradient(top, rgb(254, 191, 0), rgb(255, 170, 29)); 
+}
+.scroll-goods{
+    height: calc(100vh - 108rpx - 126rpx);
+    overflow: visible;
+}
+
+.icon-down{
+    top: 4rpx;
+}
+
+.pandel{
+    border-radius: 16rpx;
+    width: 560rpx;
+}
+.pandel>.flex{
+    padding: 4rpx 0;
+}
+.address-left{
+    width: 150rpx;
+    color: #333;
+}
+
+.new-price-shop{
+    display: inline-block;
+    padding: 0 4rpx;
+    border: 1rpx solid #FF5E4B;
+    color: #FF5E4B;
+    font-size: 16rpx;
+    line-height: 1.05;
+    margin-top: 6rpx;
+    margin-left: 4rpx;
+    white-space: nowrap;
+    left: 36rpx;
+    top: -1rpx;
+    /* transform:  rotate(-30deg); */
+}

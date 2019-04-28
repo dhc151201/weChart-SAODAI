@@ -1,0 +1,8 @@
+@import './../../assets/iconfont/iconfont.wxss';
+@import './../../assets/wxss/base.wxss';
+
+
+.icon-chose{
+    font-size: 40rpx;
+    margin-top: -6rpx;
+}

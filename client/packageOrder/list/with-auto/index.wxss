@@ -1,0 +1,11 @@
+.tabs-box{
+    border-top: 1rpx solid rgb(224,224,224);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.tab-content{
+    padding-top: 100rpx;
+}

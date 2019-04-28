@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "新增收货信息",
+  "usingComponents": {
+    "wux-button": "./../../../libs/wux/button/index",
+    "wux-input": "./../../../libs/wux/input/index"
+  }
+}

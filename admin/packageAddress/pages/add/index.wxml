@@ -1,0 +1,34 @@
+<view class="container min-full bg-write">
+
+  <view class="from-box">
+    <view class="from-margin-padded f-3">
+      <!-- items -->
+      <view class="item">
+        <wux-input label="收货人" placeholder='姓名'></wux-input>
+      </view>
+      
+      <view class="item">
+        <wux-input label="电话" type="number" placeholder='手机或固话' />
+      </view>
+
+      <view class="item">
+        <wux-input label="地址" placeholder='选择收货地址'>
+          <view slot="footer" class="color-info" style="margin-left: 5px">￥</view>
+        </wux-input>
+      </view>
+
+      <view class="item">
+        <wux-input label="门牌号" placeholder='例，8号楼808' />
+      </view>
+
+    </view>
+  </view>
+
+
+  <view class="submit">
+    <wux-button block type="assertive">保存</wux-button>
+  </view>
+  
+
+</view>
+

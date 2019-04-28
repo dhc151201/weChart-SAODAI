@@ -1,0 +1,15 @@
+.note{
+  display: inline-block;
+  height: 56rpx;
+  line-height: 54rpx;
+  text-align: center;
+  min-width: 144rpx;
+  border-radius: 56rpx;
+  margin: 12rpx 18rpx;
+  border: 1rpx solid rgb(189,189,189);
+  box-sizing: border-box;
+}
+
+.note.bg-success{
+  border-color: #ffac1a;
+}/* pages/shop/notes/index.wxss */

@@ -1,0 +1,36 @@
+<view class="gongge-box f-11">
+  <view class='gongge-margin-padded text-center'>
+    <view class="flex flex-pack-around nav-row">
+
+      <view wx:for="{{list[0]}}" wx:key="index"
+        bindtap="href" data-url="{{item.pathUrl}}?{{item.pathParam}}"
+      >
+        <cm-loading-image class="skeleton-rect" light src="{{item.imageUrl}}?imageView2/1/w/136/h/136/q/100" width="136rpx" height="136rpx" radius="1"></cm-loading-image>
+        <text class="nav-text skeleton-rect">{{item.title}}</text>
+      </view>
+
+      <view wx:if="{{list[0].length < 4}}" bindtap="href" data-url="/pages/with-auto/shop-list/index">
+        <cm-loading-image class="skeleton-rect" src="https://p4.rrkd.cn/app/icon_zrsd_more@3x.png?imageView2/1/w/136/h/136/q/100" width="136rpx" height="136rpx" radius="1"></cm-loading-image>
+        <text class="nav-text skeleton-rect">更多</text>
+      </view>
+
+    </view>
+
+    <view class="flex flex-pack-around nav-row">
+
+      <view wx:for="{{ list[1] }}" wx:key="index"
+        bindtap="href" data-url="{{item.pathUrl}}?{{item.pathParam}}"
+      >
+        <cm-loading-image class="skeleton-rect" src="{{item.imageUrl}}?imageView2/1/w/136/h/136/q/100" width="136rpx" height="136rpx" radius="1"></cm-loading-image>
+        <text class="nav-text skeleton-rect">{{item.title}}</text>
+      </view>
+
+      <view wx:if="{{list[0].length > 3}}" bindtap="href" data-url="/pages/with-auto/shop-list/index">
+        <cm-loading-image class="skeleton-rect" src="https://p4.rrkd.cn/app/icon_zrsd_more@3x.png?imageView2/1/w/136/h/136/q/100" width="136rpx" height="136rpx" radius="1"></cm-loading-image>
+        <text class="nav-text skeleton-rect">更多</text>
+      </view>
+
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,26 @@
+.from-input-block{
+  min-height: 104rpx;
+  width: 100%;
+  position: relative;
+  padding-right: 32rpx;
+  box-sizing: border-box;
+}
+.from-input-block::after{
+  content: "";
+  display: block;
+  border-bottom: 1rpx solid rgb(224,224,224);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.last-input-block::after{
+  display: none !important;
+}
+.from-label{
+  min-width: 192rpx;
+  font-size: 28rpx;
+}
+.forward{
+  color: rgb(204,204,204);
+}

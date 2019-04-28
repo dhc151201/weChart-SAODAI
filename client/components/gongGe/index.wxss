@@ -1,0 +1,24 @@
+.nav-item-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+
+.nav-row{
+  padding: 16rpx 0;
+}
+
+.nav-text{
+  display: block;
+  padding: 0 0 0;
+  color: #666;
+}
+
+.gongge-item{
+    width: 25%;
+    text-align: center;
+}
+
+.gongge-box{
+    flex-wrap: wrap;
+}

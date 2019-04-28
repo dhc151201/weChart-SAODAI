@@ -1,0 +1,42 @@
+<!-- 订单详情页 订单中 某个店铺的信息及店铺下购买的商品list panel -->
+<view class="shop-title f-17 bold flex flex-pack-justify" bindtap="link">
+    <view class="flex-1">
+        <view class="flex flex-pack-justify flex-align-center" style='line-height: 1;'>
+            <text class="">{{data.shopName}}</text>
+            <view class="f-11">
+                <cm-note wx:if="{{data.discountName}}" background="#FFE8E8" color="#FF5E4B">{{data.discountName}}</cm-note>
+            </view>
+        </view>
+        <text wx:if="{{shopLink}}" class="f-11 color-grey">{{data.address || data.shopAddress}} I 距您{{data.distance}}</text>
+    </view>
+    <text wx:if="{{shopLink}}" class="iconfont icon-ios-arrow-forward color-light" ></text>
+</view>
+
+<view class="margin-b-16 flex" wx:for="{{data.skus}}" wx:key="{{index}}" wx:if="{{showAll || index< showNum}}">
+    <cm-loading-image width="128rpx" height="128rpx" src="{{item.skuImageUrl}}?imageView2/1/w/128/h/128/q/100" radius="{{10}}" />
+    <view class="padded-l-8 flex-1 flex flex-v flex-pack-justify">
+        <view class="flex flex-pack-justify flex-align-center f-13">
+            <text>{{item.skuName}}{{item.skuSpec ? "("+ item.skuSpec+ ")" : '' }}</text>
+            <text>×{{item.skuCount}}</text>
+        </view>
+        <view class="f-11  color-grey">{{item.propName || ''}}</view>
+        <view class="flex flex-pack-justify flex-align-center f-13">
+            <text class="color-error bold">¥{{item.salePrice}}</text>
+            <text wx:if="{{item.payStatus == 2 || item.status== 5}}" class="status-cancel color-success">已退款</text>
+            <text wx:if="{{item.status== 2}}" class="status-cancel nogoods color-success">无货，已取消</text>
+        </view>
+    </view>
+</view>
+
+<view class="text-center" wx:if="{{data.skus.length> showNum && !showAll}}">
+    <text bindtap="showAllHandel" class="color-blue f-13 padded-16 padded-t-4">展开全部商品</text>
+</view>
+
+<view class="flex flex-pack-justify flex-align-center padded-b-16">
+    <view>共 <text class="color-error f-17">{{data.shopSkuCount}}</text> 件</view>
+    <view class="flex" style="line-height: 1;">
+        <text wx:if="{{shopLink}}">共计 </text>
+        <text class="color-error">¥<text class="f-17 bold">{{data.shopSkuAmount}}</text></text>
+        <text class="f-13 rel padded-l-4" style="top: 2rpx;" wx:if="{{data.discountAmount}}"> (优惠￥{{data.discountAmount}}) </text> 
+    </view>
+</view>

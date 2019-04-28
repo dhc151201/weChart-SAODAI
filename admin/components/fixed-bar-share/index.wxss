@@ -1,0 +1,11 @@
+.fixed-bar-share-item{
+  width: 50vw;
+  height: 108rpx;
+  text-align: center;
+  line-height: 108rpx;
+  font-size: 32rpx;
+  border-top: 1rpx solid #ddd;
+}
+.fixed-bar-share-item:not(:last-child){
+  border-right: 1rpx solid #ddd;
+}

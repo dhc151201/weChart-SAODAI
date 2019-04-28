@@ -1,0 +1,55 @@
+.tabs{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.head-pic{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 72rpx;
+  border: 6rpx solid #ddd;
+}
+.order-top-bar{
+  border-bottom: 1rpx solid rgb(244,244,244);
+}
+.phone-handel{
+  width: 80rpx;
+  height: 48rpx;
+  border-left: 1rpx solid rgb(244,244,244);
+}
+
+.goods-pic{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 8rpx;
+}
+
+.one-pay-number{
+  margin: 0 46rpx;
+}
+
+.goods-line-bottom{
+  border-bottom: 1rpx solid rgb(244,244,244);
+}
+
+.order-box{
+  border-radius: 16rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0,0,0,.1);
+}
+
+.order-money{
+  font-size: 1.2em;
+}
+
+.other-shop{
+    position: relative;
+    padding: 0 30rpx;
+    z-index: 1;
+    /* box-shadow: -2rpx 0 5rpx rgba(0,0,0,.1); */
+    border-left: 1rpx solid #ddd;
+    color: rgb(51,51,51);
+    font-size: 32rpx;
+}

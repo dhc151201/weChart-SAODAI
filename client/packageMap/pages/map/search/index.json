@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "修改目的地",
+  "usingComponents": {
+    "cm-search-bar": "/components/base/search-bar/index"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "店铺维护",
+  "usingComponents": {
+    "wux-notice-bar": "/libs/wux/notice-bar/index",
+    "wux-icon": "/libs/wux/icon/index",
+    "cm-upload": "/components/upload/index",
+    "cm-actionsheet": "/components/base/actionsheet/index",
+    "cm-picker": "/components/base/picker/index",
+    "cm-radio-group": "/components/base/radio-group/index",
+    "wux-spin": "/libs/wux/spin/index",
+    "wux-upload": "/libs/wux/upload/index",
+    "van-datetime-picker": "/libs/vant/datetime-picker/index"
+  }
+}

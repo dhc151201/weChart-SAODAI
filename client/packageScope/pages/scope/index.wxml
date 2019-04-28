@@ -1,0 +1,26 @@
+<view class="full text-center" catchtouchmove='nullFun'>
+
+    <image mode='aspectFill' class="bg-image full" src="{{$state.assetsUrl}}dafault_c@2x.png"></image>
+
+    <image class="login" src='{{$state.assetsUrl}}dafault_logo.png'></image>
+    <text class="f-14 login-name bold rel padded-l-12">人人捎带</text>
+
+    <view class='f-13 padded-b-4' style='margin-top: 34vh;'>
+        请点击“授权登录”，获取微信登录授权
+    </view>
+
+    <button class="f-18 margin-t-8" lang="zh_CN" openType="getUserInfo" bind:getuserinfo="getuserinfo">微信登录</button>
+
+    <!-- <button class="f-18 margin-t-8" lang="zh_CN" openType="getPhoneNumber" bindgetphonenumber="ongetphonenumber">手机号授权</button> -->
+
+    <!-- <view class='f-13 margin-t-16'>
+        手机号登录/ 注册
+    </view> -->
+
+</view>
+
+
+ <wux-dialog id="wux-dialog"></wux-dialog>
+
+ <cm-empty-layout background="rgba(255, 255, 255, .5)" show="{{showLoading}}"></cm-empty-layout>
+

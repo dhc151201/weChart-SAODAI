@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "退款详情",
+  "usingComponents": {
+    "cm-contact": "/components/base/contact/index",
+    "cm-side-to-index": "/components/side-to-index/index",
+    "cm-order-shop-goodslist": "/components/order-shop-goodslist/index"
+  }
+}

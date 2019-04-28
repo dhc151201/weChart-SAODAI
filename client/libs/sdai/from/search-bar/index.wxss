@@ -1,0 +1,33 @@
+@import './../../../../assets/wxss/base.wxss';
+@import './../../../../assets/iconfont/iconfont.wxss';
+.top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.search-bar{
+  z-index: 10;
+  height: 64rpx;
+  background: rgb(240, 241, 246);
+  border-radius: 64rpx;
+  border: 1rpx solid transparent;
+  box-sizing: border-box;
+}
+input{
+    padding: 0 32rpx;
+}
+.has-icon-search{
+  padding-left: 8rpx;
+}
+.iconfont{
+    font-size: 40rpx;
+    color: #999;
+}
+.icon-cancel{
+  margin-right: 12rpx;
+}
+.icon-search{
+  margin-left: 16rpx;
+}
